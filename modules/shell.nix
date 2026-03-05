@@ -1,5 +1,4 @@
-{ config, lib, ... }:
-{
+{config, ...}: {
   flake.modules = {
     nixos.base = nixosArgs: {
       programs.fish.enable = true;

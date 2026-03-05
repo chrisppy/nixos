@@ -2,8 +2,11 @@
 # These configurations end up as flake outputs under `#nixosConfigurations."<name>"`.
 # A check for the toplevel derivation of each configuration also ends
 # under `#checks.<system>."configurations:nixos:<name>"`.
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options.configurations.nixos = lib.mkOption {
     type = lib.types.lazyAttrsOf (
       lib.types.submodule {
@@ -16,7 +19,7 @@
 
   config.flake = {
     nixosConfigurations = lib.flip lib.mapAttrs config.configurations.nixos (
-      name: { module }: lib.nixosSystem { modules = [ module ]; }
+      _name: {module}: lib.nixosSystem {modules = [module];}
     );
 
     checks =

@@ -5,12 +5,10 @@ _: {
       hostId = "5954f78e";
       hostName = "sideling";
     };
-    
-    systemd.network.networks."10-wan" = {
+
+    systemd.network.networks."10-lan" = {
       matchConfig.Name = "enp3s0";
-      address = ["192.168.40.232/24"];
-      dns = ["192.168.1.1"];
-      routes = [{Gateway = "192.168.1.1";}];
+      networkConfig.DHCP = "ipv4";
     };
   };
 }

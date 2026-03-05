@@ -1,7 +1,6 @@
-_:
-{
+_: {
   flake.modules = {
-    nixos.bcachefs = { pkgs, ... }: {
+    nixos.bcachefs = {pkgs, ...}: {
       boot = {
         kernelPackages = pkgs.linuxPackages_latest;
         supportedFilesystems = [

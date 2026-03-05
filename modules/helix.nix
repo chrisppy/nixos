@@ -1,7 +1,6 @@
-_:
-{
+_: {
   flake.modules = {
-    nixos.base = { pkgs, ...}: {
+    nixos.base = {pkgs, ...}: {
       environment.systemPackages = with pkgs; [
         helix
       ];

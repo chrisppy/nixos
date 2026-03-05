@@ -1,10 +1,8 @@
-{ config, ... }:
-let
-  username = config.username;
-in
-{
+{config, ...}: let
+  inherit (config) username;
+in {
   flake.modules = {
-    nixos.base = { config, ... }: {
+    nixos.base = {config, ...}: {
       networking = {
         domain = "palmer.lan";
         useNetworkd = true;
