@@ -22,6 +22,7 @@ in {
       inherit sops;
     };
     homeManager.base = {
+      inputs = [inputs.sops-nix.homeManagerModules.sops];
       inherit sops;
     };
   };
