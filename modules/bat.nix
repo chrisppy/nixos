@@ -18,7 +18,7 @@ _: {
       sessionVariables = {
         MANPAGER = "sh -c 'col --no-backspaces --spaces | bat --language man'";
         MANROFFOPT = "-c";
-        PAGER = "bat";
+        PAGER = "less";
       };
     };
   };
