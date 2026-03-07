@@ -1,6 +1,7 @@
-{inputs, ...}: {
+_: {
   flake.modules.homeManager.base = {pkgs, ...}: let
-    inherit (inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}) helix;
+    # inherit (inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}) helix;
+    inherit (pkgs) helix;
   in {
     programs.helix = {
       enable = true;

@@ -1,0 +1,24 @@
+# Create ssh key
+# ssh-keygen -t ed25519 -C "your_email@example.com"
+#
+# Make a user key
+# mkdir -p ~/.config/sops/age
+# ssh-to-age -private-key -i ~/.ssh/id_ed25519 > ~/.config/sops/age/keys.txt
+#
+# Display the user public key:
+# age-keygen -y ~/.config/sops/age/keys.txt
+#
+# Add secrets
+# sops secrets/secrets.yaml
+#
+# Rekey secrets.yaml after editing recipients in .sops.yaml:
+# sops updatekeys secrets/secrets.yaml
+keys:
+  - &blueridge age1hfxd5d50s5c4sle9p93m6f86eh8lk7h3g2yxvd20thpf8kq4qgnsux86dw
+  - &sideling age1vfatm4a0tdvl063tqgsj55dhuqcnjfmvcd8aa5mfrs3hfpsexu7qg95yak
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+      - age:
+          - *blueridge
+          - *sideling

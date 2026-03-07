@@ -1,11 +1,11 @@
-{config, ...}: {
-  flake.modules.nixos.autoupgrade = {
+_: {
+  flake.modules.nixos.autoupgrade = {config, ...}: {
     system.autoUpgrade = {
       enable = true;
       flake = "github:chrisppy/nixos#${config.networking.hostName}";
       operation = "switch";
       dates = "04:00";
-      randomizedDelaySec = 1800;
+      randomizedDelaySec = "30min";
       allowReboot = false;
     };
   };

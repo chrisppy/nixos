@@ -1,6 +1,6 @@
 _: {
   flake.modules.nixos.zswap = {
-    zramSwap.enable = true;
+    zramSwap.enable = false;
     boot = {
       kernelParams = [
         "zswap.enabled=1"
