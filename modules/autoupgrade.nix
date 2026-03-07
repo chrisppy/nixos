@@ -1,11 +1,11 @@
-_: {
+{config, ...}: {
   flake.modules.nixos.autoupgrade = {
     system.autoUpgrade = {
       enable = true;
-      flake = "github:chrisppy/nixos#sideling";
+      flake = "github:chrisppy/nixos#${config.networking.hostName}";
       operation = "switch";
       dates = "04:00";
-      randomizedDelaySecs = 1800;
+      randomizedDelaySec = 1800;
       allowReboot = false;
     };
   };
