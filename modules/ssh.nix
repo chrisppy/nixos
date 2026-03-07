@@ -1,7 +1,10 @@
 {config, ...}: let
   inherit (config.flake.meta.owner) username;
 in {
-  flake.modules.nixos.base = {
+  flake.modules.nixos.base = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      kitty.terminfo
+    ];
     services.openssh = {
       enable = true;
       openFirewall = true;
