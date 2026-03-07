@@ -11,7 +11,7 @@
 in {
   flake.modules = {
     nixos.base = {pkgs, ...}: {
-      inputs = [inputs.sops-nix.nixosModules.home-manager];
+      inputs = [inputs.sops-nix.nixosModules.sops];
 
       environment.systemPackages = with pkgs; [
         age
