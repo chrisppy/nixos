@@ -1,7 +1,6 @@
 _: {
   configurations.nixos.sideling.module = {
     networking = {
-      domain = "palmer.lan";
       hostId = "5954f78e";
       hostName = "sideling";
     };
