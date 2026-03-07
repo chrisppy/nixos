@@ -21,6 +21,7 @@ in {
       tailscale = let
         flags = ["--operator=${username}"];
       in {
+        enable = true;
         extraUpFlags = flags;
         extraSetFlags = flags;
         openFirewall = true;
