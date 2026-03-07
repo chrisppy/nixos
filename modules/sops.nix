@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (config.flake.meta.owner) username;
-  sops = {
+  sopsCfg = {
     defaultSopsFile = inputs.self + "/secrets/secrets.yaml";
     age.keyFile = "/home/${username}/.config/sops/age/keys.txt";
   };
@@ -19,11 +19,12 @@ in {
         ssh-to-age
       ];
 
-      inherit sops;
+      sops = sopsCfg;
     };
     homeManager.base = {
       imports = [inputs.sops-nix.homeManagerModules.sops];
-      inherit sops;
+
+      sops = sopsCfg;
     };
   };
 }
