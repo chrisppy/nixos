@@ -1,5 +1,5 @@
 {config, ...}: {
-  flake.modules.homeManager.base = {
+  flake.modules.homeManager.dev = {
     programs.git = {
       enable = true;
       ignores = ["tags"];

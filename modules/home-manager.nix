@@ -24,8 +24,9 @@ in {
         };
       };
       pc = {
-        home-manager.users.${username}.imports = [
-          config.flake.modules.homeManager.gui
+        home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
+          dev
+          gui
         ];
       };
     };
