@@ -5,6 +5,7 @@
       base
       bcachefs
       determinate
+      freshrss
       zswap
     ];
   };
