@@ -1,7 +1,11 @@
 {config, ...}: let
   inherit (config.flake.meta.owner) username;
 in {
-  flake.modules.nixos.miniflux = {config, pkgs, ...}: let
+  flake.modules.nixos.miniflux = {
+    config,
+    pkgs,
+    ...
+  }: let
     domain = "rss.${config.networking.fqdn}";
   in {
     sops = {
@@ -36,6 +40,6 @@ in {
       };
     };
 
-    networking.firewall.allowedTCPPorts = [ 80 ];
+    networking.firewall.allowedTCPPorts = [80];
   };
 }
