@@ -6,16 +6,15 @@ in {
     pkgs,
     ...
   }: let
-    domain = "rss.${config.networking.fqdn}";
+    domain = config.networking.fqdn;
+    port = 7070;
   in {
     sops = {
       secrets.rss-passwd = {};
-      templates."miniflux-db.env" = {
-        content = ''
-          ADMIN_USERNAME=${username}
-          ADMIN_PASSWORD=${config.sops.placeholder.rss-passwd}
-        '';
-      };
+      templates."miniflux-db.env".content = ''
+        ADMIN_USERNAME=${username}
+        ADMIN_PASSWORD=${config.sops.placeholder.rss-passwd}
+      '';
     };
 
     services.miniflux = {
@@ -23,23 +22,16 @@ in {
       createDatabaseLocally = true;
       adminCredentialsFile = config.sops.templates."miniflux-db.env".path;
       config = {
-        LISTEN_ADDR = "127.0.0.1:8080";
-        BASE_URL = "http://${domain}";
+        LISTEN_ADDR = "0.0.0.0:${toString port}";
+        BASE_URL = "http://${domain}:${toString port}";
         RUN_MIGRATIONS = true;
-        POLLING_FREQUENCY = "15";
-        WORKER_POOL_SIZE = "5";
+        POLLING_FREQUENCY = 15;
+        WORKER_POOL_SIZE = 5;
       };
     };
 
-    services = {
-      postgresql.package = pkgs.postgresql_16;
+    services.postgresql.package = pkgs.postgresql_16;
 
-      caddy = {
-        enable = true;
-        virtualHosts."http://${domain}".extraConfig = "reverse_proxy 127.0.0.1:8080";
-      };
-    };
-
-    networking.firewall.allowedTCPPorts = [80];
+    networking.firewall.allowedTCPPorts = [port];
   };
 }
