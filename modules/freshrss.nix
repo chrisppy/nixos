@@ -9,7 +9,7 @@ in {
 
     services.freshrss = {
       enable = true;
-      api.enable = true;
+      # api.enable = true; not available in 25.11
       openFirewall = true;
       baseUrl = "http://${config.networking.hostName}.gaur-truck.ts.net";
       defaultUser = username;

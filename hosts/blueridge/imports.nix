@@ -7,6 +7,7 @@
       determinate
       pc
       zswap
+      zwave
     ];
   };
 }

@@ -22,6 +22,9 @@ _: {
       };
     };
 
-    services.zwave-js.secretsConfigFile = config.sops.templates."zwave-js-keys.json".path;
+    services.zwave-js = {
+      enable = true;
+      secretsConfigFile = config.sops.templates."zwave-js-keys.json".path;
+    };
   };
 }
