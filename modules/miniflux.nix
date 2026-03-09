@@ -21,7 +21,7 @@ in {
       config = {
         LISTEM_ADDR = "127.0.0.1:8080";
         BASE_URL = "http://${domain}";
-        RUN_MIGRATIONS = "1";
+        RUN_MIGRATIONS = true;
         POLLING_FREQUENCY = "15";
         WORKER_POOL_SIZE = "5";
       };
