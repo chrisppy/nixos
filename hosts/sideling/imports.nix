@@ -5,7 +5,7 @@
       base
       bcachefs
       determinate
-      freshrss
+      miniflux
       zswap
     ];
   };
