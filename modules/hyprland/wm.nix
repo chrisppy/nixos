@@ -25,8 +25,8 @@ _: {
         systemd.enable = true;
 
         xdg.portal.extraPortals = with pkgs; [
-          xdg-xdg-desktop-portal-gtk
-          xdg-xdg-desktop-portal-wlr
+          xdg-desktop-portal-gtk
+          xdg-desktop-portal-wlr
         ];
 
         settings = {
