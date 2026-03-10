@@ -32,14 +32,7 @@ _: {
         language-server = {
           ltex = {
             command = "ltex-ls";
-            config.ltex = {
-              dictionary = {
-                en-US = [];
-              };
-              disabledRules = {
-                en-US = ["PROFANITY"];
-              };
-            };
+            config.ltex.disabledRules.en-US = ["PROFANITY"];
           };
           yaml-language-server.config.yaml.keyOrdering = false;
           rust-analyzer.config.rust-analyzer.check.command = "clippy";

@@ -1,9 +1,5 @@
 _: {
-  flake.modules.nixos.home-assistant = {
-    config,
-    pkgs,
-    ...
-  }: {
+  flake.modules.nixos.home-assistant = {config, ...}: {
     virtualisation.oci-containers = {
       backend = "podman";
       containers.homeassistant = {
@@ -13,20 +9,6 @@ _: {
         extraOptions = [
           "--network=host"
         ];
-      };
-    };
-
-    systemd = {
-      timers.restart-homeassistant = {
-        timerConfig = {
-          Unit = "restart-homeassistant.service";
-          OnCalendar = "Tue 02:00";
-        };
-        wantedBy = ["timers.target"];
-      };
-      services.restart-homeassistant.serviceConfig = {
-        Type = "oneshot";
-        ExecStart = "${pkgs.systemd}/bin/systemctl try-restart podman-homeassistant.service";
       };
     };
 

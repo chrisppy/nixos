@@ -20,7 +20,6 @@ in {
 
           h = "history";
           c = "clear";
-          s = "sudo su";
 
           # Git
           gs = "git status";

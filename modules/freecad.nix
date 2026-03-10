@@ -24,7 +24,6 @@ _: {
             with ps; [
               lxml
               requests
-              pip
               pyjwt
               tzlocal
             ]

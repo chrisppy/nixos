@@ -10,7 +10,6 @@ _: {
           "flakes"
           "pipe-operators"
         ];
-        max-jobs = 8;
         warn-dirty = false;
       };
     };
