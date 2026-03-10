@@ -13,7 +13,7 @@ _: {
     config = {
       boot = {
         supportedFilesystems = ["zfs"];
-        boot.zfs.extraPools = config.zfs.pools;
+        zfs.extraPools = config.zfs.pools;
       };
       services.zfs = {
         autoScrub = {

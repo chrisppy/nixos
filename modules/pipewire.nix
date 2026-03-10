@@ -1,5 +1,5 @@
 _: {
-  flake.modules.nixos.base = {pkgs, ...}: {
+  flake.modules.nixos.pc = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       wiremix
     ];

@@ -19,7 +19,7 @@ _: {
     systemd = {
       timers.restart-homeassistant = {
         timerConfig = {
-          Unit = "update-containers.service";
+          Unit = "restart-homeassistant.service";
           OnCalendar = "Tue 02:00";
         };
         wantedBy = ["timers.target"];

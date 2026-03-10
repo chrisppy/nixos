@@ -1,7 +1,7 @@
 _: {
   configurations.nixos.blueridge.module = {
     networking = {
-      hostId = "5954f78e";
+      hostId = "383970e4";
       hostName = "blueridge";
     };
 

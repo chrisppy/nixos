@@ -7,7 +7,7 @@ _: {
   }: {
     programs.zen-browser = {
       enable = true;
-      package = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatforn.system}.default;
+      package = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
       policies = {
         AutofillAddressEnabled = true;
         AutofillCreditCardEnabled = false;
