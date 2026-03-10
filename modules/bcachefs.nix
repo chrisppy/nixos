@@ -1,17 +1,23 @@
 _: {
-  flake.modules.nixos.bcachefs = {pkgs, ...}: {
-    boot = {
-      kernelPackages = pkgs.linuxPackages_latest;
-      supportedFilesystems = [
-        "bcachefs"
-      ];
-      kernelModules = [
-        "bcachefs"
-      ];
+  flake.modules.nixos.bcachefs = {
+    config,
+    lib,
+    pkgs,
+    ...
+  }: {
+    options.bcachefs.fileSystems = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [];
+      description = "List of bcachefs filesystems to auto-scrub.";
     };
 
-    environment.systemPackages = with pkgs; [
-      bcachefs-tools
-    ];
+    config = {
+      boot.supportedFilesystems = ["bcachefs"];
+      services.bcachefs.autoScrub = {
+        enable = config.bcachefs.fileSystems != [];
+        inherit (config.bcachefs) fileSystems;
+      };
+      environment.systemPackages = [pkgs.bcachefs-tools];
+    };
   };
 }

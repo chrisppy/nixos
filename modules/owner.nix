@@ -11,7 +11,11 @@
         users.users.${config.flake.meta.owner.username} = {
           isNormalUser = true;
           initialPassword = "";
-          extraGroups = ["input"];
+          extraGroups = [
+            "input"
+            "render"
+            "video"
+          ];
         };
 
         nix.settings.trusted-users = [config.flake.meta.owner.username];

@@ -29,6 +29,11 @@ in {
           gui
         ];
       };
+      hyprland = {
+        home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
+          hyprland
+        ];
+      };
     };
     homeManager.base = {
       home = {

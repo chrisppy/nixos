@@ -1,5 +1,7 @@
 _: {
-  flake.modules.nixos.zwave = {config, ...}: {
+  flake.modules.nixos.zwave = {config, ...}: let
+    cfgFile = "zwave-js-keys.json";
+  in {
     sops = {
       secrets = {
         zwave-s0-legacy = {};
@@ -7,7 +9,7 @@ _: {
         zwave-s2-authenticated = {};
         zwave-s2-access-control = {};
       };
-      templates."zwave-js-keys.json" = {
+      templates.${cfgFile} = {
         mode = "0444";
         content = ''
           {
@@ -24,7 +26,9 @@ _: {
 
     services.zwave-js = {
       enable = true;
-      secretsConfigFile = config.sops.templates."zwave-js-keys.json".path;
+      port = 3000;
+      secretsConfigFile = config.sops.templates.${cfgFile}.path;
+      serialPort = "/dev/serial/by-id/usb-Nabu_Casa_ZWA-2_80B54EE5E558-if00";
     };
   };
 }
