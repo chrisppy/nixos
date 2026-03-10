@@ -17,17 +17,17 @@ _: {
       pkgs,
       ...
     }: {
+      xdg.portal.extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
+      ];
+
       wayland.windowManager.hyprland = {
         enable = true;
         package = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         portalPackage = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
         xwayland.enable = true;
         systemd.enable = true;
-
-        xdg.portal.extraPortals = with pkgs; [
-          xdg-desktop-portal-gtk
-          xdg-desktop-portal-wlr
-        ];
 
         settings = {
           env = [
