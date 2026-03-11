@@ -24,7 +24,7 @@ _: {
         Type = "oneshot";
         ExecStart = lib.getExe (pkgs.writeShellApplication {
           name = "update-containers";
-          runtimeInputs = [ pkgs.podman ];
+          runtimeInputs = [pkgs.podman];
           text = ''
             images=$(podman ps -a --format="{{.Image}}" | sort -u)
             for image in $images; do
