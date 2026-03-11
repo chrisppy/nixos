@@ -33,12 +33,10 @@ _: {
           "$mod SHIFT, ${up}, Move window to the right, layoutmsg, movewindowto r"
         ]
         ++ (
-          10
-          |> lib.genList toString
-          |> map (ws: [
-            "$mod, code:1${ws}, Switch to workspace ${ws}, workspace, ${ws}"
-          ])
-          |> lib.concatLists
+          lib.range 1 9
+          |> map (ws: let s = toString ws; in
+            "$mod, code:1${s}, Switch to workspace ${s}, workspace, ${s}"
+          )
         );
     };
   };
