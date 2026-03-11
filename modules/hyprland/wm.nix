@@ -4,11 +4,13 @@ _: {
       inputs,
       pkgs,
       ...
-    }: {
+    }: let
+      hnPkgs = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system};
+    in {
       programs.hyprland = {
         enable = true;
-        package = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-        portalPackage = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+        package = hnPkgs.hyprland;
+        portalPackage = hnPkgs.xdg-desktop-portal-hyprland;
         xwayland.enable = true;
       };
     };
@@ -16,7 +18,9 @@ _: {
       inputs,
       pkgs,
       ...
-    }: {
+    }: let
+      hnPkgs = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system};
+    in {
       xdg.portal.extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
         xdg-desktop-portal-wlr
@@ -24,8 +28,8 @@ _: {
 
       wayland.windowManager.hyprland = {
         enable = true;
-        package = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-        portalPackage = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+        package = hnPkgs.hyprland;
+        portalPackage = hnPkgs.xdg-desktop-portal-hyprland;
         xwayland.enable = true;
         systemd.enable = true;
 
@@ -71,15 +75,15 @@ _: {
         };
       };
 
-      home.packages = with pkgs; [
+      home.packages = with hnPkgs; [
         hyprpwcenter
-        hyprsysteminfo
+        hyprshutdown
       ];
 
       programs = {
         hyprlock = {
           enable = true;
-          package = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock;
+          package = hnPkgs.hyprlock;
         };
         hyprshot.enable = true;
       };
@@ -87,15 +91,15 @@ _: {
       services = {
         hypridle = {
           enable = true;
-          package = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hypridle;
+          package = hnPkgs.hypridle;
         };
         hyprpolkitagent = {
           enable = true;
-          package = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprpolkitagent;
+          package = hnPkgs.hyprpolkitagent;
         };
         hyprpaper = {
           enable = true;
-          package = inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprpaper;
+          package = hnPkgs.hyprpaper;
         };
       };
     };

@@ -4,10 +4,8 @@
   ...
 }: let
   inherit (config.flake.meta.owner) username;
-  sopsCfg = {
-    defaultSopsFile = inputs.self + "/secrets/secrets.yaml";
-    age.keyFile = "/home/${username}/.config/sops/age/keys.txt";
-  };
+  defaultSopsFile = inputs.self + "/secrets/secrets.yaml";
+  keyFile = "/home/${username}/.config/sops/age/keys.txt";
 in {
   flake.modules = {
     nixos.base = {pkgs, ...}: {
@@ -19,12 +17,22 @@ in {
         ssh-to-age
       ];
 
-      sops = sopsCfg;
+      sops = {
+        inherit defaultSopsFile;
+        age = {
+          inherit keyFile;
+        };
+      };
     };
     homeManager.base = {
       imports = [inputs.sops-nix.homeManagerModules.sops];
 
-      sops = sopsCfg;
+      sops = {
+        inherit defaultSopsFile;
+        age = {
+          inherit keyFile;
+        };
+      };
     };
   };
 }

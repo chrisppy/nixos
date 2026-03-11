@@ -2,10 +2,9 @@
   configurations.nixos.blueridge.module = {
     imports = with config.flake.modules.nixos; [
       autoupgrade
-      base
       bcachefs
       determinate
-      pc
+      media
       zswap
       zwave
     ];

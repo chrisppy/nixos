@@ -35,7 +35,7 @@ in {
           gpl = "git pull";
           gfr = "git fetch upstream && git rebase upstream/main";
 
-          gpa = "ls | xargs -P10 -I{} git -C {} pull";
+          gpa = "for d in */; git -C $d pull; end";
 
           fuck = "_ !!";
         };

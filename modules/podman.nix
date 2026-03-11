@@ -22,13 +22,16 @@ _: {
       };
       services.update-containers.serviceConfig = {
         Type = "oneshot";
-        ExecStart = lib.getExe (pkgs.writeShellScriptBin "update-containers" ''
-          images=$(${pkgs.podman}/bin/podman ps -a --format="{{.Image}}" | sort -u)
-
-          for image in $images; do
-            ${pkgs.podman}/bin/podman pull "$image"
-          done
-        '');
+        ExecStart = lib.getExe (pkgs.writeShellApplication {
+          name = "update-containers";
+          runtimeInputs = [ pkgs.podman ];
+          text = ''
+            images=$(podman ps -a --format="{{.Image}}" | sort -u)
+            for image in $images; do
+              podman pull "$image"
+            done
+          '';
+        });
       };
     };
   };

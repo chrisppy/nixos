@@ -1,5 +1,5 @@
 _: {
-  flake.modules.homeManager.pc = {
+  flake.modules.homeManager.gui = {
     config,
     inputs,
     pkgs,

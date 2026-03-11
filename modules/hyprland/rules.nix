@@ -1,5 +1,5 @@
 _: {
-  flake.modules.homeManager.gui = {
+  flake.modules.homeManager.hyprland = {
     wayland.windowManager.hyprland.settings = {
       layerrule = [
         {
