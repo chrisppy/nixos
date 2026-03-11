@@ -6,7 +6,7 @@ _: {
     ...
   }: {
     boot.kernelPackages = lib.mkDefault (
-      if !(builtins.elem "zfs" config.boot.supportedFilesystems)
+      if !(config.boot.supportedFilesystems ? zfs)
       then pkgs.linuxPackages_latest
       else
         pkgs.linuxKernel.packages
