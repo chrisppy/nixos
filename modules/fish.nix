@@ -33,11 +33,16 @@ in {
           gb = "git branch";
           gp = "git push";
           gpl = "git pull";
-          gfr = "git fetch upstream && git rebase upstream/main";
-
-          gpa = "for d in */; git -C $d pull; end";
-
-          fuck = "_ !!";
+        };
+        functions = {
+          gpa = {
+            description = "Pull all git repos in subdirectories";
+            body = ''
+              for d in */
+                git -C $d pull
+              end
+            '';
+          };
         };
         plugins = [
           {
