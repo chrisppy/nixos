@@ -34,8 +34,10 @@ _: {
         ]
         ++ (
           lib.range 1 9
-          |> map (ws: let s = toString ws; in
-            "$mod, code:1${s}, Switch to workspace ${s}, workspace, ${s}"
+          |> map (
+            ws: let
+              s = toString ws;
+            in "$mod, code:1${s}, Switch to workspace ${s}, workspace, ${s}"
           )
         );
     };
