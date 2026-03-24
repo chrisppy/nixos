@@ -1,17 +1,7 @@
-_: {
-  flake.modules.nixos.jellyfin = {pkgs, ...}: {
-    nixpkgs.overlays = [
-      (_self: super: {
-        jellyfin-ffmpeg = super.jellyfin-ffmpeg.override {
-          ffmpeg_7-full = super.ffmpeg_7-full.override {
-            withMfx = false; # Older media driver
-            withVpl = true; # New driver for Arc GPUs
-            withUnfree = true;
-          };
-        };
-      })
-    ];
-
+{inputs, ...}: {
+  flake.modules.nixos.jellyfin = {pkgs, ...}: let
+    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
+  in {
     environment.sessionVariables = {
       LIBVA_DRIVER_NAME = "iHD";
     };
@@ -27,6 +17,7 @@ _: {
 
     services.jellyfin = {
       enable = true;
+      package = unstable.jellyfin;
       openFirewall = true;
     };
   };

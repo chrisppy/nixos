@@ -1,6 +1,11 @@
-_: {
-  flake.modules.nixos.zwave = {config, ...}: let
+{inputs, ...}: {
+  flake.modules.nixos.zwave = {
+    config,
+    pkgs,
+    ...
+  }: let
     cfgFile = "zwave-js-keys.json";
+    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
   in {
     sops = {
       secrets = {
@@ -26,6 +31,7 @@ _: {
 
     services.zwave-js = {
       enable = true;
+      package = unstable.zwave-js-server;
       port = 3000;
       secretsConfigFile = config.sops.templates.${cfgFile}.path;
       serialPort = "/dev/serial/by-id/usb-Nabu_Casa_ZWA-2_80B54EE5E558-if00";

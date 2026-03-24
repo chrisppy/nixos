@@ -1,5 +1,5 @@
 _: {
-  flake.modules.nixos.kicad = {pkgs, ...}: {
+  flake.modules.nixos.cad = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       kicad
     ];

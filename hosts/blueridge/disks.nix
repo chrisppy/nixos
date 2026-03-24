@@ -1,44 +1,25 @@
 _: {
   configurations.nixos.blueridge.module = {
-    bcachefs.fileSystems = ["/"];
-    disko.devices.disk.nixos = {
-      device = "/dev/nvme0n1";
-      type = "disk";
-      content = {
-        type = "gpt";
-        partitions = {
-          ESP = {
-            size = "2G";
-            type = "EF00";
-            content = {
-              type = "filesystem";
-              format = "vfat";
-              mountpoint = "/boot";
-              mountOptions = [
-                "umask=0077"
-              ];
-            };
-          };
-          swap = {
-            size = "16G";
-            content = {
-              type = "swap";
-              discardPolicy = "both";
-            };
-          };
-          root = {
-            size = "100%";
-            content = {
-              type = "filesystem";
-              format = "bcachefs";
-              mountpoint = "/";
-              mountOptions = [
-                "compression=zstd"
-              ];
-            };
-          };
-        };
+    zfs.pools = ["stillhouse"];
+    fileSystems = {
+      "/" = {
+        device = "/dev/disk/by-label/nixos";
+        fsType = "ext4";
+      };
+      "/boot" = {
+        device = "/dev/disk/by-label/boot";
+        fsType = "vfat";
+        options = [
+          "fmask=0077"
+          "dmask=0077"
+        ];
       };
     };
+    swapDevices = [
+      {
+        device = "/var/lib/swapfile";
+        size = 16 * 1024;
+      }
+    ];
   };
 }

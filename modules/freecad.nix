@@ -1,5 +1,5 @@
 _: {
-  flake.modules.nixos.freecad = {pkgs, ...}: let
+  flake.modules.nixos.cad = {pkgs, ...}: let
     fasteners = pkgs.fetchFromGitHub {
       owner = "shaise";
       repo = "FreeCAD_FastenersWB";

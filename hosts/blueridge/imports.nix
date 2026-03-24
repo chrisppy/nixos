@@ -2,11 +2,16 @@
   configurations.nixos.blueridge.module = {
     imports = with config.flake.modules.nixos; [
       autoupgrade
-      bcachefs
+      cad
       determinate
       media
+      zfs
       zswap
       zwave
+
+      audiobookshelf
+      home-assistant
+      jellyfin
     ];
   };
 }

@@ -1,5 +1,8 @@
 _: {
-  flake.modules.homeManager.base = {
-    programs.eza.enable = true;
+  flake.modules.homeManager.base = {pkgs, ...}: {
+    programs.eza = {
+      enable = true;
+      package = pkgs.eza;
+    };
   };
 }

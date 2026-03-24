@@ -39,6 +39,7 @@ in {
 
         home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
           hyprland
+          noctalia
         ];
       };
     };
