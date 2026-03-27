@@ -12,6 +12,7 @@
       audiobookshelf
       home-assistant
       jellyfin
+      podman
     ];
   };
 }

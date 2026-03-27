@@ -1,4 +1,10 @@
-{inputs, ...}: {
+{
+  config,
+  inputs,
+  ...
+}: let
+  inherit (config.flake.meta.owner) username;
+in {
   flake.modules.nixos.zwave = {
     config,
     pkgs,
@@ -7,6 +13,10 @@
     cfgFile = "zwave-js-keys.json";
     unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
   in {
+    users.groups.uucp.members = [
+      config.services.zwave-js.user
+      username
+    ];
     sops = {
       secrets = {
         zwave-s0-legacy = {};

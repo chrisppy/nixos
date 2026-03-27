@@ -12,7 +12,7 @@ _: {
 
     config = {
       boot = {
-        supportedFilesystems = ["zfs"];
+        supportedFilesystems.zfs = true;
         zfs.extraPools = config.zfs.pools;
       };
       services.zfs = {

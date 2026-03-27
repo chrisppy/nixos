@@ -15,11 +15,6 @@
     };
     hyprnix.url = "github:hyprwm/hyprnix";
     import-tree.url = "github:vic/import-tree";
-    niri-src = {
-      url = "github:niri-wm/niri";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.rust-overlay.follows = "";
-    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     noctalia = {

@@ -6,7 +6,7 @@ _: {
     ...
   }: {
     boot.kernelPackages = lib.mkForce (
-      if !(config.boot.supportedFilesystems ? zfs)
+      if (config.boot.supportedFilesystems.zfs == false)
       then pkgs.linuxPackages_latest
       else
         pkgs.linuxKernel.packages

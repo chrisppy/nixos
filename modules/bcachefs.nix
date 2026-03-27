@@ -12,7 +12,7 @@ _: {
     };
 
     config = {
-      boot.supportedFilesystems = ["bcachefs"];
+      boot.supportedFilesystems.bcachefs = true;
       services.bcachefs.autoScrub = {
         enable = config.bcachefs.fileSystems != [];
         inherit (config.bcachefs) fileSystems;
