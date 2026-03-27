@@ -4,6 +4,7 @@
       autoupgrade
       cad
       determinate
+      gpu-intel
       media
       zfs
       zswap
