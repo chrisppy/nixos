@@ -30,6 +30,10 @@ _: {
             for image in $images; do
               podman pull "$image"
             done
+            containers=$(podman ps -a --format="{{.Names}}")
+            for container in $containers; do
+              podman restart "$container"
+            done
           '';
         });
       };

@@ -5,7 +5,9 @@
       cad
       determinate
       gpu-intel
+      hyprland
       media
+      uefi
       zfs
       zswap
       zwave

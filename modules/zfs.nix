@@ -17,7 +17,7 @@ _: {
       };
       services.zfs = {
         autoScrub = {
-          enable = config.zfs.pools != [];
+          enable = lib.mkDefault (config.zfs.pools != []);
           inherit (config.zfs) pools;
         };
         trim.enable = true;

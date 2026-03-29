@@ -1,5 +1,5 @@
 _: {
-  flake.modules.nixos.base = {
+  flake.modules.nixos.uefi = {
     boot.loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {

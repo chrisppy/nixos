@@ -1,12 +1,12 @@
 {config, ...}: {
-  configurations.nixos.sideling.module = {
+  configurations.nixos.smoky.module = {
     imports = with config.flake.modules.nixos; [
       autoupgrade
       base
       bcachefs
       determinate
-      miniflux
-      uefi
+      grub
+      niri
       zswap
     ];
   };

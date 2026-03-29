@@ -39,7 +39,13 @@ in {
 
         home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
           hyprland
-          noctalia
+        ];
+      };
+      niri = {
+        imports = [config.flake.modules.nixos.pc];
+
+        home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
+          niri
         ];
       };
     };
