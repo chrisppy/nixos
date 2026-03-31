@@ -3,8 +3,9 @@
 # A check for the toplevel derivation of each configuration also ends
 # under `#checks.<system>."configurations:nixos:<name>"`.
 {
-  lib,
   config,
+  inputs,
+  lib,
   ...
 }: {
   options.configurations.nixos = lib.mkOption {
@@ -19,7 +20,10 @@
 
   config.flake = {
     nixosConfigurations = lib.flip lib.mapAttrs config.configurations.nixos (
-      _name: {module}: lib.nixosSystem {modules = [module];}
+      _name: {module}: lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [module];
+      }
     );
 
     checks =
