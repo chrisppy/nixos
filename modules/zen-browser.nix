@@ -1,10 +1,11 @@
 _: {
   flake.modules.homeManager.gui = {
-    config,
     inputs,
     pkgs,
     ...
   }: {
+    imports = [ inputs.zen-browser.homeModules.beta];
+
     programs.zen-browser = {
       enable = true;
       package = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -26,8 +27,7 @@ _: {
           Fingerprinting = true;
         };
       };
-      profiles."default" = {
-        containersForce = true;
+      profiles."default" = let
         containers = {
           Personal = {
             color = "green";
@@ -40,10 +40,11 @@ _: {
             id = 2;
           };
         };
+      in {
+        containersForce = true;
+        inherit containers;
         spacesForce = true;
-        spaces = let
-          inherit (config.programs.zen-browser.profiles."default") containers;
-        in {
+        spaces = {
           "Space" = {
             id = "c6de089c-410d-4206-961d-ab11f988d40a";
             position = 1000;

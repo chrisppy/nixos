@@ -12,7 +12,10 @@ in {
 
         home-manager = {
           useGlobalPkgs = true;
-          extraSpecialArgs.hasGlobalPkgs = true;
+          extraSpecialArgs = {
+            hasGlobalPkgs = true;
+            inherit inputs;
+          };
           users.${username}.imports = [
             (
               {osConfig, ...}: {
