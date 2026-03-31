@@ -5,10 +5,11 @@
       pkgs,
       ...
     }: {
+      nixpkgs.overlays = [inputs.niri-module.overlays.niri];
       programs = {
         niri = {
           enable = true;
-          package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
+          # package = pkgs.niri-stable;
         };
         regreet.enable = true;
       };
@@ -34,7 +35,7 @@
 
       programs.niri = {
         enable = true;
-        package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
+          # package = pkgs.niri-stable;
         settings = {
           prefer-no-csd = true;
           cursor.hide-when-typing = true;
