@@ -1,24 +1,15 @@
 _: {
-  flake.modules.homeManager.hyprland = {
-    inputs,
-    lib,
-    pkgs,
-    ...
-  }: let
+  flake.modules.homeManager.hyprland = {lib, ...}: let
     left = "left";
     down = "down";
     up = "up";
     right = "right";
-    launcher = "${inputs.hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprlauncher}/bin/hyprlauncher";
-    term = "${pkgs.kitty}/bin/kitty";
   in {
     wayland.windowManager.hyprland.settings = {
       "$mod" = "SUPER";
       bindd =
         [
           "$mod, escape, Close active window, killactive,"
-          "$mod, space, Launch apps, exec, ${launcher} | xargs hyprctl dispatch exec"
-          "$mod, return, Terminal, exec, ${term}"
 
           "$mod, ${left}, Move to previous column, layoutmsg, move -col"
           "$mod, ${right}, Move to next column, layoutmsg, move +col"

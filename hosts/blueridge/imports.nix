@@ -4,7 +4,6 @@
       autoupgrade
       cad
       determinate
-      gpu-intel
       hyprland
       media
       uefi
