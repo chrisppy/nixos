@@ -165,15 +165,18 @@ _: {
 
       home.packages = lib.concatLists [
         (lib.optional (cfg.package != null) cfg.package)
-        (lib.optional (cfg.xwaylandSatellite != null) cfg.xwaylandSatellite)
+        (lib.optional (cfg.xwaylandSatellitePackage != null) cfg.xwaylandSatellitePackage)
       ];
 
-      systemd.user.packages = lib.optional cfg.systemd.enable cfg.package;
-
-      xdg.portal = lib.mkIf (cfg.portalPackage != null) {
-        enable = true;
-        extraPortals = [cfg.portalPackage];
-        configPackages = lib.optional (cfg.package != null) cfg.package;
+      xdg.dataFile = lib.mkIf (cfg.systemd.enable) {
+        "systemd/user" = {
+          recursive = true;
+          source = pkgs.symlinkJoin {
+            name = "user-systemd-units";
+            paths = [cfg.package];
+            stripPrefix = "/share/systemd/user";
+          };
+        };
       };
 
       xdg.configFile."niri/config.kdl" = let

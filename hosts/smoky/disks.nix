@@ -1,6 +1,5 @@
 _: {
   configurations.nixos.smoky.module = {
-    boot.loader.grub.device = "/dev/sda";
     bcachefs.fileSystems = ["/"];
     disko.devices.disk.main = {
       device = "/dev/sda";
