@@ -9,10 +9,10 @@ _: {
     options.stylix.targets.niri.enable = config.lib.stylix.mkEnableTarget "niri" true;
 
     config = mkIf (config.stylix.enable && config.stylix.targets.niri.enable) {
-      programs.niri.settings = {
+      wayland.windowManager.niri.settings = {
         cursor = mkIf (config.stylix.cursor != null) {
-          size = mkDefault config.stylix.cursor.size;
-          theme = mkDefault config.stylix.cursor.name;
+          xcursor-size = mkDefault config.stylix.cursor.size;
+          xcursor-theme = mkDefault config.stylix.cursor.name;
         };
         layout = {
           focus-ring = {
@@ -20,8 +20,8 @@ _: {
           };
           border = with config.lib.stylix.colors.withHashtag; {
             on = {};
-            active.color = base0D;
-            inactive.color = base03;
+            active-color = base0D;
+            inactive-color = base03;
           };
         };
       };

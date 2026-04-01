@@ -5,21 +5,21 @@ _: {
         kicad
       ];
     };
-    homeManager.niri = {
-      wayland.windowManager.niri.settings._children = [
-        {
-          window-rule._children = [
-            {
-              match._props = {
-                app-id = "^KiCAD$";
-              };
-            }
-            {
-              default-column-width.proportion = 1.0;
-            }
-          ];
-        }
-      ];
-    };
+    # homeManager.niri = {
+    #   wayland.windowManager.niri.settings._children = [
+    #     {
+    #       window-rule._children = [
+    #         {
+    #           match._props = {
+    #             app-id = "^KiCAD$";
+    #           };
+    #         }
+    #         {
+    #           open-maximized-to-edges = true;
+    #         }
+    #       ];
+    #     }
+    #   ];
+    # };
   };
 }
