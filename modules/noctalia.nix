@@ -8,11 +8,13 @@ _: {
     launcher = "${lib.getExe config.programs.noctalia-shell.package} ipc call launcher toggle";
   in {
     imports = [inputs.noctalia.homeModules.default];
-    wayland.windowManager.hyprland.settings.bindd = [
-      "$mod, space, Launch apps, exec, ${launcher} | xargs hyprctl dispatch exec"
-    ];
-    programs = {
+    wayland.windowManager = {
+      hyprland.settings.bindd = [
+        "$mod, space, Launch apps, exec, ${launcher} | xargs hyprctl dispatch exec"
+      ];
       niri.settings.binds."Mod+Space".action.spawn = [launcher];
+    };
+    programs = {
       noctalia-shell = {
         enable = true;
         systemd.enable = true;

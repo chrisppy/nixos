@@ -6,14 +6,12 @@ _: {
       ];
     };
     homeManager.niri = {
-      programs.niri.settings = {
-        window-rules = [
-          {
-            matches = [{app-id = "^Bitwarden$";}];
-            block-out-from = "screen-capture";
-          }
-        ];
-      };
+      wayland.windowManager.niri.settings.window-rules = [
+        {
+          matches = [{app-id = "^Bitwarden$";}];
+          block-out-from = "screen-capture";
+        }
+      ];
     };
   };
 }

@@ -1,6 +1,6 @@
 _: {
   flake.modules.homeManager.niri = {
-    programs.niri.settings.input = {
+    wayland.windowManager.niri.settings.input = {
       keyboard.xkb = {};
       mouse = {
         accel-speed = 0.0;

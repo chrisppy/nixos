@@ -21,13 +21,14 @@ in {
       pkgs,
       ...
     }: {
-      wayland.windowManager.hyprland.settings.exec-once = [
-        "${lib.getExe' pkgs.tailscale "tailscale"} systray"
-      ];
-
-      programs.niri.settings.spawn-at-startup = [
-        {command = ["${lib.getExe' pkgs.tailscale "tailscale"}" "systray"];}
-      ];
+      wayland.windowManager = {
+        hyprland.settings.exec-once = [
+          "${lib.getExe' pkgs.tailscale "tailscale"} systray"
+        ];
+        niri.settings.spawn-at-startup = [
+          {command = ["${lib.getExe' pkgs.tailscale "tailscale"}" "systray"];}
+        ];
+      };
     };
   };
 }

@@ -1,6 +1,6 @@
 _: {
   flake.modules.homeManager.niri = {
-    programs.niri.settings.animations = {
+    wayland.windowManager.niri.settings.animations = {
       slowdown = 1.0;
 
       window-open = {

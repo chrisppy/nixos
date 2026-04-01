@@ -5,7 +5,7 @@ _: {
     up = "Up";
     right = "Right";
   in {
-    programs.niri.settings.binds =
+    wayland.windowManager.niri.settings.binds =
       {
         "Mod+Escape".action.close-window = [];
 

@@ -6,14 +6,12 @@ _: {
       ];
     };
     homeManager.niri = {
-      programs.niri.settings = {
-        window-rules = [
-          {
-            matches = [{app-id = "^KiCAD$";}];
-            default-column-width.proportion = 1.0;
-          }
-        ];
-      };
+      wayland.windowManager.niri.settings.window-rules = [
+        {
+          matches = [{app-id = "^KiCAD$";}];
+          default-column-width.proportion = 1.0;
+        }
+      ];
     };
   };
 }

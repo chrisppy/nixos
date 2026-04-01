@@ -1,6 +1,6 @@
 _: {
   flake.modules.homeManager.niri = {
-    programs.niri.settings.environment = {
+    wayland.windowManager.niri.settings.environment = {
       _JAVA_AWT_WM_NONREPARENTING = "1";
       GDK_BACKEND = "wayland,x11,*";
       GTK_CSD = "0";

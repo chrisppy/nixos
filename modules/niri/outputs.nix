@@ -1,6 +1,6 @@
 _: {
   flake.modules.homeManager.niri = {
-    programs.niri.settings.outputs = {
+    wayland.windowManager.niri.settings.outputs = {
       "LG Electronics LG HDR WFHD 0x00017724" = {
         mode = {
           width = 2560;

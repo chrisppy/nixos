@@ -1,6 +1,6 @@
 _: {
   flake.modules.homeManager.niri = {
-    programs.niri.settings.layout = {
+    wayland.windowManager.niri.settings.layout = {
       gaps = 10;
       center-focused-column = "never";
 

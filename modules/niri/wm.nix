@@ -5,11 +5,10 @@
       pkgs,
       ...
     }: {
-      nixpkgs.overlays = [inputs.niri-module.overlays.niri];
       programs = {
         niri = {
           enable = true;
-          # package = pkgs.niri-stable;
+          package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
         regreet.enable = true;
       };
@@ -24,18 +23,9 @@
     };
 
     homeManager.niri = {pkgs, ...}: {
-      xdg.portal = {
+      wayland.windowManager.niri = {
         enable = true;
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-gtk
-          xdg-desktop-portal-gnome
-        ];
-        config.common.default = "*";
-      };
-
-      programs.niri = {
-        enable = true;
-          # package = pkgs.niri-stable;
+        package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default;
         settings = {
           prefer-no-csd = true;
           cursor.hide-when-typing = true;
