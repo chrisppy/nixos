@@ -25,8 +25,10 @@ in {
         hyprland.settings.exec-once = [
           "${lib.getExe' pkgs.tailscale "tailscale"} systray"
         ];
-        niri.settings.spawn-at-startup = [
-          {command = ["${lib.getExe' pkgs.tailscale "tailscale"}" "systray"];}
+        niri.settings._children = [
+          {
+            spawn-at-startup = "${lib.getExe' pkgs.tailscale "tailscale"} systray";
+          }
         ];
       };
     };

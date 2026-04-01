@@ -16,7 +16,7 @@
     hyprnix.url = "github:hyprwm/hyprnix";
     import-tree.url = "github:vic/import-tree";
     niri = {
-      url = "github:niri-wm/niri";
+      url = "github:niri-wm/niri/v25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";

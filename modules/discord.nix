@@ -9,8 +9,10 @@ _: {
       hyprland.settings.exec-once = [
         "${lib.getExe config.programs.discord.package} --start-minimized"
       ];
-      niri.settings.spawn-at-startup = [
-        {command = ["${lib.getExe config.programs.discord.package}" "--start-minimized"];}
+      niri.settings._children = [
+        {
+          spawn-at-startup = "${lib.getExe config.programs.discord.package} --start-minimized";
+        }
       ];
     };
   };

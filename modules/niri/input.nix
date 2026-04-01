@@ -6,8 +6,8 @@ _: {
         accel-speed = 0.0;
         accel-profile = "flat";
       };
-      focus-follows-mouse.enable = true;
-      warp-mouse-to-focus = false;
+      focus-follows-mouse = [];
+      warp-mouse-to-focus = [];
     };
   };
 }

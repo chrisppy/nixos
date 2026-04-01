@@ -168,7 +168,7 @@ _: {
         (lib.optional (cfg.xwaylandSatellitePackage != null) cfg.xwaylandSatellitePackage)
       ];
 
-      xdg.dataFile = lib.mkIf (cfg.systemd.enable) {
+      xdg.dataFile = lib.mkIf cfg.systemd.enable {
         "systemd/user" = {
           recursive = true;
           source = pkgs.symlinkJoin {

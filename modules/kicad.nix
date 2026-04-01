@@ -6,10 +6,18 @@ _: {
       ];
     };
     homeManager.niri = {
-      wayland.windowManager.niri.settings.window-rules = [
+      wayland.windowManager.niri.settings._children = [
         {
-          matches = [{app-id = "^KiCAD$";}];
-          default-column-width.proportion = 1.0;
+          window-rule._children = [
+            {
+              match._props = {
+                app-id = "^KiCAD$";
+              };
+            }
+            {
+              default-column-width.proportion = 1.0;
+            }
+          ];
         }
       ];
     };
