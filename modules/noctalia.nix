@@ -60,6 +60,9 @@ _: {
                 {
                   id = "Network";
                 }
+                {
+                  id = "Battery";
+                }
               ];
             };
           };
