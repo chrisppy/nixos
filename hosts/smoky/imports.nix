@@ -6,6 +6,7 @@
       determinate
       hyprland
       laptop
+      plymouth
       uefi
       zswap
     ];
