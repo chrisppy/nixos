@@ -13,6 +13,7 @@
           initialPassword = "";
           extraGroups = [
             "input"
+            "networkmanager"
             "render"
             "video"
           ];
