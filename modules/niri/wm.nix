@@ -1,23 +1,10 @@
 {inputs, ...}: {
   flake.modules = {
-    nixos.niri = {
-      lib,
-      pkgs,
-      ...
-    }: {
+    nixos.niri = {pkgs, ...}: {
       programs = {
         niri = {
           enable = true;
           package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default;
-        };
-        regreet.enable = true;
-      };
-
-      services.greetd = {
-        enable = true;
-        settings.default_session = {
-          command = "${lib.getExe pkgs.cage} -s -- regreet";
-          user = "greeter";
         };
       };
     };

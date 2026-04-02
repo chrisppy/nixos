@@ -4,6 +4,7 @@
       autoupgrade
       bcachefs
       determinate
+      greetd
       hyprland
       laptop
       plymouth

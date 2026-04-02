@@ -4,6 +4,7 @@
       autoupgrade
       cad
       determinate
+      greetd
       hyprland
       media
       uefi
