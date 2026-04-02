@@ -5,6 +5,7 @@
       bcachefs
       determinate
       hyprland
+      laptop
       uefi
       zswap
     ];
