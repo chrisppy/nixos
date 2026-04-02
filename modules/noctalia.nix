@@ -12,7 +12,7 @@ _: {
       hyprland.settings.bindd = [
         "$mod, space, Launch apps, exec, ${launcher} | xargs hyprctl dispatch exec"
       ];
-      niri.settings.binds."Mod+Space".spawn = [launcher];
+      # niri.settings.binds."Mod+Space".spawn = [launcher];
     };
     programs = {
       noctalia-shell = {

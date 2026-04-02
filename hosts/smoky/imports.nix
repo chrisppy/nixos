@@ -4,8 +4,8 @@
       autoupgrade
       bcachefs
       determinate
-      grub
-      niri
+      hyprland
+      uefi
       zswap
     ];
   };

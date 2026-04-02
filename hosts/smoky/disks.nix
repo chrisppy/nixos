@@ -7,18 +7,30 @@ _: {
       content = {
         type = "gpt";
         partitions = {
-          boot = {
-            size = "1M";
-            type = "EF02";
-          };
-          boot-fs = {
-            size = "1G";
+          ESP = {
+            size = "2G";
+            type = "EF00";
             content = {
               type = "filesystem";
-              format = "ext4";
+              format = "vfat";
               mountpoint = "/boot";
+              mountOptions = [
+                "umask=0077"
+              ];
             };
           };
+          # boot = {
+          #   size = "1M";
+          #   type = "EF02";
+          # };
+          # boot-fs = {
+          #   size = "1G";
+          #   content = {
+          #     type = "filesystem";
+          #     format = "ext4";
+          #     mountpoint = "/boot";
+          #   };
+          # };
           swap = {
             size = "4G";
             content = {

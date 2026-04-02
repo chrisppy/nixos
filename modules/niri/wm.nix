@@ -22,7 +22,12 @@
       };
     };
 
-    homeManager.niri = {config, lib, pkgs, ...}: {
+    homeManager.niri = {
+      config,
+      lib,
+      pkgs,
+      ...
+    }: {
       wayland.windowManager.niri = {
         enable = true;
         package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.default;
