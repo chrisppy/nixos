@@ -46,26 +46,7 @@
     };
   };
 
-  outputs = inputs: let
-    # Import nixpkgs with the Home Manager patch overlay
-    pkgs = import inputs.nixpkgs {
-      system = "x86_64-linux";
-      overlays = [
-        (_self: super: {
-          home-manager = super.home-manager.overrideAttrs (_old: {
-            patches = [./patches/hm-toKDL-fix.patch];
-          });
-        })
-      ];
-    };
-
-    # Wrap home-manager to always use patched pkgs
-    patchedHomeManager = import inputs.home-manager {
-      inherit pkgs;
-      # set to true so nixosModules.home-manager is usable
-      configuration = {};
-    };
-  in
+  outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         (inputs.import-tree ./modules)
@@ -74,8 +55,6 @@
 
       _module.args = {
         rootPath = ./.;
-        home-manager = patchedHomeManager;
-        inherit pkgs;
       };
     };
 }
