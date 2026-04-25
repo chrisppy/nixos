@@ -26,6 +26,7 @@ in {
       caddy.virtualHosts."${domain}".extraConfig = ''
         tls {
           dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+          resolvers 1.1.1.1
         }
         reverse_proxy ${ip} {
       '';
