@@ -22,8 +22,7 @@ in {
 
     services = {
       caddy.virtualHosts."${domain}".extraConfig = ''
-        handle /rss* {
-          uri strip_prefix /rss
+        handle_path /rss* {
           reverse_proxy ${ip} {
             header_up X-Forwarded-Prefix /rss
           }
