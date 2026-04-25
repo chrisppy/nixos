@@ -3,13 +3,12 @@
 in {
   flake.modules.nixos.miniflux = {
     config,
-    lib,
     pkgs,
     ...
   }: let
     # domain = config.networking.fqdn;
     # domain = "rss.chrisppy.me";
-    domain = "rss.${config.networking.hostName}.gaur-truck.ts.net";
+    domain = "${config.networking.hostName}.gaur-truck.ts.net";
     port = 7070;
     ip = "127.0.0.1:${toString port}";
   in {
@@ -23,10 +22,15 @@ in {
 
     services = {
       caddy.virtualHosts."${domain}".extraConfig = ''
-        tls /var/lib/tailscale/certs/${domain}.crt \
-          /var/lib/tailscale/certs/${domain}.key
-
-        reverse_proxy ${ip}
+        handle /rss* {
+          uri strip_prefix /rss
+          reverse_proxy ${ip} {
+            header_up X-Forwarded-Prefix /rss
+          }
+        }
+        handle {
+          respond "OK"
+        }
       '';
       miniflux = {
         enable = true;
@@ -35,38 +39,13 @@ in {
         config = {
           LISTEN_ADDR = "${ip}";
           # BASE_URL = "http://${domain}:${toString port}";
-          BASE_URL = "https://${domain}";
+          BASE_URL = "https://${domain}/rss";
           RUN_MIGRATIONS = true;
           POLLING_FREQUENCY = 15;
           WORKER_POOL_SIZE = 5;
         };
       };
       postgresql.package = pkgs.postgresql_16;
-    };
-
-    systemd = {
-      services.tailscale-cert-rss = {
-        description = "Fetch Tailscale cert for rss subdomain";
-
-        after = ["network-online.target" "tailscaled.service"];
-        wants = ["network-online.target"];
-        requires = ["tailscaled.service"];
-
-        serviceConfig = {
-          Type = "oneshot";
-          ExecStartPre = "${lib.getExe' pkgs.tailscale "tailscale"} status";
-          ExecStart = "${lib.getExe' pkgs.tailscale "tailscale"} cert ${domain}";
-        };
-
-        wantedBy = ["multi-user.target"];
-      };
-      timers.tailscale-cert-rss = {
-        wantedBy = ["timers.target"];
-        timerConfig = {
-          OnBootSec = "5m";
-          OnUnitActiveSec = "12h";
-        };
-      };
     };
   };
 }
