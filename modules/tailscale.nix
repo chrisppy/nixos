@@ -3,11 +3,20 @@
 in {
   flake.modules = {
     nixos.base = {config, ...}: {
-      networking.firewall.trustedInterfaces = [
-        config.services.tailscale.interfaceName
-      ];
+      networking = {
+        firewall = {
+          trustedInterfaces = [
+            config.services.tailscale.interfaceName
+          ];
+          allowedTCPPorts = [80 443];
+        };
+        nameservers = ["100.100.100.100"];
+      };
       services.tailscale = let
-        flags = ["--operator=${username}"];
+        flags = [
+          "--operator=${username}"
+          "--accept-dns=true"
+        ];
       in {
         enable = true;
         extraUpFlags = flags;

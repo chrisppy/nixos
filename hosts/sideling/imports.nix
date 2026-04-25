@@ -4,6 +4,7 @@
       autoupgrade
       base
       bcachefs
+      caddy
       determinate
       miniflux
       uefi
