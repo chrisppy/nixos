@@ -11,6 +11,7 @@ in {
     # domain = "rss.chrisppy.me";
     domain = "rss.${config.networking.hostName}.gaur-truck.ts.net";
     port = 7070;
+    ip = "127.0.0.1:${toString port}";
   in {
     sops = {
       secrets.rss-passwd = {};
@@ -25,14 +26,14 @@ in {
         tls /var/lib/tailscale/certs/${domain}.crt \
           /var/lib/tailscale/certs/${domain}.key
 
-        reverse_proxy 127.0.0.1:${port}
+        reverse_proxy ${ip}
       '';
       miniflux = {
         enable = true;
         createDatabaseLocally = true;
         adminCredentialsFile = config.sops.templates."miniflux-db.env".path;
         config = {
-          LISTEN_ADDR = "127.0.0.1:${toString port}";
+          LISTEN_ADDR = "${ip}";
           # BASE_URL = "http://${domain}:${toString port}";
           BASE_URL = "https://${domain}";
           RUN_MIGRATIONS = true;
@@ -53,8 +54,8 @@ in {
 
         serviceConfig = {
           Type = "oneshot";
-          ExecStartPre = "${lib.getExe pkgs.tailscale} status";
-          ExecStart = "${lib.getExe pkgs.tailscale} cert ${domain}";
+          ExecStartPre = "${lib.getExe' pkgs.tailscale "tailscale"} status";
+          ExecStart = "${lib.getExe' pkgs.tailscale "tailscale"} cert ${domain}";
         };
 
         wantedBy = ["multi-user.target"];
