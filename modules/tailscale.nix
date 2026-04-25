@@ -10,7 +10,6 @@ in {
           ];
           allowedTCPPorts = [80 443];
         };
-        nameservers = ["100.100.100.100"];
       };
       services.tailscale = let
         flags = [

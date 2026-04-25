@@ -3,12 +3,13 @@
 in {
   flake.modules.nixos.miniflux = {
     config,
+    lib,
     pkgs,
     ...
   }: let
     # domain = config.networking.fqdn;
     # domain = "rss.chrisppy.me";
-    domain = "rss.sideling.gaur-truck.ts.net";
+    domain = "rss.${config.networking.hostName}.gaur-truck.ts.net";
     port = 7070;
   in {
     sops = {
@@ -21,6 +22,9 @@ in {
 
     services = {
       caddy.virtualHosts."${domain}".extraConfig = ''
+        tls /var/lib/tailscale/certs/${domain}.crt \
+          /var/lib/tailscale/certs/${domain}.key
+
         reverse_proxy 127.0.0.1:${port}
       '';
       miniflux = {
@@ -39,6 +43,29 @@ in {
       postgresql.package = pkgs.postgresql_16;
     };
 
-    networking.firewall.allowedTCPPorts = [port];
+    systemd = {
+      services.tailscale-cert-rss = {
+        description = "Fetch Tailscale cert for rss subdomain";
+
+        after = ["network-online.target" "tailscaled.service"];
+        wants = ["network-online.target"];
+        requires = ["tailscaled.service"];
+
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStartPre = "${lib.getExe pkgs.tailscale} status";
+          ExecStart = "${lib.getExe pkgs.tailscale} cert ${domain}";
+        };
+
+        wantedBy = ["multi-user.target"];
+      };
+      timers.tailscale-cert-rss = {
+        wantedBy = ["timers.target"];
+        timerConfig = {
+          OnBootSec = "5m";
+          OnUnitActiveSec = "12h";
+        };
+      };
+    };
   };
 }

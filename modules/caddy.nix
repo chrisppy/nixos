@@ -3,5 +3,8 @@ _: {
     services.caddy = {
       enable = true;
     };
+    systemd.services.caddy.serviceConfig = {
+      SupplementaryGroups = ["tailscale"];
+    };
   };
 }
