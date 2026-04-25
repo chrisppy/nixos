@@ -7,13 +7,15 @@ in {
     ...
   }: let
     # domain = config.networking.fqdn;
-    # domain = "rss.chrisppy.me";
-    domain = "${config.networking.hostName}.gaur-truck.ts.net";
+    domain = "rss.chrisppy.me";
     port = 7070;
     ip = "127.0.0.1:${toString port}";
   in {
     sops = {
-      secrets.rss-passwd = {};
+      secrets = {
+        rss-passwd = {};
+        cloudflare-api-token = {};
+      };
       templates."miniflux-db.env".content = ''
         ADMIN_USERNAME=${username}
         ADMIN_PASSWORD=${config.sops.placeholder.rss-passwd}
@@ -22,14 +24,10 @@ in {
 
     services = {
       caddy.virtualHosts."${domain}".extraConfig = ''
-        handle_path /rss* {
-          reverse_proxy ${ip} {
-            header_up X-Forwarded-Prefix /rss
-          }
+        tls {
+          dns cloudflare {env.CLOUDFLARE_API_TOKEN}
         }
-        handle {
-          respond "OK"
-        }
+        reverse_proxy ${ip} {
       '';
       miniflux = {
         enable = true;
@@ -37,8 +35,7 @@ in {
         adminCredentialsFile = config.sops.templates."miniflux-db.env".path;
         config = {
           LISTEN_ADDR = "${ip}";
-          # BASE_URL = "http://${domain}:${toString port}";
-          BASE_URL = "https://${domain}/rss";
+          BASE_URL = "https://${domain}";
           RUN_MIGRATIONS = true;
           POLLING_FREQUENCY = 15;
           WORKER_POOL_SIZE = 5;
@@ -46,5 +43,9 @@ in {
       };
       postgresql.package = pkgs.postgresql_16;
     };
+
+    systemd.services.caddy.serviceConfig.EnvironmentFile = [
+      config.sops.secrets.cloudflare-api-token.path
+    ];
   };
 }
