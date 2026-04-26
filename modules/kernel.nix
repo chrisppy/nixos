@@ -12,7 +12,7 @@ _: {
         pkgs.linuxKernel.packages
         |> lib.filterAttrs (name: kernelPackages:
           builtins.match "linux_[0-9]+_[0-9]+" name != null
-          && (builtins.tryEval kernelPackages.kernel.version).success
+          && (builtins.tryEval kernelPackages.kernel).success
           && (let tried = builtins.tryEval kernelPackages.${pkgs.zfs.kernelModuleAttribute}.meta.broken;
               in tried.success && !tried.value))
         |> builtins.attrValues
