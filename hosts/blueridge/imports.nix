@@ -7,6 +7,7 @@
       greetd
       hyprland
       media
+      plymouth
       uefi
       zfs
       zswap
