@@ -2,9 +2,9 @@
   flake.modules.nixos.jellyfin = {pkgs, ...}: let
     unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   in {
-    environment.sessionVariables = {
-      LIBVA_DRIVER_NAME = "iHD";
-    };
+    # environment.sessionVariables = {
+    #   LIBVA_DRIVER_NAME = "iHD";
+    # };
 
     hardware.graphics = {
       enable = true;
