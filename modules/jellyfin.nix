@@ -1,6 +1,6 @@
 {inputs, ...}: {
   flake.modules.nixos.jellyfin = {pkgs, ...}: let
-    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
+    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   in {
     environment.sessionVariables = {
       LIBVA_DRIVER_NAME = "iHD";

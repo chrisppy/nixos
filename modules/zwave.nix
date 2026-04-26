@@ -11,7 +11,7 @@ in {
     ...
   }: let
     cfgFile = "zwave-js-keys.json";
-    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
+    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   in {
     users.groups.uucp.members = [
       "zwave-js"
