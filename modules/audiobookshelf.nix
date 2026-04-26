@@ -1,6 +1,6 @@
 {inputs, ...}: {
   flake.modules.nixos.audiobookshelf = {pkgs, ...}: let
-    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
+    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   in {
     services.audiobookshelf = {
       enable = true;

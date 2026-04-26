@@ -14,7 +14,7 @@ in {
     unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
   in {
     users.groups.uucp.members = [
-      config.services.zwave-js.user
+      "zwave-js"
       username
     ];
     sops = {
