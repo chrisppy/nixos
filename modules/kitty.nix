@@ -22,6 +22,7 @@ _: {
         enable = true;
       };
       programs.alacritty.enable = true;
+      programs.foot.enable = true;
     };
   };
 }
