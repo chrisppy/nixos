@@ -11,9 +11,10 @@ _: {
       else
         pkgs.linuxKernel.packages
         |> lib.filterAttrs (name: kernelPackages:
-          builtins.match "linux_[0-9]+_[0-9]+" name
-          != null
-          && !(builtins.tryEval kernelPackages.${pkgs.zfs.kernelModuleAttribute}.meta.broken).value)
+          builtins.match "linux_[0-9]+_[0-9]+" name != null
+          && (builtins.tryEval kernelPackages.kernel.version).success
+          && (let tried = builtins.tryEval kernelPackages.${pkgs.zfs.kernelModuleAttribute}.meta.broken;
+              in tried.success && !tried.value))
         |> builtins.attrValues
         |> lib.sort (a: b: lib.versionOlder a.kernel.version b.kernel.version)
         |> lib.last
