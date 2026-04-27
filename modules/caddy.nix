@@ -10,8 +10,8 @@ _: {
           tls {
             dns cloudflare {env.CLOUDFLARE_API_TOKEN}
             resolvers 1.1.1.1
-            propagation_delay 30s
-            propagation_timeout 120s
+            propagation_delay 60s
+            propagation_timeout 300s
           }
         reverse_proxy 127.0.0.1:${toString port}
       '';
