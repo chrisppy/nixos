@@ -4,7 +4,7 @@ _: {
       enable = true;
       flake = "github:chrisppy/nixos#${config.networking.hostName}";
       operation = "switch";
-      dates = "04:00";
+      dates = "07:00";
       randomizedDelaySec = "30min";
       allowReboot = false;
       flags = ["--refresh"];
