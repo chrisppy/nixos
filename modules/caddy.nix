@@ -24,7 +24,8 @@ _: {
         hash = "sha256-4WF7tIx8d6O/Bd0q9GhMch8lS3nlR5N3Zg4ApA3hrKw=";
       };
       virtualHosts = lib.mkMerge [
-        (lib.mkIf config.services.miniflux.enable (mkVHost "rss" 7070))
+        (lib.mkIf config.services.audiobookshelf.enable (mkVHost "books" 13378))
+        (lib.mkIf config.services.miniflux.enable (mkVHost "feed" 7070))
       ];
     };
 

@@ -3,6 +3,7 @@
     imports = with config.flake.modules.nixos; [
       autoupgrade
       cad
+      caddy
       determinate
       greetd
       hyprland

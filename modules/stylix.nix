@@ -6,7 +6,7 @@
       ...
     }: {
       imports = [inputs.stylix.nixosModules.stylix];
-      
+
       fonts.fontconfig.enable = true;
 
       stylix = {
