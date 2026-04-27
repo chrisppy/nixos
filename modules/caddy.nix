@@ -10,6 +10,8 @@ _: {
           tls {
             dns cloudflare {env.CLOUDFLARE_API_TOKEN}
             resolvers 1.1.1.1
+            propagation_delay 30s
+            propagation_timeout 120s
           }
         reverse_proxy 127.0.0.1:${toString port}
       '';
@@ -25,7 +27,7 @@ _: {
       };
       virtualHosts = lib.mkMerge [
         (lib.mkIf config.services.audiobookshelf.enable (mkVHost "books" 13378))
-        (lib.mkIf config.services.miniflux.enable (mkVHost "feed" 7070))
+        (lib.mkIf config.services.miniflux.enable (mkVHost "feeds" 7070))
       ];
     };
 
