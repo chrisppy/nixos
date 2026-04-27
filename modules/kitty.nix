@@ -8,6 +8,7 @@ _: {
     gui = {
       config,
       lib,
+      pkgs,
       ...
     }: let
       term = lib.getExe config.programs.kitty.package;
