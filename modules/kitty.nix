@@ -24,7 +24,7 @@ _: {
       };
       programs.alacritty.enable = true;
       programs.foot.enable = true;
-      home.packages = [pkgs.weston];
+      home.packages = [pkgs.xterm];
     };
   };
 }
