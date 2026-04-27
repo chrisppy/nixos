@@ -1,5 +1,9 @@
 _: {
-  flake.modules.homeManager.hyprland = {lib, ...}: let
+  flake.modules.homeManager.hyprland = {
+    config,
+    lib,
+    ...
+  }: let
     left = "left";
     down = "down";
     up = "up";
@@ -22,6 +26,8 @@ _: {
 
           "$mod SHIFT, ${down}, Move window to the left, layoutmsg, movewindowto l"
           "$mod SHIFT, ${up}, Move window to the right, layoutmsg, movewindowto r"
+
+          "$mod CTRL, l, Lock Screen, exec, ${lib.getExe config.programs.hyprlock.package}"
         ]
         ++ (
           lib.range 1 9
