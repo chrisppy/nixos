@@ -19,11 +19,7 @@ _: {
         ];
         # niri.settings.binds."Mod+Return".spawn = [term];
       };
-      programs.kitty = {
-        enable = true;
-      };
-      programs.alacritty.enable = true;
-      programs.foot.enable = true;
+      programs.kitty.enable = true;
       home.packages = [pkgs.xterm];
     };
   };
