@@ -56,7 +56,6 @@ in {
       home = {
         inherit username;
         homeDirectory = "/home/${username}";
-        fonts.fontconfig.enable = true;
       };
       news.display = "silent";
       programs.home-manager.enable = true;
