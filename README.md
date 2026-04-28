@@ -4,11 +4,11 @@ My personal NixOS configuration, managed as a Nix flake.
 
 ## Hosts
 
-| Host | Platform |
-|------|----------|
+| Host      | Platform     |
+| --------- | ------------ |
 | blueridge | x86_64-linux |
-| sideling | x86_64-linux |
-| smoky | x86_64-linux |
+| sideling  | x86_64-linux |
+| smoky     | x86_64-linux |
 
 ## Structure
 
