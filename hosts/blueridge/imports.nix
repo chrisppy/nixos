@@ -17,6 +17,7 @@
       audiobookshelf
       home-assistant
       jellyfin
+      navidrome
       podman
     ];
   };
