@@ -1,24 +1,28 @@
-{inputs, ...}: {
-  flake.modules.nixos.jellyfin = {pkgs, ...}: let
-    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-  in {
-    # environment.sessionVariables = {
-    #   LIBVA_DRIVER_NAME = "iHD";
-    # };
+{ inputs, ... }:
+{
+  flake.modules.nixos.jellyfin =
+    { pkgs, ... }:
+    let
+      unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+    in
+    {
+      # environment.sessionVariables = {
+      #   LIBVA_DRIVER_NAME = "iHD";
+      # };
 
-    hardware.graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-        intel-media-driver # VA-API (iHD) — works with xe
-        vpl-gpu-rt # oneVPL / QSV runtime
-        intel-compute-runtime # OpenCL
-      ];
-    };
+      hardware.graphics = {
+        enable = true;
+        extraPackages = with pkgs; [
+          intel-media-driver # VA-API (iHD) — works with xe
+          vpl-gpu-rt # oneVPL / QSV runtime
+          intel-compute-runtime # OpenCL
+        ];
+      };
 
-    services.jellyfin = {
-      enable = true;
-      package = unstable.jellyfin;
-      openFirewall = true;
+      services.jellyfin = {
+        enable = true;
+        package = unstable.jellyfin;
+        openFirewall = true;
+      };
     };
-  };
 }

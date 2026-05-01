@@ -1,6 +1,8 @@
-{config, ...}: let
+{ config, ... }:
+let
   inherit (config.flake.meta.owner) username;
-in {
+in
+{
   flake.modules = {
     nixos.pc = {
       hardware.keyboard.qmk.enable = true;

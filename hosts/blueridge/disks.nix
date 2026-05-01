@@ -1,6 +1,6 @@
 _: {
   configurations.nixos.blueridge.module = {
-    zfs.pools = ["stillhouse"];
+    zfs.pools = [ "stillhouse" ];
     fileSystems = {
       "/" = {
         device = "/dev/disk/by-label/nixos";

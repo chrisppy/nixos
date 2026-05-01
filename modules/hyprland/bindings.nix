@@ -1,18 +1,20 @@
 _: {
-  flake.modules.homeManager.hyprland = {
-    config,
-    lib,
-    ...
-  }: let
-    left = "left";
-    down = "down";
-    up = "up";
-    right = "right";
-  in {
-    wayland.windowManager.hyprland.settings = {
-      "$mod" = "SUPER";
-      bindd =
-        [
+  flake.modules.homeManager.hyprland =
+    {
+      config,
+      lib,
+      ...
+    }:
+    let
+      left = "left";
+      down = "down";
+      up = "up";
+      right = "right";
+    in
+    {
+      wayland.windowManager.hyprland.settings = {
+        "$mod" = "SUPER";
+        bindd = [
           "$mod, escape, Close active window, killactive,"
 
           "$mod, ${left}, Move to previous column, layoutmsg, move -col"
@@ -32,11 +34,13 @@ _: {
         ++ (
           lib.range 1 9
           |> map (
-            ws: let
+            ws:
+            let
               s = toString ws;
-            in "$mod, code:1${s}, Switch to workspace ${s}, workspace, ${s}"
+            in
+            "$mod, code:1${s}, Switch to workspace ${s}, workspace, ${s}"
           )
         );
+      };
     };
-  };
 }

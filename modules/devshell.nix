@@ -1,7 +1,9 @@
 _: {
-  perSystem = {pkgs, ...}: {
-    devShells.default = pkgs.mkShell {
-      packages = [pkgs.qmk];
+  perSystem =
+    { pkgs, ... }:
+    {
+      devShells.default = pkgs.mkShell {
+        packages = [ pkgs.qmk ];
+      };
     };
-  };
 }

@@ -1,10 +1,12 @@
 _: {
   flake.modules = {
-    nixos.cad = {pkgs, ...}: {
-      environment.systemPackages = with pkgs; [
-        kicad
-      ];
-    };
+    nixos.cad =
+      { pkgs, ... }:
+      {
+        environment.systemPackages = with pkgs; [
+          kicad
+        ];
+      };
     # homeManager.niri = {
     #   wayland.windowManager.niri.settings._children = [
     #     {

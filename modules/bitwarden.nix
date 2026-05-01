@@ -1,10 +1,12 @@
 _: {
   flake.modules = {
-    nixos.pc = {pkgs, ...}: {
-      environment.systemPackages = with pkgs; [
-        bitwarden-desktop
-      ];
-    };
+    nixos.pc =
+      { pkgs, ... }:
+      {
+        environment.systemPackages = with pkgs; [
+          bitwarden-desktop
+        ];
+      };
     # homeManager.niri = {
     #   wayland.windowManager.niri.settings._children = [
     #     {

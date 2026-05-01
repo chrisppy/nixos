@@ -1,6 +1,8 @@
-{config, ...}: let
+{ config, ... }:
+let
   inherit (config.flake.modules.homeManager) noctalia;
-in {
+in
+{
   flake.modules = {
     homeManager.niri.imports = [
       noctalia

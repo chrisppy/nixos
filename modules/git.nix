@@ -1,8 +1,9 @@
-{config, ...}: {
+{ config, ... }:
+{
   flake.modules.homeManager.dev = {
     programs.git = {
       enable = true;
-      ignores = ["tags"];
+      ignores = [ "tags" ];
       settings = {
         user = {
           inherit (config.flake.meta.owner) email name;

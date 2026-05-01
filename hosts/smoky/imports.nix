@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   configurations.nixos.smoky.module = {
     imports = with config.flake.modules.nixos; [
       autoupgrade

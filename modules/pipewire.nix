@@ -1,17 +1,19 @@
 _: {
-  flake.modules.nixos.pc = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
-      wiremix
-    ];
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa = {
+  flake.modules.nixos.pc =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = with pkgs; [
+        wiremix
+      ];
+      security.rtkit.enable = true;
+      services.pipewire = {
         enable = true;
-        support32Bit = true;
+        alsa = {
+          enable = true;
+          support32Bit = true;
+        };
+        pulse.enable = true;
+        jack.enable = true;
       };
-      pulse.enable = true;
-      jack.enable = true;
     };
-  };
 }

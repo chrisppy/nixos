@@ -7,7 +7,8 @@
   inputs,
   lib,
   ...
-}: {
+}:
+{
   options.configurations.nixos = lib.mkOption {
     type = lib.types.lazyAttrsOf (
       lib.types.submodule {
@@ -20,11 +21,12 @@
 
   config.flake = {
     nixosConfigurations = lib.flip lib.mapAttrs config.configurations.nixos (
-      _name: {module}:
-        lib.nixosSystem {
-          specialArgs = {inherit inputs;};
-          modules = [module];
-        }
+      _name:
+      { module }:
+      lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ module ];
+      }
     );
 
     checks =

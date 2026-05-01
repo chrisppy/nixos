@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   flake = {
     meta.owner = {
       email = "chris@red-oxide.org";
@@ -19,7 +20,7 @@
           ];
         };
 
-        nix.settings.trusted-users = [config.flake.meta.owner.username];
+        nix.settings.trusted-users = [ config.flake.meta.owner.username ];
       };
     };
   };

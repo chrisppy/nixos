@@ -2,13 +2,15 @@
   config,
   inputs,
   ...
-}: let
+}:
+let
   inherit (config.flake.meta.owner) username;
-in {
+in
+{
   flake.modules = {
     nixos = {
       base = {
-        imports = [inputs.home-manager.nixosModules.home-manager];
+        imports = [ inputs.home-manager.nixosModules.home-manager ];
 
         home-manager = {
           useGlobalPkgs = true;
@@ -18,7 +20,8 @@ in {
           };
           users.${username}.imports = [
             (
-              {osConfig, ...}: {
+              { osConfig, ... }:
+              {
                 home.stateVersion = osConfig.system.stateVersion;
               }
             )
@@ -27,7 +30,7 @@ in {
         };
       };
       pc = {
-        imports = [config.flake.modules.nixos.base];
+        imports = [ config.flake.modules.nixos.base ];
 
         home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
           dev
@@ -38,14 +41,14 @@ in {
         hardware.graphics.enable = true;
       };
       hyprland = {
-        imports = [config.flake.modules.nixos.pc];
+        imports = [ config.flake.modules.nixos.pc ];
 
         home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
           hyprland
         ];
       };
       niri = {
-        imports = [config.flake.modules.nixos.pc];
+        imports = [ config.flake.modules.nixos.pc ];
 
         home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
           niri

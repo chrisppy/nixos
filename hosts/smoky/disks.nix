@@ -1,6 +1,6 @@
 _: {
   configurations.nixos.smoky.module = {
-    bcachefs.fileSystems = ["/"];
+    bcachefs.fileSystems = [ "/" ];
     disko.devices.disk.main = {
       device = "/dev/sda";
       type = "disk";

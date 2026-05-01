@@ -1,7 +1,9 @@
 _: {
-  flake.modules.nixos.media = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
-      filebot
-    ];
-  };
+  flake.modules.nixos.media =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = with pkgs; [
+        filebot
+      ];
+    };
 }
