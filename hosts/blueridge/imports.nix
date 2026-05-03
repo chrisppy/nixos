@@ -8,6 +8,7 @@
       determinate
       greetd
       hyprland
+      inkscape
       media
       plymouth
       uefi
