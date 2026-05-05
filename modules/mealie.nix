@@ -12,8 +12,6 @@
           content = ''
             SECRET_KEY=${config.sops.placeholder.mealie_secret_key}
           '';
-          owner = "mealie";
-          group = "mealie";
         };
       };
       services.mealie = {
