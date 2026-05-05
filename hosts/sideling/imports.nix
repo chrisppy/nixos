@@ -7,6 +7,7 @@
       bcachefs
       caddy
       determinate
+      mealie
       miniflux
       uefi
       zswap

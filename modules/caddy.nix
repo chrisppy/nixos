@@ -29,10 +29,14 @@ _: {
           hash = "sha256-4WF7tIx8d6O/Bd0q9GhMch8lS3nlR5N3Zg4ApA3hrKw=";
         };
         virtualHosts = lib.mkMerge [
-          (lib.mkIf config.services.audiobookshelf.enable (mkVHost "books" 13378))
-          (lib.mkIf config.services.jellyfin.enable (mkVHost "media" 8096))
-          (lib.mkIf config.services.miniflux.enable (mkVHost "feeds" 7070))
           (lib.mkIf (config.networking.hostName == "blueridge") (mkVHost "ha" 8123))
+
+          (lib.mkIf config.services.audiobookshelf.enable (
+            mkVHost "books" config.services.audiobookshelf.port
+          ))
+          (lib.mkIf config.services.jellyfin.enable (mkVHost "media" 8096))
+          (lib.mkIf config.services.mealie.enable (mkVHost "meals" config.services.mealie.port))
+          (lib.mkIf config.services.miniflux.enable (mkVHost "feeds" 7070))
         ];
       };
 
