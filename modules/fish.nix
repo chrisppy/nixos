@@ -26,6 +26,7 @@ in
 
             h = "history";
             c = "clear";
+            tree = "${lib.getExe config.programs.eza.package} --tree";
 
             # Git
             gs = "git status";

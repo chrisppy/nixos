@@ -20,6 +20,7 @@ _: {
     homeManager.hyprland =
       {
         inputs,
+        lib,
         pkgs,
         ...
       }:
@@ -106,6 +107,37 @@ _: {
           hyprpaper = {
             enable = true;
             package = hnPkgs.hyprpaper;
+          };
+        };
+
+        systemd.user.services.hypr-dpms-off =
+          let
+            hyprctl = lib.getExe' pkgs.hyprland "hyprctl";
+          in
+          {
+            Unit = {
+              Description = "Turn off display 5 minutes after lock";
+            };
+            Service = {
+              Type = "oneshot";
+              ExecStart = pkgs.writeShellScript "dpms-off-if-locked" ''
+                if pgrep hyprlock > /dev/null; then
+                  ${hyprctl} dispatch dpms off
+                fi
+              '';
+            };
+          };
+
+        systemd.user.timers.hypr-dpms-off = {
+          Unit = {
+            Description = "DPMS off timer after manual lock";
+          };
+          Timer = {
+            OnActiveSec = "5min";
+            Unit = "hypr-dpms-off.service";
+          };
+          Install = {
+            WantedBy = [ "timers.target" ];
           };
         };
       };
