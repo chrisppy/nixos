@@ -12,6 +12,7 @@ in
       };
     homeManager.base =
       {
+        config,
         lib,
         pkgs,
         ...
