@@ -6,8 +6,8 @@
       bcachefs
       determinate
       greetd
-      hyprland
       laptop
+      niri
       plymouth
       uefi
       zswap

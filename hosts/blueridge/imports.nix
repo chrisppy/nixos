@@ -7,7 +7,6 @@
       caddy
       determinate
       greetd
-      # hyprland
       inkscape
       media
       niri
