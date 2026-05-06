@@ -1,7 +1,6 @@
 _: {
   flake.modules.nixos.greetd =
     {
-      config,
       lib,
       pkgs,
       ...
@@ -11,7 +10,13 @@ _: {
         enable = true;
         settings = {
           default_session = {
-            command = "${lib.getExe pkgs.cage} -s -- ${lib.getExe config.programs.regreet.package}";
+            command = ''
+              ${lib.getExe pkgs.tuigreet} \
+                --time \
+                --remember \
+                --remember-session \
+                --asterisks 
+            '';
             user = "greeter";
           };
         };

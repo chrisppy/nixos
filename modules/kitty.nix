@@ -22,7 +22,7 @@ _: {
           hyprland.settings.bindd = [
             "$mod, return, Terminal, exec, ${term}"
           ];
-          # niri.settings.binds."Mod+Return".spawn = [term];
+          niri.settings.binds."Mod+Return".spawn = [ term ];
         };
         programs.kitty.enable = true;
         home.packages = [ pkgs.xterm ];

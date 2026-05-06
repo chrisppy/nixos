@@ -7,9 +7,10 @@
       caddy
       determinate
       greetd
-      hyprland
+      # hyprland
       inkscape
       media
+      niri
       plymouth
       uefi
       zfs

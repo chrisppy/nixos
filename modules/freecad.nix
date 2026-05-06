@@ -41,21 +41,5 @@ _: {
       {
         environment.systemPackages = [ freecad-customized ];
       };
-    # homeManager.niri = {
-    #   wayland.windowManager.niri.settings._children = [
-    #     {
-    #       window-rule._children = [
-    #         {
-    #           match._props = {
-    #             app-id = "^FreeCAD$";
-    #           };
-    #         }
-    #         {
-    #           open-maximized-to-edges = true;
-    #         }
-    #       ];
-    #     }
-    #   ];
-    # };
   };
 }

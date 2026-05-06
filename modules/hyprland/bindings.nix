@@ -29,7 +29,7 @@ _: {
           "$mod SHIFT, ${down}, Move window to the left, layoutmsg, movewindowto l"
           "$mod SHIFT, ${up}, Move window to the right, layoutmsg, movewindowto r"
 
-          "$mod CTRL, l, Lock Screen, exec, systemctl --user restart hypr-dpms-off.timer; ${lib.getExe config.programs.hyprlock.package}"
+          "$mod CTRL, l, Lock Screen, exec, ${lib.getExe config.programs.hyprlock.package}"
         ]
         ++ (
           lib.range 1 9
