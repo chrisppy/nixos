@@ -10,6 +10,8 @@ _: {
       down = "down";
       up = "up";
       right = "right";
+      launcher = "${lib.getExe config.programs.noctalia-shell.package} ipc call launcher toggle";
+      term = lib.getExe config.programs.kitty.package;
     in
     {
       wayland.windowManager.hyprland.settings = {
@@ -30,6 +32,8 @@ _: {
           "$mod SHIFT, ${up}, Move window to the right, layoutmsg, movewindowto r"
 
           "$mod CTRL, l, Lock Screen, exec, ${lib.getExe config.programs.hyprlock.package}"
+          "$mod, space, Launch apps, exec, ${launcher} | xargs hyprctl dispatch exec"
+          "$mod, return, Terminal, exec, ${term}"
         ]
         ++ (
           lib.range 1 9

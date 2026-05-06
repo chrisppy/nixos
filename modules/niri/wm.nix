@@ -29,11 +29,15 @@ _: {
                 open-maximized-to-edges = true;
               }
               {
+                match._props.app-id._raw = ''r#"^Inkscape$"#'';
+                open-maximized-to-edges = true;
+              }
+              {
                 match._props.app-id._raw = ''r#"^KiCAD$"#'';
                 open-maximized-to-edges = true;
               }
               {
-                match._props.app-id.raw = ''r#"^Bitwarden$"#'';
+                match._props.app-id._raw = ''r#"^Bitwarden$"#'';
                 block-out-from = "screen-capture";
               }
             ];

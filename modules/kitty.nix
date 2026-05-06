@@ -9,21 +9,10 @@ _: {
       };
     gui =
       {
-        config,
-        lib,
         pkgs,
         ...
       }:
-      let
-        term = lib.getExe config.programs.kitty.package;
-      in
       {
-        wayland.windowManager = {
-          hyprland.settings.bindd = [
-            "$mod, return, Terminal, exec, ${term}"
-          ];
-          niri.settings.binds."Mod+Return".spawn = [ term ];
-        };
         programs.kitty.enable = true;
         home.packages = [ pkgs.xterm ];
       };

@@ -1,14 +1,21 @@
 { inputs, config, ... }:
 let
-  inherit (config.flake.modules.homeManager) noctalia;
+  inherit (config.flake.modules.homeManager) fuzzel waybar wpaperd;
 in
 {
   flake.modules = {
-    nixos.niri.imports = [
-      inputs.niri-nix.nixosModules.default
-    ];
+    nixos.niri = {
+      imports = [
+        inputs.niri-nix.nixosModules.default
+      ];
+      nixpkgs.overlays = [
+        inputs.niri-nix.overlays.niri-nix
+      ];
+    };
     homeManager.niri.imports = [
-      noctalia
+      fuzzel
+      waybar
+      wpaperd
       inputs.niri-nix.homeModules.default
     ];
   };

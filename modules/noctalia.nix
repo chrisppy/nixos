@@ -1,22 +1,11 @@
 _: {
   flake.modules.homeManager.noctalia =
     {
-      config,
       inputs,
-      lib,
       ...
     }:
-    let
-      launcher = "${lib.getExe config.programs.noctalia-shell.package} ipc call launcher toggle";
-    in
     {
       imports = [ inputs.noctalia.homeModules.default ];
-      wayland.windowManager = {
-        hyprland.settings.bindd = [
-          "$mod, space, Launch apps, exec, ${launcher} | xargs hyprctl dispatch exec"
-        ];
-        # niri.settings.binds."Mod+Space".spawn = [launcher];
-      };
       programs = {
         noctalia-shell = {
           enable = true;
