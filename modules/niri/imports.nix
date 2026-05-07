@@ -1,6 +1,10 @@
 { inputs, config, ... }:
 let
-  inherit (config.flake.modules.homeManager) fuzzel waybar wpaperd;
+  inherit (config.flake.modules.homeManager)
+    fuzzel
+    waybar
+    wpaperd
+    ;
 in
 {
   flake.modules = {
