@@ -45,6 +45,8 @@ _: {
           "toggle"
         ];
         "Mod+Return".spawn = [ term ];
+
+        "Mod+Ctrl+l".power-off-monitors = [ ];
       }
       // (
         lib.range 1 9
