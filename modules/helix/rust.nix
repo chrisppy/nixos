@@ -16,16 +16,10 @@ _: {
             }
           ];
           language-server = {
-            rust-analyzer.config.rust-analyzer.config = {
-              checkOnSave = {
-                command = "clippy"; # Uses clippy instead of cargo check
-              };
-              cargo = {
-                allFeatures = true;
-              };
-              procMacro = {
-                enable = true;
-              };
+            rust-analyzer.config.rust-analyzer = {
+              checkOnSave.command = "clippy";
+              cargo.allFeatures = true;
+              procMacro.enable = true;
             };
           };
         };

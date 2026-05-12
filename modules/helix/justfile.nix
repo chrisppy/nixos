@@ -9,9 +9,9 @@ _: {
         languages = {
           language = [
             {
-          name = "just";
-          auto-format = true;
-        }
+              name = "just";
+              auto-format = true;
+            }
           ];
         };
       };

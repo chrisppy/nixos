@@ -42,10 +42,10 @@ _: {
               }
             ];
             spawn-at-startup = [
-              "${lib.getExe' pkgs.tailscale "tailscale"} systray"
+              ["${lib.getExe' pkgs.tailscale "tailscale"} systray"]
             ]
             ++ lib.optionals config.programs.discord.enable [
-              "${lib.getExe config.programs.discord.package} --start-minimized"
+              ["${lib.getExe config.programs.discord.package} --start-minimized"]
             ];
           };
         };

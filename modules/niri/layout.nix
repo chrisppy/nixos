@@ -2,7 +2,7 @@ _: {
   flake.modules.homeManager.niri = {
     wayland.windowManager.niri.settings.layout = {
       gaps = 10;
-      center-focused-column = "never";
+      center-focused-column = "on-overflow";
 
       preset-column-widths._children = [
         { proportion = 1.0 / 3.0; }
