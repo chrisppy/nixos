@@ -13,16 +13,11 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprnix.url = "github:hyprwm/hyprnix";
     import-tree.url = "github:vic/import-tree";
     niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix";
     nixfmt-rs.url = "github:Mic92/nixfmt-rs/0.1.2";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v4.5.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";

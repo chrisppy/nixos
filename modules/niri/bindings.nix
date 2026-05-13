@@ -47,7 +47,7 @@ _: {
         "Mod+Return".spawn = [ term ];
 
         "Mod+Ctrl+l".power-off-monitors = [ ];
-        
+
         "Print".screenshot = [ ];
         "Shift+Print".screenshot-window = [ ];
         "Ctrl+Print".screenshot-screen = [ ];

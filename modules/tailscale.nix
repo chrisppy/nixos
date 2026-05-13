@@ -33,18 +33,5 @@ in
             useRoutingFeatures = "both";
           };
       };
-    homeManager.base =
-      {
-        lib,
-        pkgs,
-        ...
-      }:
-      {
-        wayland.windowManager = {
-          hyprland.settings.exec-once = [
-            "${lib.getExe' pkgs.tailscale "tailscale"} systray"
-          ];
-        };
-      };
   };
 }
