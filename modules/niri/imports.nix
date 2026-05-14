@@ -2,6 +2,7 @@
 let
   inherit (config.flake.modules.homeManager)
     fuzzel
+    tofi
     waybar
     wpaperd
     ;
@@ -18,6 +19,7 @@ in
     };
     homeManager.niri.imports = [
       fuzzel
+      tofi
       waybar
       wpaperd
       inputs.niri-nix.homeModules.default
