@@ -1,12 +1,4 @@
 { inputs, config, ... }:
-let
-  inherit (config.flake.modules.homeManager)
-    fuzzel
-    tofi
-    waybar
-    wpaperd
-    ;
-in
 {
   flake.modules = {
     nixos.niri = {
@@ -17,9 +9,8 @@ in
         inputs.niri-nix.overlays.niri-nix
       ];
     };
-    homeManager.niri.imports = [
+    homeManager.niri.imports = with config.flake.modules.homeManager; [
       fuzzel
-      tofi
       waybar
       wpaperd
       inputs.niri-nix.homeModules.default
