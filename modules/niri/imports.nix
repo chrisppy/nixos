@@ -14,6 +14,7 @@
       waybar
       wpaperd
       inputs.niri-nix.homeModules.default
+      inputs.niri-nix.homeModules.stylix
     ];
   };
 }
