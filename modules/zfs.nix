@@ -15,7 +15,10 @@ _: {
       config = {
         boot = {
           supportedFilesystems.zfs = true;
-          zfs.extraPools = config.zfs.pools;
+          zfs = {
+            extraPools = config.zfs.pools;
+            forceImportRoot = false;
+          };
         };
         services.zfs = {
           autoScrub = {
