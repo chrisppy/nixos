@@ -11,6 +11,7 @@ _: {
         wl-clipboard
         wlr-randr
         wf-recorder
+        xwayland-satellite
       ];
     };
 }
