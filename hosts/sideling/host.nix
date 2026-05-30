@@ -1,5 +1,6 @@
 _: {
   configurations.nixos.sideling.module = {
+    documentation.enable = false;
     hardware.facter.reportPath = ./facter.json;
     nixpkgs.hostPlatform = "x86_64-linux";
     system.stateVersion = "26.05";
