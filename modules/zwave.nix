@@ -15,7 +15,27 @@ in
     }:
     let
       cfgFile = "zwave-js-keys.json";
-      unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+      # unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+
+      overlay = final: prev: {
+        zwave-js-ui = prev.zwave-js-ui.overrideAttrs (old: rec {
+          version = "11.19.1";
+
+          src = prev.fetchFromGitHub {
+            owner = "zwave-js";
+            repo = "zwave-js-ui";
+            tag = "v${version}";
+            hash = "sha256-9dqvQxlk+DdYcpCgoLR8EqtgwJwMA4Dvtwc8n1K8Cic=";
+          };
+
+          npmDepsHash = "sha256-dED08xcbgO3zfNRP9iNuTcL+73HnfBnwDrPCGY4TZBQ=";
+        });
+      };
+
+      unstable = import inputs.nixpkgs-unstable {
+        system = pkgs.stdenv.hostPlatform.system;
+        overlays = [ overlay ];
+      };
     in
     {
       users.groups.uucp.members = [
