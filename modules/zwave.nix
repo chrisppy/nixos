@@ -18,17 +18,21 @@ in
       # unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 
       overlay = final: prev: {
-        zwave-js-ui = prev.zwave-js-ui.overrideAttrs (old: rec {
-          version = "11.19.1";
+        zwave-js-server = prev.zwave-js-server.overrideAttrs (old: rec {
+          version = "3.9.0";
 
           src = prev.fetchFromGitHub {
             owner = "zwave-js";
-            repo = "zwave-js-ui";
-            tag = "v${version}";
-            hash = "sha256-9dqvQxlk+DdYcpCgoLR8EqtgwJwMA4Dvtwc8n1K8Cic=";
+            repo = "zwave-js-server";
+            rev = version;
+            hash = "sha256-PZmIpGcNxjZ5q7rnYj2SdtxCO7SyjWd5QFl+JT89KDU=";
           };
 
-          npmDepsHash = "sha256-dED08xcbgO3zfNRP9iNuTcL+73HnfBnwDrPCGY4TZBQ=";
+          npmDeps = final.fetchNpmDeps {
+            name = "zwave-js-server-${version}-npm-deps";
+            inherit src;
+            hash = "sha256-CIVGcz8K0kTfcJXaTO7SClt72AhRx1rZUXQgTm+aFdk=";
+          };
         });
       };
 
