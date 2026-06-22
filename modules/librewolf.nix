@@ -1,9 +1,10 @@
 _: {
   flake.modules.homeManager.gui =
-    { config, ... }:
+    { config, pkgs, ... }:
     {
       programs.librewolf = {
         enable = true;
+        package = pkgs.librewolf-unwrapped;
         policies = {
           BlockAboutConfig = true;
           DefaultDownloadDirectory = "${config.home.homeDirectory}/downloads";
