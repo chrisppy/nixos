@@ -18,7 +18,7 @@ in
       # unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 
       overlay = final: prev: {
-        zwave-js-server = prev.zwave-js-server.overrideAttrs (old: rec {
+        zwave-js-server = prev.zwave-js-server.overrideAttrs (_old: rec {
           version = "3.9.0";
 
           src = prev.fetchFromGitHub {

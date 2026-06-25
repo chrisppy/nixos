@@ -4,7 +4,7 @@ _: {
     {
       programs.librewolf = {
         enable = true;
-        package = pkgs.librewolf-unwrapped;
+        package = pkgs.librewolf;
         policies = {
           BlockAboutConfig = true;
           DefaultDownloadDirectory = "${config.home.homeDirectory}/downloads";
