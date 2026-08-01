@@ -3,6 +3,8 @@ _: {
     nixos.cad =
       { pkgs, ... }:
       let
+        freecad = pkgs.callPackage ../pkgs/freecad/package.nix { };
+
         fasteners = pkgs.fetchFromGitHub {
           owner = "shaise";
           repo = "FreeCAD_FastenersWB";
@@ -16,10 +18,10 @@ _: {
           hash = "sha256-t03rARNxsAQSoSjkUdsjSF4UPkyElcHOAgEldjK00aA=";
         };
 
-        freecad-customized = pkgs.freecad.customize {
+        freecad-customized = freecad.customize {
           modules = [
-            fasteners
-            sheet-metal
+            # fasteners
+            # sheet-metal
           ];
           pythons = [
             (
