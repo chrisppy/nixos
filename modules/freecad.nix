@@ -3,7 +3,8 @@ _: {
     nixos.cad =
       { pkgs, ... }:
       let
-        freecad = pkgs.callPackage ../pkgs/freecad/package.nix { };
+        # freecad = pkgs.callPackage ../pkgs/freecad/package.nix { };
+        freecad = pkgs.freecad;
 
         fasteners = pkgs.fetchFromGitHub {
           owner = "shaise";
