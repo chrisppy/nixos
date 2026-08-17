@@ -43,6 +43,8 @@
             "*.svg"
             "**/.gitkeep"
 
+            "modules/freecad/user.cfg"
+
             "secrets/**"
           ];
           formatter = {
