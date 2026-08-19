@@ -1,6 +1,7 @@
 _: {
   configurations.nixos.sideling.module = {
     bcachefs.fileSystems = [ "/" ];
+    zfs.pools = [ "stillhouse" ];
     disko.devices.disk.nixos = {
       device = "/dev/nvme0n1";
       type = "disk";

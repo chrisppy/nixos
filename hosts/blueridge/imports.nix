@@ -11,6 +11,7 @@
       media
       niri
       plymouth
+      protonmail
       uefi
       zfs
       zswap
@@ -19,9 +20,7 @@
       audiobookshelf
       home-assistant
       jellyfin
-      navidrome
       podman
-      protonmail
     ];
   };
 }
