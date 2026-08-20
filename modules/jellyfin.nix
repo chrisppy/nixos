@@ -23,6 +23,11 @@
         enable = true;
         package = unstable.jellyfin;
         openFirewall = true;
+        hardwareAcceleration = {
+          enable = true;
+          type = "qsv";
+          device = "/dev/dri/by-path/pci-0000:03:00.0-render";
+        };
       };
     };
 }
