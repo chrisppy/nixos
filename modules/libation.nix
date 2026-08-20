@@ -7,7 +7,7 @@ let
   inherit (config.flake.meta.owner) username;
 in
 {
-  flake.modules.nixos.media =
+  flake.modules.nixos.audiobookshelf =
     { lib, pkgs, ... }:
     let
       unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};

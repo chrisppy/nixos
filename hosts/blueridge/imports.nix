@@ -13,13 +13,10 @@
       plymouth
       protonmail
       uefi
-      zfs
       zswap
       zwave
 
-      audiobookshelf
       home-assistant
-      jellyfin
       podman
     ];
   };
