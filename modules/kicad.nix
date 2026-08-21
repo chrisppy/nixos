@@ -1,6 +1,6 @@
 _: {
   flake.modules = {
-    nixos.cad =
+    nixos.design =
       { pkgs, ... }:
       {
         environment.systemPackages = with pkgs; [

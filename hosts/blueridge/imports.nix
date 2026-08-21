@@ -3,11 +3,10 @@
   configurations.nixos.blueridge.module = {
     imports = with config.flake.modules.nixos; [
       autoupgrade
-      cad
       caddy
+      design
       determinate
       greetd
-      inkscape
       media
       niri
       plymouth

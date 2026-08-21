@@ -1,6 +1,6 @@
 _: {
   flake.modules = {
-    nixos.cad =
+    nixos.design =
       { pkgs, ... }:
       let
         # freecad = pkgs.callPackage ../pkgs/freecad/package.nix { };
