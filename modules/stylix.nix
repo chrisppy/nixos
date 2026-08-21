@@ -15,8 +15,7 @@
         stylix = {
           enable = true;
           image = inputs.self + "/assets/wallpaper.jpg";
-          # base16Scheme = "${pkgs.base16-schemes}/share/themes/shadesmear-dark.yaml";
-          base16Scheme = ../themes/camden.yaml;
+          base16Scheme = inputs.self + "/themes/camden.yaml";
           cursor = {
             package = pkgs.bibata-cursors;
             name = "Bibata-Modern-Amber";
