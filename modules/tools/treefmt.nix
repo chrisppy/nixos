@@ -43,7 +43,7 @@
             "*.svg"
             "**/.gitkeep"
 
-            "modules/freecad/user.cfg"
+            "modules/programs/freecad/user.cfg"
 
             "secrets/**"
           ];
