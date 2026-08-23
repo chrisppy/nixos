@@ -33,8 +33,8 @@ in
               name = "libation-sync";
               runtimeInputs = [ unstable.libation ];
               text = ''
-                libationcli scan
-                libationcli liberate
+                libationcli scan --libationFiles /var/lib/libation/
+                libationcli liberate --libationFiles /var/lib/libation/
               '';
             }
           );
