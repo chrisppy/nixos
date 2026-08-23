@@ -1,6 +1,6 @@
 _: {
   flake.modules.homeManager.base = {
-    programs.helix.settings.editor = {
+    programs.nhx.settings.editor = {
       bufferline = "always";
       color-modes = true;
       cursorline = true;

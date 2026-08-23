@@ -8,7 +8,7 @@ _: {
         rustfmt
       ];
 
-      programs.helix.languages = {
+      programs.nhx.languages = {
         language = [
           {
             name = "rust";

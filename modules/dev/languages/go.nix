@@ -8,7 +8,7 @@ _: {
         gotools
       ];
 
-      programs.helix.languages = {
+      programs.nhx.languages = {
         language = [
           {
             name = "go";

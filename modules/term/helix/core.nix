@@ -1,14 +1,22 @@
-_: {
-  flake.modules.homeManager.base =
-    { pkgs, ... }:
-    let
-      inherit (pkgs) helix;
-    in
-    {
-      programs.helix = {
+{ inputs, ... }:
+{
+  flake.modules.homeManager.base = {helixPlugins, ...}: {
+    imports = [ inputs.nhx.homeManagerModules.default ];
+
+    stylix.targets.nhx.enable = true;
+
+    programs.nhx = {
+      enable = true;
+
+      steel = {
         enable = true;
-        package = helix;
-        defaultEditor = true;
+        lsp.enable = true;
       };
+
+      plugins = with helixPlugins; [
+        glyph
+        moka
+      ];
     };
+  };
 }

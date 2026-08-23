@@ -1,6 +1,6 @@
 _: {
   flake.modules.homeManager.base = {
-    programs.helix.settings.keys.normal = {
+    programs.nhx.settings.keys.normal = {
       "space" = {
         left = ":buffer-previous";
         right = ":buffer-next";

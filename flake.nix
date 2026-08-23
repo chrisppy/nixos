@@ -14,6 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:vic/import-tree";
+    nhx.url = "github:Ra77a3l3-jar/nhx";
     niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix";
     nixfmt-rs.url = "github:Mic92/nixfmt-rs/0.1.2";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";

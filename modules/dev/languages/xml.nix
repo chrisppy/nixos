@@ -1,6 +1,6 @@
 _: {
   flake.modules.homeManager.dev = {
-    programs.helix.languages = {
+    programs.nhx.languages = {
       language = [
         {
           name = "xml";

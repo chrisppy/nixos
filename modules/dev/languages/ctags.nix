@@ -8,7 +8,7 @@ _: {
 
       ];
 
-      programs.helix.languages = {
+      programs.nhx.languages = {
         language-server.ctags-lsp = {
           command = lib.getExe pkgs.ctags-lsp;
         };
