@@ -20,7 +20,7 @@ in
       systemd = {
         timers.libation-sync = {
           timerConfig = {
-            OnCalendar = "12:00";
+            OnCalendar = "*-*-* 00/4:00:00";
             Persistent = true;
           };
           wantedBy = [ "timers.target" ];
