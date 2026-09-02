@@ -46,7 +46,7 @@ _: {
             "QT_FONT_DPI"
             "80"
           ];
-          userCfg = ./user.cfg;
+          # userCfg = ./user.cfg;
         };
       in
       {
