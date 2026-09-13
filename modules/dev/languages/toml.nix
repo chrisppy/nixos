@@ -18,7 +18,7 @@ _: {
         taplo
       ];
 
-      programs.helix.languages = {
+      programs.nhx.languages = {
         language = [
           {
             name = "toml";

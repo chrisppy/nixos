@@ -6,7 +6,7 @@ _: {
         yaml-language-server
       ];
 
-      programs.helix.languages = {
+      programs.nhx.languages = {
         language = [
           {
             name = "yaml";

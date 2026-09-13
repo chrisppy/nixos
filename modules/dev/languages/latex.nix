@@ -8,7 +8,7 @@ _: {
         zathura
       ];
 
-      programs.helix.languages = {
+      programs.nhx.languages = {
         language = [
           {
             name = "latex";
