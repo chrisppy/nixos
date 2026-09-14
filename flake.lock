@@ -388,11 +388,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1789257930,
-        "narHash": "sha256-BdYa4xcOnqeBHQsb/Alemek+2bD7JSrTNL55aXs10PM=",
+        "lastModified": 1789344154,
+        "narHash": "sha256-cwRBONt2p2aVU7ItMXKqa6tIDKOErqkQKDR0WVHD3eI=",
         "ref": "refs/heads/main",
-        "rev": "17055c57b0194099ef38b9ba0208e7dccdc11147",
-        "revCount": 188,
+        "rev": "eff47aebab7ea25128aba1c83fd447c46ba65aa4",
+        "revCount": 189,
         "type": "git",
         "url": "https://codeberg.org/BANanaD3V/niri-nix"
       },
@@ -404,11 +404,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1789244303,
-        "narHash": "sha256-ZymbkFBfgzMXbENnBzopIZ9LkrnJi6ytRABIzjCqEbk=",
+        "lastModified": 1789308908,
+        "narHash": "sha256-rKf+kiqygvn1DjpNRlHVkbXnABLGpd/N6Gg+t2POEQM=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "849c576ffc902c9a6f249d9371a1e95fb63cf553",
+        "rev": "66d04a7d72e25a6c74307bab33a91924d124755d",
         "type": "github"
       },
       "original": {
