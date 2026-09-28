@@ -8,7 +8,7 @@
     stylix = {
       enable = true;
       image = inputs.self + "/assets/wallpaper.jpg";
-      base16Scheme = inputs.self + "/themes/camden.yaml";
+      base16Scheme = inputs.base24-themes + "/themes/camden.yaml";
       polarity = "dark";
     };
   };

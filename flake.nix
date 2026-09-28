@@ -1,5 +1,9 @@
 {
   inputs = {
+    base24-themes = {
+      url = "github:chrisppy/base24-themes";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     disko = {
       url = "github:nix-community/disko";
