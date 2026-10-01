@@ -7,6 +7,7 @@
       design
       determinate
       greetd
+      libation
       media
       niri
       plymouth
