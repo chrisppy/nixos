@@ -13,15 +13,14 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
+    freecad-flake = {
+      url = "github:chrisppy/freecad-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    import-tree.url = "github:vic/import-tree";
     nhx = {
       url = "github:Ra77a3l3-jar/nhx";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,17 +36,17 @@
       url = "github:danth/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    systems.url = "github:nix-systems/default";
   };
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import inputs.systems;
+    inputs.devfmt.inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import inputs.devfmt.inputs.systems;
       imports = [
-        (inputs.import-tree ./modules)
-        (inputs.import-tree ./hosts)
+        (inputs.devfmt.inputs.import-tree ./modules)
+        (inputs.devfmt.inputs.import-tree ./hosts)
         inputs.devfmt.flakeModules.default
+        inputs.devfmt.inputs.flake-parts.flakeModules.modules
       ];
 
       _module.args = {
