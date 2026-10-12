@@ -40,12 +40,10 @@
 
   outputs =
     inputs:
-    inputs.devfmt.inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import inputs.devfmt.inputs.systems;
+    inputs.devfmt.lib.mkFlake { inherit inputs; } {
       imports = [
-        (inputs.devfmt.inputs.import-tree ./modules)
-        (inputs.devfmt.inputs.import-tree ./hosts)
-        inputs.devfmt.flakeModules.default
+        (inputs.devfmt.lib.importTree ./modules)
+        (inputs.devfmt.lib.importTree ./hosts)
       ];
 
       _module.args = {

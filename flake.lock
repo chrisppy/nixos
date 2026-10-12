@@ -76,11 +76,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791827128,
-        "narHash": "sha256-3XlDBlnGtYDfxejq903241Tj9yWinvplvrR/UlaHmVo=",
+        "lastModified": 1791828329,
+        "narHash": "sha256-VHq9fok3PcemcoF15vsD2s90i3UvhnDwtMctWt8CAMM=",
         "owner": "chrisppy",
         "repo": "base24-themes",
-        "rev": "4ecaacf8538ffada1d349e996a0e4176302f1456",
+        "rev": "839822bcb38bfa6e21fb576f875e48c43c15e764",
         "type": "github"
       },
       "original": {
@@ -176,11 +176,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1791827054,
-        "narHash": "sha256-a1bQHwzTVOrd56qNkGg4dJGUpXMwahpMkLqZWATJULo=",
+        "lastModified": 1791828129,
+        "narHash": "sha256-K1fnC1E+8xh+eUx1oFYNJUsWQZgNNUNucbo8piSZXio=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "27284e486acc7ba759fd47f341edf855ab0b1c34",
+        "rev": "63a4253970c23f8ba265081698d6236bc7b8176d",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
         "treefmt-nix": "treefmt-nix_4"
       },
       "locked": {
-        "lastModified": 1791827054,
-        "narHash": "sha256-a1bQHwzTVOrd56qNkGg4dJGUpXMwahpMkLqZWATJULo=",
+        "lastModified": 1791828129,
+        "narHash": "sha256-K1fnC1E+8xh+eUx1oFYNJUsWQZgNNUNucbo8piSZXio=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "27284e486acc7ba759fd47f341edf855ab0b1c34",
+        "rev": "63a4253970c23f8ba265081698d6236bc7b8176d",
         "type": "github"
       },
       "original": {
@@ -227,11 +227,11 @@
         "treefmt-nix": "treefmt-nix_6"
       },
       "locked": {
-        "lastModified": 1791827054,
-        "narHash": "sha256-a1bQHwzTVOrd56qNkGg4dJGUpXMwahpMkLqZWATJULo=",
+        "lastModified": 1791828129,
+        "narHash": "sha256-K1fnC1E+8xh+eUx1oFYNJUsWQZgNNUNucbo8piSZXio=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "27284e486acc7ba759fd47f341edf855ab0b1c34",
+        "rev": "63a4253970c23f8ba265081698d6236bc7b8176d",
         "type": "github"
       },
       "original": {
@@ -407,11 +407,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791827144,
-        "narHash": "sha256-0dgLuyHu/PmIvihvNjJ5w1ilQArGkswnU6pagoVcbB4=",
+        "lastModified": 1791828387,
+        "narHash": "sha256-ZRiVay5v132epcMnIMUeuLIxNM5ax3VTl96YPfhoqog=",
         "owner": "chrisppy",
         "repo": "freecad-flake",
-        "rev": "d6364e3e8811cb5c44c156f91b4069dbb54cea80",
+        "rev": "d8cd92d9335f6462c33da18a98c2a70a3a42c55c",
         "type": "github"
       },
       "original": {
