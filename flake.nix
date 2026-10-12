@@ -37,11 +37,13 @@
       url = "github:danth/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    systems.url = "github:nix-systems/default";
   };
 
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import inputs.systems;
       imports = [
         (inputs.import-tree ./modules)
         (inputs.import-tree ./hosts)
