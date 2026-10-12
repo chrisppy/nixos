@@ -4,6 +4,10 @@
       url = "github:chrisppy/base24-themes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    devfmt = {
+      url = "github:chrisppy/devfmt";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     disko = {
       url = "github:nix-community/disko";
@@ -23,7 +27,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix";
-    nixfmt-rs.url = "github:Mic92/nixfmt-rs/0.1.2";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     sops-nix = {
@@ -34,10 +37,6 @@
       url = "github:danth/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -46,6 +45,7 @@
       imports = [
         (inputs.import-tree ./modules)
         (inputs.import-tree ./hosts)
+        inputs.devfmt.flakeModules.default
       ];
 
       _module.args = {

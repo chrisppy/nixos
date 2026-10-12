@@ -1,15 +1,14 @@
 _: {
-  flake.modules.homeManager.base =
-    {
-      stylix.targets.nhx.enable = true;
+  flake.modules.homeManager.base = {
+    stylix.targets.nhx.enable = true;
 
-      programs.nhx = {
+    programs.nhx = {
+      enable = true;
+
+      steel = {
         enable = true;
-
-        steel = {
-          enable = true;
-          lsp.enable = true;
-        };
+        lsp.enable = true;
       };
     };
+  };
 }

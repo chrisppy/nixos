@@ -1,27 +1,18 @@
-{ inputs, ... }:
-{
-  imports = [ inputs.treefmt-nix.flakeModule ];
+_: {
+  perSystem.treefmt.settings.global.excludes = [
+    "LICENSE"
+    ".git"
+    ".gitattributes"
+    ".gitignore"
 
-  perSystem.treefmt = {
-    projectRootFile = "flake.nix";
-    settings = {
-      on-unmatched = "fatal";
-      global.excludes = [
-        "LICENSE"
-        ".git"
-        ".gitattributes"
-        ".gitignore"
+    "*.jpg"
+    "*.patch"
+    "*.png"
+    "*.svg"
+    "**/.gitkeep"
 
-        "*.jpg"
-        "*.patch"
-        "*.png"
-        "*.svg"
-        "**/.gitkeep"
+    "modules/programs/freecad/user.cfg"
 
-        "modules/programs/freecad/user.cfg"
-
-        "secrets/**"
-      ];
-    };
-  };
+    "secrets/**"
+  ];
 }
