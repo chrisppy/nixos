@@ -46,7 +46,6 @@
         (inputs.devfmt.inputs.import-tree ./modules)
         (inputs.devfmt.inputs.import-tree ./hosts)
         inputs.devfmt.flakeModules.default
-        inputs.devfmt.inputs.flake-parts.flakeModules.modules
       ];
 
       _module.args = {
