@@ -8,7 +8,7 @@ _: {
     }:
     let
       mkVHost = name: port: {
-        "${name}.chrisppy.me".extraConfig = ''
+        "${name}.palmerlife.online".extraConfig = ''
             tls {
               dns cloudflare {env.CLOUDFLARE_API_TOKEN}
               resolvers 1.1.1.1

@@ -21,7 +21,7 @@
         listenAddress = "127.0.0.1";
         port = 9000;
         settings = {
-          BASE_URL = "https://meals.chrisppy.me";
+          BASE_URL = "https://meals.palmerlife.online";
           ALLOW_SIGNUP = "0";
           TOKEN_TIME = "48";
           TZ = "America/New_York";

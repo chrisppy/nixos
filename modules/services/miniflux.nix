@@ -25,7 +25,7 @@ in
           adminCredentialsFile = config.sops.templates."miniflux-db.env".path;
           config = {
             LISTEN_ADDR = "127.0.0.1:7070";
-            BASE_URL = "https://feeds.chrisppy.me";
+            BASE_URL = "https://feeds.palmerlife.online";
             RUN_MIGRATIONS = true;
             POLLING_FREQUENCY = 15;
             WORKER_POOL_SIZE = 5;
