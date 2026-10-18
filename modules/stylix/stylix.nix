@@ -16,7 +16,7 @@ in
       enable = true;
       image = inputs.self + "/assets/wallpaper.jpg";
       inherit base16Scheme;
-      polarity = "dark";
+      polarity = camden.variant;
     };
   };
 }
