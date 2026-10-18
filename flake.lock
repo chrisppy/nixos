@@ -76,11 +76,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792274018,
-        "narHash": "sha256-IJgo9o/NGZ1neJskXgwN5uywydPBUnF2J+809k0iYtY=",
+        "lastModified": 1792301003,
+        "narHash": "sha256-h6YMpFNskjAs2LexGBupvTPi35ui/MJSknNVoLzEjT0=",
         "owner": "chrisppy",
         "repo": "base24-themes",
-        "rev": "2e24bf6885604f9be8e7bc47f937f5a17995c2a2",
+        "rev": "fa8351574adf5b51e46470d6706bed64c48e315c",
         "type": "github"
       },
       "original": {
@@ -176,11 +176,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1792273886,
-        "narHash": "sha256-TGi1JgChAty8oA9m97ptDsuU9seFtaM4knvPyuxxK+4=",
+        "lastModified": 1792289943,
+        "narHash": "sha256-r8Njd5Ia1DD6LlPr/Xe0nRWhNZ59VGPYf01RatDuleI=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "7a8df710b5bcf81fcf9865e3861dd107a760292a",
+        "rev": "556fee50f6ddf721445b822ec582d9ca8396ba31",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
         "treefmt-nix": "treefmt-nix_4"
       },
       "locked": {
-        "lastModified": 1792273886,
-        "narHash": "sha256-TGi1JgChAty8oA9m97ptDsuU9seFtaM4knvPyuxxK+4=",
+        "lastModified": 1792289943,
+        "narHash": "sha256-r8Njd5Ia1DD6LlPr/Xe0nRWhNZ59VGPYf01RatDuleI=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "7a8df710b5bcf81fcf9865e3861dd107a760292a",
+        "rev": "556fee50f6ddf721445b822ec582d9ca8396ba31",
         "type": "github"
       },
       "original": {
@@ -227,11 +227,11 @@
         "treefmt-nix": "treefmt-nix_6"
       },
       "locked": {
-        "lastModified": 1792273886,
-        "narHash": "sha256-TGi1JgChAty8oA9m97ptDsuU9seFtaM4knvPyuxxK+4=",
+        "lastModified": 1792289943,
+        "narHash": "sha256-r8Njd5Ia1DD6LlPr/Xe0nRWhNZ59VGPYf01RatDuleI=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "7a8df710b5bcf81fcf9865e3861dd107a760292a",
+        "rev": "556fee50f6ddf721445b822ec582d9ca8396ba31",
         "type": "github"
       },
       "original": {
@@ -407,11 +407,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792274268,
-        "narHash": "sha256-gk00c6s6hQCflqR4x7j6YGG01oYMrHgSQg910qhww+E=",
+        "lastModified": 1792300618,
+        "narHash": "sha256-3t6ZuiA3l8azq7vdOb7JeEyYHQ1g34UpAqxqkyuxLgQ=",
         "owner": "chrisppy",
         "repo": "freecad-flake",
-        "rev": "53df4a73477566cc26468d2304beb41f04bd914b",
+        "rev": "0885f7599bc6b2354b0ce5d4e730c6a25a80a176",
         "type": "github"
       },
       "original": {
@@ -732,11 +732,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1791956154,
-        "narHash": "sha256-jBYGPi4udQ9uo4KQp9m2J0546nJVQitG15gvZSaVVAs=",
+        "lastModified": 1792094642,
+        "narHash": "sha256-zp8ToDMnqZcu4o4IH9pdwXFXGp7yLm/M0dEnNWnyd7I=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
+        "rev": "fe13242281a67641c0102cdb1087f0ebe586c7df",
         "type": "github"
       },
       "original": {
