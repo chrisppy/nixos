@@ -3,7 +3,7 @@ name: Update flake inputs
 on:
   schedule:
     # Every day at midnight UTC
-    - cron: "0 2 * * *"
+    - cron: "0 4 * * *"
   workflow_dispatch:
 
 permissions:
