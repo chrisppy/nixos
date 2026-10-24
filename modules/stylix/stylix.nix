@@ -2,9 +2,9 @@
 
 let
   base24 = inputs.base24-themes.lib.base24;
-  camden = inputs.base24-themes.themes.camden;
+  birdland = inputs.base24-themes.themes.birdland;
 
-  base16Scheme = builtins.toFile "camden.yaml" (base24.toYaml camden);
+  base16Scheme = builtins.toFile "birdland.yaml" (base24.toYaml birdland);
 in
 {
   flake.modules.nixos.base = {
@@ -16,7 +16,7 @@ in
       enable = true;
       image = inputs.self + "/assets/wallpaper.jpg";
       inherit base16Scheme;
-      polarity = camden.variant;
+      polarity = birdland.variant;
     };
   };
 }
