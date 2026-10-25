@@ -76,11 +76,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792858926,
-        "narHash": "sha256-Jl5MeiKasifW4aR/bkXwW8weWRzzAF6TPsFZIxGjvsw=",
+        "lastModified": 1792906694,
+        "narHash": "sha256-PkPXgF5VDvjeS9Aki6zZOpNlO7IDK8CImCNzf3Ypj4o=",
         "owner": "chrisppy",
         "repo": "base24-themes",
-        "rev": "8cb69b4ad4ce43cd6dc7b609e37f21e80876a0dc",
+        "rev": "97328a033510d6f310fdf2e29004a514a50d330c",
         "type": "github"
       },
       "original": {
@@ -176,11 +176,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1792550425,
-        "narHash": "sha256-0h45KPV7xdjEAx2kOkLmTsrNJ4LeeVgRx3snaYJpC44=",
+        "lastModified": 1792895354,
+        "narHash": "sha256-do2OxxLXRKHT/loZP+CVrINMuQLKm6P8+xyp0dYqHbc=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "8d2f5b9ce615a673263559176bf27081d9bf2746",
+        "rev": "7d1ad6fd714858577ca72f3c134f0f9b261c77a1",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
         "treefmt-nix": "treefmt-nix_4"
       },
       "locked": {
-        "lastModified": 1792550425,
-        "narHash": "sha256-0h45KPV7xdjEAx2kOkLmTsrNJ4LeeVgRx3snaYJpC44=",
+        "lastModified": 1792895354,
+        "narHash": "sha256-do2OxxLXRKHT/loZP+CVrINMuQLKm6P8+xyp0dYqHbc=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "8d2f5b9ce615a673263559176bf27081d9bf2746",
+        "rev": "7d1ad6fd714858577ca72f3c134f0f9b261c77a1",
         "type": "github"
       },
       "original": {
@@ -227,11 +227,11 @@
         "treefmt-nix": "treefmt-nix_6"
       },
       "locked": {
-        "lastModified": 1792550425,
-        "narHash": "sha256-0h45KPV7xdjEAx2kOkLmTsrNJ4LeeVgRx3snaYJpC44=",
+        "lastModified": 1792895354,
+        "narHash": "sha256-do2OxxLXRKHT/loZP+CVrINMuQLKm6P8+xyp0dYqHbc=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "8d2f5b9ce615a673263559176bf27081d9bf2746",
+        "rev": "7d1ad6fd714858577ca72f3c134f0f9b261c77a1",
         "type": "github"
       },
       "original": {
@@ -407,11 +407,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792560797,
-        "narHash": "sha256-UJwK/4BMUwkN6q9I9ijpzjs3YrrvYKPSQ2s029T82ks=",
+        "lastModified": 1792906274,
+        "narHash": "sha256-6PXzAqX38A+85xA/AFNpMEl/ERkPZY+KU5EZD86kDD4=",
         "owner": "chrisppy",
         "repo": "freecad-flake",
-        "rev": "7b3ffa385c9f964059c273108a292760210623a2",
+        "rev": "31a5ce2d33d2ce8ee665d3694981160949538cb2",
         "type": "github"
       },
       "original": {
@@ -569,11 +569,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1792800794,
-        "narHash": "sha256-VSXPWioLpbE4P2LQUmxosnof5nLCmzGMGDJwNWNpYdw=",
+        "lastModified": 1792886985,
+        "narHash": "sha256-np7UUAvRwWIKLJJDPmCjgovBYT/+JwP9P8hhS2F/q3s=",
         "ref": "refs/heads/main",
-        "rev": "51231a121d5d5c45295a84b9aa6fb99ccea9f276",
-        "revCount": 209,
+        "rev": "e0ad6fdaf3f096fd82c79fc800660fcb73c805a0",
+        "revCount": 210,
         "type": "git",
         "url": "https://codeberg.org/BANanaD3V/niri-nix"
       },
@@ -714,11 +714,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1792502884,
-        "narHash": "sha256-IoNisKcGbUjdd45qCqywGMCYmZ5EnkxezvLII0FWwNA=",
+        "lastModified": 1792773339,
+        "narHash": "sha256-rZLrzrC6i+jnTAlvPZHogKDulY7WWDEv9hJeHieO7Zw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "02c087f3fe673c9e317f206a627cb6b910336dbe",
+        "rev": "3ec636362e1816bc2f0888fa0fa2c69f1bc9e504",
         "type": "github"
       },
       "original": {
@@ -855,10 +855,10 @@
     "nixpkgs_9": {
       "locked": {
         "lastModified": 315532800,
-        "narHash": "sha256-ij8QUxzTOHovLrNOxVRx+RAhGQFOMsJbji0veiatH5k=",
-        "rev": "02c087f3fe673c9e317f206a627cb6b910336dbe",
+        "narHash": "sha256-17eNBI5Khe4JZaRkL5hRGPWf8MZ6qv+bWAr4V8YeKBw=",
+        "rev": "3ec636362e1816bc2f0888fa0fa2c69f1bc9e504",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1097682.02c087f3fe67/nixexprs.tar.zst?lastModified=1792502884"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1100280.3ec636362e18/nixexprs.tar.zst?lastModified=1792773339"
       },
       "original": {
         "type": "tarball",
