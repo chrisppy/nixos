@@ -4,6 +4,10 @@
       url = "github:chrisppy/base24-themes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    birdland = {
+      url = "github:chrisppy/birdland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     devfmt = {
       url = "github:chrisppy/devfmt";
       inputs.nixpkgs.follows = "nixpkgs";
