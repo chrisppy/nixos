@@ -98,11 +98,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792955217,
-        "narHash": "sha256-uxwO5Ul4RS5QbSOM4V/EyXfZKtvsbOtNoO/DpuNz1tA=",
+        "lastModified": 1793012369,
+        "narHash": "sha256-j9WAiZ+NC4DIaH3MP3H4iWMO9fFkf+OUYNWirAm5DPQ=",
         "owner": "chrisppy",
         "repo": "base24-themes",
-        "rev": "e3dc427bc6a231193d1c34a62a1356f2d014ff32",
+        "rev": "e5c3bc42716fbac64c4f81aa275779de7fce51a3",
         "type": "github"
       },
       "original": {
@@ -139,11 +139,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1793000277,
-        "narHash": "sha256-6oreA+dcUcgsQnFz2MHJLDHrvhXY0G+Ft0lpKjazauY=",
+        "lastModified": 1793015408,
+        "narHash": "sha256-lv26XcGgxL3k47ZN9oExFDa66Kdbk/i9g5ckjZ3BQ6o=",
         "owner": "chrisppy",
         "repo": "birdland",
-        "rev": "8f532804eae1972a0b52b832cfaa0de76f53714f",
+        "rev": "6eb380cb40c98bbe88d292a8bfb16a7ad6488972",
         "type": "github"
       },
       "original": {
@@ -745,11 +745,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792599073,
-        "narHash": "sha256-AnxrIzDGGAPOkPripsmTzJyFKDcWjvrV325sp70XvXI=",
+        "lastModified": 1793036601,
+        "narHash": "sha256-QmNXVB8KGhoB3TA9ajLxbudwh8xL5nvBqzpz06SxZ6M=",
         "owner": "Ra77a3l3-jar",
         "repo": "nhx",
-        "rev": "ede2696a351a4909be6f7894889818b23528a943",
+        "rev": "f815186ff1ff503804f356211bc3ec8c4caa537f",
         "type": "github"
       },
       "original": {
@@ -763,11 +763,11 @@
         "nixpkgs": "nixpkgs_14"
       },
       "locked": {
-        "lastModified": 1792973383,
-        "narHash": "sha256-cnSBfVB6chVPrZ8Y29J4/RyWdR5o6IAiumXtRsGszuM=",
+        "lastModified": 1793059741,
+        "narHash": "sha256-eXBeOQsVZz6x5uj2v3H8KkJ7fdJyeby0m0j28vHYboA=",
         "ref": "refs/heads/main",
-        "rev": "c6888a62f028174c9b0503eb7cb26bf0c53e2761",
-        "revCount": 211,
+        "rev": "e127ff5d05103385bf4b42a8d1ae6e3ca1959284",
+        "revCount": 213,
         "type": "git",
         "url": "https://codeberg.org/BANanaD3V/niri-nix"
       },
@@ -1056,11 +1056,11 @@
     },
     "nixpkgs_15": {
       "locked": {
-        "lastModified": 1792898606,
-        "narHash": "sha256-Mg3rRjsbMqhSMxop5PYMXos8SwAjejrxSgVThTvP9eg=",
+        "lastModified": 1793015021,
+        "narHash": "sha256-Ee5BWo8sh3pGt70QUdRajnaginqFmWvrtdBc4gJzhks=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1f607aa79b6356ed45d3cd3c8079c196e79efa2c",
+        "rev": "718f670e845328e9c2cecdd832835712b2cbd065",
         "type": "github"
       },
       "original": {
@@ -1292,11 +1292,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792809984,
-        "narHash": "sha256-KV+CaZX7QS0hcdKxwGKehDb1jmUgx6lbkTPpaoIW5Nw=",
+        "lastModified": 1793052255,
+        "narHash": "sha256-Y/JIHTnMlOabDfyaSBubWGLDIVGihLEUuoMhFvQKaDo=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "442449fa7b1fe6c692d0103ac9fc8f9e82931cf3",
+        "rev": "60182817ee048ac94b4c68ea76d5ef2e8aac730d",
         "type": "github"
       },
       "original": {
