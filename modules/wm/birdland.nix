@@ -47,8 +47,8 @@
         };
 
         lineup = {
-          enable = false;
-          position = "bottom";
+          enable = true;
+          position = "right";
           favorites = [
             "chromium"
             "freecad"
