@@ -20,6 +20,6 @@ in
       };
 
       networking.firewall.allowedTCPPorts = [ port ];
-      caddy.virtualHosts = mkVHost "ha" port;
+      services.caddy.virtualHosts = mkVHost "ha" port;
     };
 }
