@@ -11,7 +11,6 @@
     };
     homeManager.niri.imports = with config.flake.modules.homeManager; [
       birdland
-      wpaperd
       inputs.niri-nix.homeModules.default
       inputs.niri-nix.homeModules.stylix
     ];

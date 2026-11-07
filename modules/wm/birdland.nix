@@ -54,6 +54,13 @@
             "freecad"
           ];
         };
+
+        outfield = {
+          enable = true;
+          wallpaper = inputs.self + "/assets";
+          interval = 30;
+          shuffle = true;
+        };
       };
     };
 }
