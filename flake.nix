@@ -2,11 +2,18 @@
   inputs = {
     base24-themes = {
       url = "github:chrisppy/base24-themes";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        devfmt.follows = "devfmt";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     birdland = {
       url = "github:chrisppy/birdland";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        base24-themes.follows = "base24-themes";
+        devfmt.follows = "devfmt";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     devfmt = {
       url = "github:chrisppy/devfmt";
@@ -19,7 +26,10 @@
     };
     freecad-flake = {
       url = "github:chrisppy/freecad-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        devfmt.follows = "devfmt";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -35,6 +45,13 @@
     opengym = {
       url = "github:DuarteSantos8/openGym?dir=contrib/nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    pressbox = {
+      url = "github:chrisppy/pressbox";
+      inputs = {
+        devfmt.follows = "devfmt";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
