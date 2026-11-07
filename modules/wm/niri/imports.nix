@@ -10,8 +10,7 @@
       ];
     };
     homeManager.niri.imports = with config.flake.modules.homeManager; [
-      fuzzel
-      waybar
+      birdland
       wpaperd
       inputs.niri-nix.homeModules.default
       inputs.niri-nix.homeModules.stylix

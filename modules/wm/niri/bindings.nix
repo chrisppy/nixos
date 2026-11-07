@@ -6,7 +6,7 @@ _: {
       down = "Down";
       up = "Up";
       right = "Right";
-      launcher = lib.getExe config.programs.fuzzel.package;
+      launcher = "birdland-dugout";
       term = lib.getExe config.programs.kitty.package;
     in
     {
@@ -41,8 +41,8 @@ _: {
           launcher
           "ipc"
           "call"
-          "launcher"
-          "toggle"
+          "dugout"
+          "show"
         ];
         "Mod+Return".spawn = [ term ];
 
