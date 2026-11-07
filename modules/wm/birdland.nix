@@ -18,6 +18,28 @@
         bullpen = {
           enable = true;
           position = "left";
+          units = "imperial";
+          weather = {
+            latitude = 39.41;
+            longitude = -77.29;
+          };
+          layout = {
+            left = [ "workspaces" ];
+            center = [ "title" ];
+            right = [
+              "tray"
+              "weather"
+              "cpu"
+              "memory"
+              "gpu"
+              "temperature"
+              "volume"
+              "microphone"
+              "network"
+              "battery"
+              "clock"
+            ];
+          };
         };
 
         dugout = {
@@ -25,7 +47,7 @@
         };
 
         lineup = {
-          enable = true;
+          enable = false;
           position = "bottom";
           favorites = [
             "chromium"
