@@ -32,6 +32,10 @@
     niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    opengym = {
+      url = "github:DuarteSantos8/openGym?dir=contrib/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";

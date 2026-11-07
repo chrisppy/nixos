@@ -12,6 +12,7 @@
       mealie
       miniflux
       navidrome
+      opengym
       uefi
       zfs
       zswap

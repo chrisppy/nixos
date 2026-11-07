@@ -1,4 +1,8 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
+let
+  inherit (config.flake.lib) mkDomain mkVHost;
+  name = "meals";
+in
 {
   flake.modules.nixos.mealie =
     { config, pkgs, ... }:
@@ -14,20 +18,23 @@
           '';
         };
       };
-      services.mealie = {
-        enable = true;
-        package = unstable.mealie;
-        credentialsFile = config.sops.templates."mealie-env".path;
-        listenAddress = "127.0.0.1";
-        port = 9000;
-        settings = {
-          BASE_URL = "https://meals.palmerlife.online";
-          ALLOW_SIGNUP = "0";
-          TOKEN_TIME = "48";
-          TZ = "America/New_York";
-          WORKERS_PER_CORE = "1";
-          MAX_WORKERS = "4";
+      services = {
+        mealie = {
+          enable = true;
+          package = unstable.mealie;
+          credentialsFile = config.sops.templates."mealie-env".path;
+          listenAddress = "127.0.0.1";
+          port = 9000;
+          settings = {
+            BASE_URL = "https://${mkDomain name}";
+            ALLOW_SIGNUP = "0";
+            TOKEN_TIME = "48";
+            TZ = "America/New_York";
+            WORKERS_PER_CORE = "1";
+            MAX_WORKERS = "4";
+          };
         };
+        caddy.virtualHosts = mkVHost name config.services.mealie.port;
       };
     };
 }

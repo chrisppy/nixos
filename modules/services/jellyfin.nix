@@ -1,4 +1,7 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
+let
+  inherit (config.flake.lib) mkVHost;
+in
 {
   flake.modules.nixos.jellyfin =
     { pkgs, ... }:
@@ -19,15 +22,18 @@
         ];
       };
 
-      services.jellyfin = {
-        enable = true;
-        package = unstable.jellyfin;
-        openFirewall = true;
-        hardwareAcceleration = {
+      services = {
+        jellyfin = {
           enable = true;
-          type = "qsv";
-          device = "/dev/dri/by-path/pci-0000:03:00.0-render";
+          package = unstable.jellyfin;
+          openFirewall = true;
+          hardwareAcceleration = {
+            enable = true;
+            type = "qsv";
+            device = "/dev/dri/by-path/pci-0000:03:00.0-render";
+          };
         };
+        caddy.virtualHosts = mkVHost "media" 8096;
       };
     };
 }

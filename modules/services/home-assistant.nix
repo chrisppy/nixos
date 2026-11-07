@@ -1,4 +1,9 @@
-_: {
+{ config, ... }:
+let
+  inherit (config.flake.lib) mkVHost;
+  port = 8123;
+in
+{
   flake.modules.nixos.home-assistant =
     { config, ... }:
     {
@@ -14,6 +19,7 @@ _: {
         };
       };
 
-      networking.firewall.allowedTCPPorts = [ 8123 ];
+      networking.firewall.allowedTCPPorts = [ port ];
+      caddy.virtualHosts = mkVHost "ha" port;
     };
 }

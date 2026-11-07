@@ -1,6 +1,9 @@
 { config, ... }:
 let
   inherit (config.flake.meta.owner) username;
+  inherit (config.flake.lib) mkDomain mkVHost;
+  name = "feeds";
+  port = 7070;
 in
 {
   flake.modules.nixos.miniflux =
@@ -24,14 +27,15 @@ in
           createDatabaseLocally = true;
           adminCredentialsFile = config.sops.templates."miniflux-db.env".path;
           config = {
-            LISTEN_ADDR = "127.0.0.1:7070";
-            BASE_URL = "https://feeds.palmerlife.online";
+            LISTEN_ADDR = "127.0.0.1:${port}";
+            BASE_URL = "https://${mkDomain name}";
             RUN_MIGRATIONS = true;
             POLLING_FREQUENCY = 15;
             WORKER_POOL_SIZE = 5;
           };
         };
         postgresql.package = pkgs.postgresql_16;
+        caddy.virtualHosts = mkVHost name port;
       };
     };
 }
