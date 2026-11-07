@@ -55,6 +55,11 @@
           ];
         };
 
+        jumbotron = {
+          enable = true;
+          position = "top";
+        };
+
         outfield = {
           enable = true;
           wallpaper = inputs.self + "/assets";

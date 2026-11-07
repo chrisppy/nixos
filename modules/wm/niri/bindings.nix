@@ -51,6 +51,43 @@ _: {
         "Print".screenshot = [ ];
         "Shift+Print".screenshot-window = [ ];
         "Ctrl+Print".screenshot-screen = [ ];
+
+        "XF86AudioRaiseVolume".spawn = [
+          "wpctl"
+          "set-volume"
+          "@DEFAULT_AUDIO_SINK@"
+          "0.05+"
+          "-l"
+          "1.0"
+        ];
+        "XF86AudioLowerVolume".spawn = [
+          "wpctl"
+          "set-volume"
+          "@DEFAULT_AUDIO_SINK@"
+          "0.05-"
+        ];
+        "XF86AudioMute".spawn = [
+          "wpctl"
+          "set-mute"
+          "@DEFAULT_AUDIO_SINK@"
+          "toggle"
+        ];
+        "XF86AudioMicMute".spawn = [
+          "wpctl"
+          "set-mute"
+          "@DEFAULT_AUDIO_SOURCE@"
+          "toggle"
+        ];
+        "XF86MonBrightnessUp".spawn = [
+          "brightnessctl"
+          "set"
+          "5%+"
+        ];
+        "XF86MonBrightnessDown".spawn = [
+          "brightnessctl"
+          "set"
+          "5%-"
+        ];
       }
       // (
         lib.range 1 9
