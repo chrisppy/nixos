@@ -42,7 +42,7 @@ _: {
           "ipc"
           "call"
           "dugout"
-          "show"
+          "toggle"
         ];
         "Mod+Return".spawn = [ term ];
 
