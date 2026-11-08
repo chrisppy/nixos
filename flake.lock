@@ -123,11 +123,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1794102495,
-        "narHash": "sha256-4k5PvmjfYE8tm0US73dh5HNoLGuBO2rVFTd/vD3yuGg=",
+        "lastModified": 1794102874,
+        "narHash": "sha256-7OPFOc14aqI4rPG8HG2yHrolurnU+f58+EoV/pWAhkM=",
         "owner": "chrisppy",
         "repo": "birdland",
-        "rev": "37c67998bceee94191bfa131d86d83bbd4baddd1",
+        "rev": "c82396896dce4f2a5bb399d00a9aa94c2d1095c8",
         "type": "github"
       },
       "original": {
