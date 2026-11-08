@@ -46,7 +46,13 @@ _: {
         ];
         "Mod+Return".spawn = [ term ];
 
-        "Mod+Ctrl+l".power-off-monitors = [ ];
+        "Mod+Ctrl+l".spawn = [
+          "birdland-tarp"
+          "ipc"
+          "call"
+          "tarp"
+          "lock"
+        ];
 
         "Print".screenshot = [ ];
         "Shift+Print".screenshot-window = [ ];

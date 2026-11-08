@@ -42,9 +42,7 @@
           };
         };
 
-        dugout = {
-          enable = true;
-        };
+        dugout.enable = true;
 
         lineup = {
           enable = true;
@@ -66,6 +64,8 @@
           interval = 30;
           shuffle = true;
         };
+
+        tarp.enable = true;
       };
     };
 }
