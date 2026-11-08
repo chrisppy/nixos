@@ -123,11 +123,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1794090801,
-        "narHash": "sha256-1N4lKA7lIaE1IQdfROkLr/+WkJh3XInnDA8pYPL7QsQ=",
+        "lastModified": 1794102495,
+        "narHash": "sha256-4k5PvmjfYE8tm0US73dh5HNoLGuBO2rVFTd/vD3yuGg=",
         "owner": "chrisppy",
         "repo": "birdland",
-        "rev": "2986627636840aba80a4d35e84940e92adb658f6",
+        "rev": "37c67998bceee94191bfa131d86d83bbd4baddd1",
         "type": "github"
       },
       "original": {
@@ -528,11 +528,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1794010190,
-        "narHash": "sha256-s06aSsZOozz8a5sanViic4aViP9QaCj5sm+XDMkEUyE=",
+        "lastModified": 1794096592,
+        "narHash": "sha256-tp8aArbo2blNkTbKw27/fWFO2gLtgRqJT+2lXyXAkxw=",
         "ref": "refs/heads/main",
-        "rev": "edacee82834f112fa46987780a7d43a77f9579df",
-        "revCount": 221,
+        "rev": "2bf797ee5a2fa16b5699b9dc582350654d342b72",
+        "revCount": 222,
         "type": "git",
         "url": "https://codeberg.org/BANanaD3V/niri-nix"
       },
@@ -668,10 +668,10 @@
     "nixpkgs_3": {
       "locked": {
         "lastModified": 315532800,
-        "narHash": "sha256-iNjybNORi/2+shilhMlkNr01UHWKOHRGzQyIyvobs9o=",
-        "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
+        "narHash": "sha256-Q62pssAT9r01POiSyXW0IPXBWhntiKqMhzlsp3bsl5I=",
+        "rev": "f9a75f41be3a74eab55d3a7679d34ad6cc0da977",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1107793.1d060086d60c/nixexprs.tar.zst?lastModified=1793726008"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1108983.f9a75f41be3a/nixexprs.tar.zst?lastModified=1793876309"
       },
       "original": {
         "type": "tarball",
