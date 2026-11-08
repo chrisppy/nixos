@@ -81,6 +81,11 @@
             shuffle = true;
           };
 
+          announcer = {
+            enable = true;
+            position = "top-right";
+          };
+
           tarp.enable = true;
         };
       };
