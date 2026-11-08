@@ -17,7 +17,7 @@
 
         bullpen = {
           enable = true;
-          position = "left";
+          position = "top";
           units = "imperial";
           weather = {
             latitude = 39.41;
@@ -46,7 +46,7 @@
 
         lineup = {
           enable = true;
-          position = "right";
+          position = "bottom";
           favorites = [
             "chromium"
             "freecad"
