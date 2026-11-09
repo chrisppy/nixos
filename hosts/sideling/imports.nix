@@ -10,9 +10,9 @@
       determinate
       jellyfin
       mealie
-      miniflux
       navidrome
       opengym
+      pressbox
       uefi
       zfs
       zswap

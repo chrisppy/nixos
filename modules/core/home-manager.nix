@@ -35,6 +35,7 @@ in
         home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
           dev
           gui
+          pressbox-tui
           wayland
         ];
 
