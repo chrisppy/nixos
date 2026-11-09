@@ -86,12 +86,13 @@ in
       };
     };
     homeManager = {
-      pressbox-tui = {
+      pressbox-clients = {
         imports = [ inputs.pressbox.homeManagerModules.default ];
         programs.pressbox = {
           enable = true;
           server = "https://${mkDomain name}";
           tui.enable = true;
+          desktop.enable = true;
         };
       };
     };
