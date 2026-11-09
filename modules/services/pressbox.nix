@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, inputs, ... }:
 let
   inherit (config.flake.meta.owner) username;
   inherit (config.flake.lib) mkDomain mkVHost;
@@ -8,6 +8,7 @@ in
 {
   flake.modules = {
     nixos.pressbox = {
+      imports = [ inputs.pressbox.nixosModules.default ];
       services = {
         pressbox = {
           enable = true;
@@ -31,6 +32,7 @@ in
     };
     homeManager = {
       pressbox-tui = {
+        imports = [ inputs.pressbox.homeManagerModules.default ];
         programs.pressbox = {
           enable = true;
           server = "https://${mkDomain name}";
