@@ -19,6 +19,10 @@ in
             ${username} = {
               admin = true;
               feeds = {
+                "Tailscale" = {
+                  url = "https://tailscale.com/blog/index.xml";
+                  fullText = true;
+                };
                 "This-Week-in-Ekala" = {
                   url = "https://ekala-project.github.io/twie/atom.xml";
                   fullText = true;
