@@ -47,6 +47,7 @@
                 "title"
               ];
               center = [
+                "feeds"
                 "date"
                 "clock"
                 "weather"

@@ -15,7 +15,6 @@
       audiobookshelf
       jellyfin
       mealie
-      opengym
       pressbox
     ];
   };
