@@ -75,8 +75,8 @@
             enable = true;
             position = "bottom";
             favorites = [
-              "chromium"
               "freecad"
+              "chromium-browser"
             ];
           };
 
