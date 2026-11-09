@@ -17,6 +17,8 @@
       };
     homeManager.birdland =
       {
+        config,
+        lib,
         pkgs,
         ...
       }:
@@ -37,6 +39,7 @@
             units = "imperial";
             clock.format = "HH:mm";
             date.format = "yyyy-MM-dd";
+            feeds.command = "${lib.getExe config.programs.kitty.package} --class pressbox -e pressbox";
             weather = {
               latitude = 39.41;
               longitude = -77.29;
@@ -74,6 +77,7 @@
 
           lineup = {
             enable = true;
+            iconSize = 24;
             position = "bottom";
             favorites = [
               "freecad"
