@@ -35,25 +35,36 @@
             enable = true;
             position = "top";
             units = "imperial";
+            clock.format = "HH:mm";
+            date.format = "yyyy-MM-dd";
             weather = {
               latitude = 39.41;
               longitude = -77.29;
             };
             layout = {
-              left = [ "workspaces" ];
-              center = [ "title" ];
+              left = [
+                "workspaces"
+                "title"
+              ];
+              center = [
+                "date"
+                "clock"
+                "weather"
+              ];
               right = [
                 "tray"
-                "weather"
-                "cpu"
-                "memory"
-                "gpu"
-                "temperature"
-                "volume"
-                "microphone"
-                "network"
-                "battery"
-                "clock"
+                [
+                  "volume"
+                  "microphone"
+                ]
+                [
+                  "network"
+                  "battery"
+                  "temperature"
+                  "cpu"
+                  "memory"
+                  "gpu"
+                ]
               ];
             };
           };
