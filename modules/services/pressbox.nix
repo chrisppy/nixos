@@ -19,6 +19,9 @@ in
             ${username} = {
               admin = true;
               feeds = {
+                "Chris" = {
+                  url = "https://chris.palmerlife.online/atom.xml";
+                };
                 "FreeCAD" = {
                   url = "https://blog.freecad.org/feed/";
                   fullText = true;
@@ -57,6 +60,22 @@ in
                 };
                 "Yorik" = {
                   url = "https://www.uncreated.net/yorik/?feed";
+                  fullText = true;
+                };
+                "Linux-Unplugged" = {
+                  url = "https://feeds.jupiterbroadcasting.com/lup";
+                  fullText = true;
+                };
+                "The-Launch" = {
+                  url = "https://serve.podhome.fm/rss/04b078f9-b3e8-4363-a576-98e668231306";
+                  fullText = true;
+                };
+                "This-Week-in-Bitcoin" = {
+                  url = "https://feeds.fountain.fm/40huHEEF6JMPGYctMuUI";
+                  fullText = true;
+                };
+                "Jupiter-Extras" = {
+                  url = "https://feeds.fireside.fm/extras/rss";
                   fullText = true;
                 };
               };
