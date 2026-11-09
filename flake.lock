@@ -728,11 +728,11 @@
       },
       "locked": {
         "dir": "contrib/nix",
-        "lastModified": 1793816290,
-        "narHash": "sha256-FcJ7OKprQEVN3WXmyNOf9LVzB1AXwQ1GKFBOS5T3y8c=",
+        "lastModified": 1794227729,
+        "narHash": "sha256-WunkpOqdkDAhV27rxFO91u12zmDitG8AM0DFbff/RwA=",
         "owner": "DuarteSantos8",
         "repo": "openGym",
-        "rev": "8fb98b16861a2728652302a7e6e30c50548493a0",
+        "rev": "4171d3cefa946cfa032b0b28f74cea85a2e28a7b",
         "type": "github"
       },
       "original": {
