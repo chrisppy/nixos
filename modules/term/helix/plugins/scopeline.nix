@@ -5,6 +5,7 @@ _: {
       config = {
         showFile = false;
         alwaysReserved = true;
+        position = "bottom-left";
       };
     };
   };
