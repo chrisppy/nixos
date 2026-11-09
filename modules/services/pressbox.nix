@@ -19,7 +19,7 @@ in
             ${username} = {
               admin = true;
               feeds = {
-                "This Week in Ekala" = {
+                "This-Week-in-Ekala" = {
                   url = "https://ekala-project.github.io/twie/atom.xml";
                   fullText = true;
                 };
