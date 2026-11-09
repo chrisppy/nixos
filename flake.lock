@@ -78,11 +78,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794179680,
-        "narHash": "sha256-FoKy1S2cyBAQ6YWmnEzNgWmmoDQE4G9nbVLUF/AiPns=",
+        "lastModified": 1794209791,
+        "narHash": "sha256-+bwcfvaPohZN1q2VK3YE0s000IiQO4pOKw1QxZ1u/X8=",
         "owner": "chrisppy",
         "repo": "base24-themes",
-        "rev": "2bc5008cec4f4fff7add9294ed187c58ac17e8da",
+        "rev": "bd47de4ee6c968092359d531def99ddb8c6df958",
         "type": "github"
       },
       "original": {
@@ -123,11 +123,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1794187105,
-        "narHash": "sha256-JsW5oELWvBLgdtJyyAlIHHsPD/YK5Mdeu/b/EfPWSio=",
+        "lastModified": 1794216592,
+        "narHash": "sha256-EBfs6EpA/+CVAZeX9JX3cID9Cx6ZNO/Z4M0mvgPMkrE=",
         "owner": "chrisppy",
         "repo": "birdland",
-        "rev": "c1e9068bb399e3aa98694c6c73a050c1ea47500e",
+        "rev": "ad9af5385005934d4220eb8841975bc3cbb07c3b",
         "type": "github"
       },
       "original": {
@@ -220,11 +220,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1794108990,
-        "narHash": "sha256-9DRk1JyWKGczIyBev2sTe+N/FBzysFrMaGBXjKTTnd4=",
+        "lastModified": 1794196193,
+        "narHash": "sha256-qwqf9BLZkrkYa5sKoEP2uKwXXzXDWl4AbjJRty7I01Y=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "0119b830da4dd2387fe3eb67e090cca2b2d9e6a9",
+        "rev": "acbe094dc2f353a9896a9d82392eec522eedd4ff",
         "type": "github"
       },
       "original": {
@@ -262,11 +262,11 @@
         "rust-analyzer-src": "rust-analyzer-src"
       },
       "locked": {
-        "lastModified": 1794055457,
-        "narHash": "sha256-ikO+WgHkuOGeBH8gJMUt4zbkhkRMIyEHEPSQOSkz+4M=",
+        "lastModified": 1794142885,
+        "narHash": "sha256-xWFSr7q8IerDAVRk4W7/CgTmi05hMy2qjZ0z3VYpOVk=",
         "owner": "nix-community",
         "repo": "fenix",
-        "rev": "5161c3b5239da76a876135d51ff91281daffd78e",
+        "rev": "f7d416b5073152c7f2e4de1a28d1a4330dd30a26",
         "type": "github"
       },
       "original": {
@@ -398,11 +398,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794120609,
-        "narHash": "sha256-a8SGjb4rRdYTi7SA89jmZ8jmkFP9R2XIKXpH5ak2GJM=",
+        "lastModified": 1794209262,
+        "narHash": "sha256-+IwRI43ZDPHpYKHicgGJC8Ni0m5/0AYxpiS3y2FURTY=",
         "owner": "chrisppy",
         "repo": "freecad-flake",
-        "rev": "c9daa938c8ffa621535a0370b50c6d7045eeef79",
+        "rev": "83c0a45d95945be1f06bbb502699ec02c009d289",
         "type": "github"
       },
       "original": {
@@ -754,11 +754,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794171870,
-        "narHash": "sha256-tbGwhNDaemIubObdit8Nx9hfKP2v0WhkmdHPbLCGpug=",
+        "lastModified": 1794193739,
+        "narHash": "sha256-a0e+8SrDHz0oPOodXOZgum6dganobfiiiWUtZzbXOK8=",
         "owner": "chrisppy",
         "repo": "pressbox",
-        "rev": "0da442f1f081a902438407361b0fdc3f0b3a69a9",
+        "rev": "ada73af4e9015fa3354ac0191ff21e6fb35c1bea",
         "type": "github"
       },
       "original": {
@@ -846,11 +846,11 @@
     "rust-analyzer-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1793973055,
-        "narHash": "sha256-FGNEfLMCD+0loZXe0gfrlu1Eu3BvI7MZNLyyOFhskmk=",
+        "lastModified": 1794096810,
+        "narHash": "sha256-dWC+YtMX+cwH3e9ndiFB77ijTsKtO5I2OxfcvUY4j3k=",
         "owner": "rust-lang",
         "repo": "rust-analyzer",
-        "rev": "55effabb762bbd0a21c5af530ea447bd6772881d",
+        "rev": "03ae6be57aa063bb373f69eead3b8e15168a45d2",
         "type": "github"
       },
       "original": {
