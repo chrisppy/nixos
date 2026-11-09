@@ -20,7 +20,7 @@ secrets/    sops-nix encrypted secrets
 
 ## Key inputs
 
-- [nixpkgs](https://github.com/NixOS/nixpkgs) (25.11)
+- [nixpkgs](https://github.com/NixOS/nixpkgs) (26.05)
 - [home-manager](https://github.com/nix-community/home-manager)
 - [disko](https://github.com/nix-community/disko)
 - [sops-nix](https://github.com/Mic92/sops-nix)
