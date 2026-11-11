@@ -50,10 +50,12 @@
                 "title"
               ];
               center = [
+                "dnd"
                 "feeds"
                 "date"
                 "clock"
                 "weather"
+                "idle-inhibitor"
               ];
               right = [
                 "tray"

@@ -123,11 +123,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1794303109,
-        "narHash": "sha256-zCJBCTxBgTC4lnDQA9rFWcOexW4wtP00IBT0yhYkzK4=",
+        "lastModified": 1794431630,
+        "narHash": "sha256-Uj/GDlTp1hKKiqUk0dZqjfhJr88iN1h5GnvY3a6clTE=",
         "owner": "chrisppy",
         "repo": "birdland",
-        "rev": "5d307902250357e93e9caecd34f2d6445385a3ed",
+        "rev": "a48dbbbf650efbfc2ca883e7a5ddd443e7a76795",
         "type": "github"
       },
       "original": {
@@ -754,11 +754,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794422681,
-        "narHash": "sha256-3+VQ7dWH3VSjTF3LASm9H0iPoLPZNryx8hjroHdufno=",
+        "lastModified": 1794424133,
+        "narHash": "sha256-1WV2VOnENyhiYCi4lN5lXAtDN61ze+rvST9dwgg1C4g=",
         "owner": "chrisppy",
         "repo": "pressbox",
-        "rev": "7243d308fec629db88e48be72116d227157a31b4",
+        "rev": "728189c3e2b61acc4194c2cae941fc41b5b4bce9",
         "type": "github"
       },
       "original": {
