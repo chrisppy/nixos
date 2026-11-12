@@ -19,9 +19,7 @@ in
             ${username} = {
               admin = true;
               feeds = {
-                "Chris" = {
-                  url = "https://chris.palmerlife.online/atom.xml";
-                };
+                "Chris".url = "https://chris.palmerlife.online/atom.xml";
                 "FreeCAD" = {
                   url = "https://blog.freecad.org/feed/";
                   fullText = true;
@@ -42,6 +40,7 @@ in
                   url = "https://nrd.sh/feed.xml";
                   fullText = true;
                 };
+                "red-oxide".url = "https://red-oxide.org/atom.xml";
                 "Rustlang" = {
                   url = "https://blog.rust-lang.org/feed.xml";
                   fullText = true;
