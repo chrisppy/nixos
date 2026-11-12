@@ -1,14 +1,14 @@
 {
   inputs = {
     base24-themes = {
-      url = "github:chrisppy/base24-themes";
+      url = "github:red-oxide/base24-themes";
       inputs = {
         devfmt.follows = "devfmt";
         nixpkgs.follows = "nixpkgs";
       };
     };
     birdland = {
-      url = "github:chrisppy/birdland";
+      url = "github:red-oxide/birdland";
       inputs = {
         base24-themes.follows = "base24-themes";
         devfmt.follows = "devfmt";
@@ -16,7 +16,7 @@
       };
     };
     devfmt = {
-      url = "github:chrisppy/devfmt";
+      url = "github:red-oxide/devfmt";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
@@ -47,7 +47,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pressbox = {
-      url = "github:chrisppy/pressbox";
+      url = "github:red-oxide/pressbox";
       inputs = {
         devfmt.follows = "devfmt";
         nixpkgs.follows = "nixpkgs";
