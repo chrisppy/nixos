@@ -19,7 +19,10 @@ in
             ${username} = {
               admin = true;
               feeds = {
-                "Chris".url = "https://chris.palmerlife.online/atom.xml";
+                "Chris" = {
+                  url = "https://chris.palmerlife.online/atom.xml";
+                  fullText = true;
+                };
                 "FreeCAD" = {
                   url = "https://blog.freecad.org/feed/";
                   fullText = true;
@@ -40,7 +43,10 @@ in
                   url = "https://nrd.sh/feed.xml";
                   fullText = true;
                 };
-                "red-oxide".url = "https://red-oxide.org/atom.xml";
+                "red-oxide" = {
+                  url = "https://red-oxide.org/atom.xml";
+                  fullText = true;
+                };
                 "Rustlang" = {
                   url = "https://blog.rust-lang.org/feed.xml";
                   fullText = true;
