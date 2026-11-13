@@ -123,11 +123,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1794495768,
-        "narHash": "sha256-hDM/Z1XRFCb+XyxFkNFkBk8W3TaNw5tqE/MvH6HasRA=",
+        "lastModified": 1794561576,
+        "narHash": "sha256-DCZdamk0tAjY5H7dzfwUflwvwD0x9pXj416aYjXuB90=",
         "owner": "red-oxide",
         "repo": "birdland",
-        "rev": "7be9f4bb43124d024358cffd2290d5a7ed4346de",
+        "rev": "77622fcc90cad6c83986ee55ec6ae8fe402c49c2",
         "type": "github"
       },
       "original": {
@@ -754,11 +754,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794584140,
-        "narHash": "sha256-oKk225R0HK/7fdVCGgkbEMuVNdJS5WfF0MBaib+YeP0=",
+        "lastModified": 1794609411,
+        "narHash": "sha256-TlDvLLd4Ih8nm5nuGgeSeOpgnfBsecMzSGAQUW22+l8=",
         "owner": "red-oxide",
         "repo": "pressbox",
-        "rev": "c7f1776bd7ab3d5f70378f65e67b691397d320e2",
+        "rev": "702585e3a60a62a6b6be59e031cfe01e56838b68",
         "type": "github"
       },
       "original": {
