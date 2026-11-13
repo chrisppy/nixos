@@ -754,11 +754,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794609411,
-        "narHash": "sha256-TlDvLLd4Ih8nm5nuGgeSeOpgnfBsecMzSGAQUW22+l8=",
+        "lastModified": 1794611636,
+        "narHash": "sha256-Rp1v3ar+zVMji0LGr8HtlhBz+xEr4jgENPcLGLknm+g=",
         "owner": "red-oxide",
         "repo": "pressbox",
-        "rev": "702585e3a60a62a6b6be59e031cfe01e56838b68",
+        "rev": "556c1987a169e794aa742057b3e083e96b7a4f56",
         "type": "github"
       },
       "original": {
