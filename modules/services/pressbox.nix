@@ -58,16 +58,6 @@ in
                   fullText = true;
                   tags = [ "nix" ];
                 };
-                "PerkinsBuilderBrothers" = {
-                  url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCKwM-7sO1_Tw9EmYhKfpBBw";
-                  fullText = true;
-                  tags = [ "constuction" ];
-                };
-                "PigTownSports" = {
-                  url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCNVxg_AeAAiqiOXmJox0Hog";
-                  fullText = true;
-                  tags = [ "baseball" ];
-                };
                 "nrxdp" = {
                   url = "https://nrd.sh/feed.xml";
                   fullText = true;
