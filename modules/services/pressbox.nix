@@ -19,6 +19,11 @@ in
             ${username} = {
               admin = true;
               feeds = {
+                "Baltimore-Orioles" = {
+                  url = "https://www.mlb.com/orioles/feeds/news/rss.xml";
+                  fullText = true;
+                  tags = [ "baseball" ];
+                };
                 "Chris" = {
                   url = "https://chris.palmerlife.online/atom.xml";
                   fullText = true;
@@ -27,6 +32,11 @@ in
                     "rust"
                     "software"
                   ];
+                };
+                "Frederick-Keys" = {
+                  url = "https://www.milb.com/frederick/feeds/news/rss.xml";
+                  fullText = true;
+                  tags = [ "baseball" ];
                 };
                 "FreeCAD" = {
                   url = "https://blog.freecad.org/feed/";
@@ -47,6 +57,16 @@ in
                   url = "https://nixos.org/blog/announcements-rss.xml";
                   fullText = true;
                   tags = [ "nix" ];
+                };
+                "PerkinsBuilderBrothers" = {
+                  url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCKwM-7sO1_Tw9EmYhKfpBBw";
+                  fullText = true;
+                  tags = [ "constuction" ];
+                };
+                "PigTownSports" = {
+                  url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCNVxg_AeAAiqiOXmJox0Hog";
+                  fullText = true;
+                  tags = [ "baseball" ];
                 };
                 "nrxdp" = {
                   url = "https://nrd.sh/feed.xml";
