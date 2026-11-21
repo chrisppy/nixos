@@ -42,6 +42,8 @@
     niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # TODO: drop once bcachefs-tools builds against 6.18.64+ (see hosts/sideling/host.nix)
+    nixpkgs-kernel.url = "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f";
     opengym = {
       url = "github:DuarteSantos8/openGym?dir=contrib/nix";
       inputs.nixpkgs.follows = "nixpkgs";
