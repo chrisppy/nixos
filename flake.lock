@@ -78,11 +78,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795161707,
-        "narHash": "sha256-TLMO+4m81iqfbas6x1Oqhxa00ZWm1fqvS7WmPaylfnY=",
+        "lastModified": 1795247817,
+        "narHash": "sha256-mmck/5tt4RbTTJ21XI4uqDRDuEALPO8VYnqU+dqaJ60=",
         "owner": "red-oxide",
         "repo": "base24-themes",
-        "rev": "513e84a70a7ba15c6346194cac6902a1622a9733",
+        "rev": "0ebc220e4c21a2da5b86f78f98634a49e5bc8b00",
         "type": "github"
       },
       "original": {
@@ -123,11 +123,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1795168344,
-        "narHash": "sha256-ba1dkF5zhGI3t/8T+iZZic+NS1ujEy83vlrqv21Sp+c=",
+        "lastModified": 1795253304,
+        "narHash": "sha256-3fUKlstfZcIdK3wQBq1RF1zTUhwiEkY4hxhiVu1N3V4=",
         "owner": "red-oxide",
         "repo": "birdland",
-        "rev": "744ad3694443718b14e57d87faa7807d08de8b65",
+        "rev": "6b2c1b07d081288e3d5fd80bfdeab5fe57fba32f",
         "type": "github"
       },
       "original": {
@@ -220,11 +220,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1795065237,
-        "narHash": "sha256-53yxRsFfP0pM+F7TaR92L+iyvVTWWcz/A3aqPGbrLRw=",
+        "lastModified": 1795236958,
+        "narHash": "sha256-N8/eC+J61+DMphkGJfB7ICLOfWY1AViXdUA9bP8k0RE=",
         "owner": "red-oxide",
         "repo": "devfmt",
-        "rev": "4af59134dcccfef737dfe40353f66ea0ae594ccf",
+        "rev": "8ecef473cc7df03ef1d4d558932c605303fd88ab",
         "type": "github"
       },
       "original": {
@@ -262,11 +262,11 @@
         "rust-analyzer-src": "rust-analyzer-src"
       },
       "locked": {
-        "lastModified": 1795102243,
-        "narHash": "sha256-HnABs2+i8cjYStZ31xTkxEu3MLSZIkU88mo7Kk3d3bU=",
+        "lastModified": 1795187345,
+        "narHash": "sha256-5ncfNXhwirKE2EKvq5srtuNF4j0V9+6XiRI0CqGcFtQ=",
         "owner": "nix-community",
         "repo": "fenix",
-        "rev": "56cb1cb22a0718efbf464dd045e53c729fa78f35",
+        "rev": "ea745d6a7730c73bb5e0c028818240234e7bda05",
         "type": "github"
       },
       "original": {
@@ -398,11 +398,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795161230,
-        "narHash": "sha256-ZVbKesEdPVaDCig7jQpcdxe7lnf6STUWpaGEVf19RVA=",
+        "lastModified": 1795247507,
+        "narHash": "sha256-d+d928LaTszbBT51cxIgesg91Ir/ZpqXQE6y/lkylxQ=",
         "owner": "chrisppy",
         "repo": "freecad-flake",
-        "rev": "539ee9e7d18999f177f15604fd45e67de5e1fe65",
+        "rev": "77b97f16b09a80fde63df56eab83ff8ecbe6b47f",
         "type": "github"
       },
       "original": {
@@ -770,11 +770,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795149018,
-        "narHash": "sha256-Giu815aYwQucPgn4f8sYbRu5rAEX4aqN8b9Jj1frmGM=",
+        "lastModified": 1795235045,
+        "narHash": "sha256-qvarg97sZFGJdsOcL8xI1q/mXcPxkFzBBdJFuGyONy8=",
         "owner": "red-oxide",
         "repo": "pressbox",
-        "rev": "60d337573ca2bdd98a39cd01ed00969135d43a32",
+        "rev": "bf108f61f7b8a2963ff737412344be96f6df6892",
         "type": "github"
       },
       "original": {
@@ -863,11 +863,11 @@
     "rust-analyzer-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1795029100,
-        "narHash": "sha256-y+hK29DFce9pID3opWyQteXeBO2kt7vd7ML0NnA9U/k=",
+        "lastModified": 1795098625,
+        "narHash": "sha256-fu0a0Rp87IfJuB/9m+4HQ+zEEaGUjk4u8+fyiOx1+SE=",
         "owner": "rust-lang",
         "repo": "rust-analyzer",
-        "rev": "8ef9c27d332d6b01f09f80dc24cf4720650dde0f",
+        "rev": "aa198229289901e5718e7c0a8d4115638cc1900c",
         "type": "github"
       },
       "original": {
@@ -1048,11 +1048,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795017206,
-        "narHash": "sha256-WSBJcYjPRxGetDNxVzKnRPs1TQasQQlAC25W/S4W6YE=",
+        "lastModified": 1795173499,
+        "narHash": "sha256-J8IYl3oEdctyvBgWr+/L01MY5Xm0TU4WXwZDccN5jjk=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "0ba5d67225c3f5c88eb134e1a665a379bfd3bea9",
+        "rev": "a0a97e31a897a3537eea5c49df4f8adaa83b3b37",
         "type": "github"
       },
       "original": {
