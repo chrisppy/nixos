@@ -10,7 +10,7 @@
         };
         alias = {
           fuckit = "reset --hard";
-          lg = "log --color --graphs --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+          lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
           tasks = "grep -EI \"TODO|FIXME|HACK|OPTIMIZE|NOTE|BUG\"";
         };
         commit.verbose = "yes";
