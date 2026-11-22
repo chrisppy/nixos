@@ -1,10 +1,19 @@
 _: {
   flake.modules.nixos.podman =
     {
+      config,
       lib,
       pkgs,
       ...
     }:
+    let
+      # Restart through systemd so the oci-containers units stay in charge
+      # of the containers instead of podman restarting them behind its back.
+      units =
+        config.virtualisation.oci-containers.containers
+        |> lib.attrNames
+        |> map (name: "podman-${name}.service");
+    in
     {
       virtualisation.podman = {
         enable = true;
@@ -27,16 +36,16 @@ _: {
           ExecStart = lib.getExe (
             pkgs.writeShellApplication {
               name = "update-containers";
-              runtimeInputs = [ pkgs.podman ];
+              runtimeInputs = [
+                pkgs.podman
+                pkgs.systemd
+              ];
               text = ''
                 images=$(podman ps -a --format="{{.Image}}" | sort -u)
                 for image in $images; do
                   podman pull "$image"
                 done
-                containers=$(podman ps -a --format="{{.Names}}")
-                for container in $containers; do
-                  podman restart "$container"
-                done
+                ${lib.optionalString (units != [ ]) "systemctl restart ${lib.escapeShellArgs units}"}
               '';
             }
           );
