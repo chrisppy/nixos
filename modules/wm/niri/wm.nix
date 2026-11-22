@@ -36,16 +36,18 @@ _: {
                 match._props.app-id._raw = ''r#"^KiCAD$"#'';
                 open-maximized-to-edges = true;
               }
-              {
-                match._props.app-id._raw = ''r#"^Bitwarden$"#'';
-                block-out-from = "screen-capture";
-              }
             ];
             spawn-at-startup = [
-              [ "${lib.getExe' pkgs.tailscale "tailscale"} systray" ]
+              [
+                (lib.getExe' pkgs.tailscale "tailscale")
+                "systray"
+              ]
             ]
             ++ lib.optionals config.programs.discord.enable [
-              [ "${lib.getExe config.programs.discord.package} --start-minimized" ]
+              [
+                (lib.getExe config.programs.discord.package)
+                "--start-minimized"
+              ]
             ];
           };
         };
