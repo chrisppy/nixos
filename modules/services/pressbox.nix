@@ -12,9 +12,8 @@ in
       services = {
         pressbox = {
           enable = true;
-          openFirewall = true;
           address = "127.0.0.1";
-          port = 7070;
+          inherit port;
           users = {
             ${username} = {
               admin = true;
