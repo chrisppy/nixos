@@ -5,7 +5,6 @@ _: {
       home.packages = with pkgs; [
         texlab
         texlive.combined.scheme-small
-        zathura
       ];
 
       programs.nhx.languages = {

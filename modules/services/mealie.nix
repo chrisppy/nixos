@@ -29,7 +29,7 @@ in
             BASE_URL = "https://${mkDomain name}";
             ALLOW_SIGNUP = "0";
             TOKEN_TIME = "48";
-            TZ = "America/New_York";
+            TZ = config.time.timeZone;
             WORKERS_PER_CORE = "1";
             MAX_WORKERS = "4";
           };

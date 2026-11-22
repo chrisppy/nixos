@@ -5,6 +5,7 @@ _: {
       home.packages = with pkgs; [
         nil
         nixd
+        nixfmt
       ];
 
       programs.nhx.languages = {
