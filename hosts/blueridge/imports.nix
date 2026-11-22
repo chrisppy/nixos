@@ -7,6 +7,7 @@
       design
       determinate
       greetd
+      intel-arc
       libation
       media
       niri

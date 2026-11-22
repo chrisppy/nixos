@@ -9,19 +9,8 @@ in
       unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
     in
     {
-      # environment.sessionVariables = {
-      #   LIBVA_DRIVER_NAME = "iHD";
-      # };
-
-      hardware.graphics = {
-        enable = true;
-        extraPackages = with pkgs; [
-          intel-media-driver # VA-API (iHD) — works with xe
-          vpl-gpu-rt # oneVPL / QSV runtime
-          intel-compute-runtime # OpenCL
-        ];
-      };
-
+      # VA-API/QSV/OpenCL drivers come from the intel-arc module. sideling's
+      # A310 (DG2) runs on i915; xe support for DG2 still needs force_probe.
       services = {
         jellyfin = {
           enable = true;
