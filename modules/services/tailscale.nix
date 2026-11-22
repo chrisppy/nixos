@@ -8,15 +8,9 @@ in
       { config, ... }:
       {
         networking = {
-          firewall = {
-            trustedInterfaces = [
-              config.services.tailscale.interfaceName
-            ];
-            allowedTCPPorts = [
-              80
-              443
-            ];
-          };
+          firewall.trustedInterfaces = [
+            config.services.tailscale.interfaceName
+          ];
         };
         services.tailscale =
           let

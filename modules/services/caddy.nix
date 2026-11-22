@@ -16,6 +16,11 @@ _: {
         };
       };
 
+      networking.firewall.allowedTCPPorts = [
+        80
+        443
+      ];
+
       systemd.services.caddy.serviceConfig.EnvironmentFile = [
         config.sops.secrets.cloudflare-api-token.path
       ];

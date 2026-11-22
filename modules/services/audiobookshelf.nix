@@ -13,7 +13,6 @@ in
         audiobookshelf = {
           enable = true;
           package = unstable.audiobookshelf;
-          openFirewall = true;
           host = "127.0.0.1";
           port = 13378;
         };

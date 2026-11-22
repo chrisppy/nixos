@@ -54,7 +54,7 @@ in
           zwave-s2-access-control = { };
         };
         templates.${cfgFile} = {
-          mode = "0444";
+          mode = "0400";
           content = ''
             {
               "securityKeys": {
