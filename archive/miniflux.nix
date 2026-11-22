@@ -27,7 +27,7 @@ in
           createDatabaseLocally = true;
           adminCredentialsFile = config.sops.templates."miniflux-db.env".path;
           config = {
-            LISTEN_ADDR = "127.0.0.1:${port}";
+            LISTEN_ADDR = "127.0.0.1:${toString port}";
             BASE_URL = "https://${mkDomain name}";
             RUN_MIGRATIONS = true;
             POLLING_FREQUENCY = 15;
