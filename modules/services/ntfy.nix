@@ -35,6 +35,7 @@ in
             behind-proxy = true;
             auth-default-access = "deny-all";
             enable-login = true;
+            enable-signup = false;
             # relay poll requests through ntfy.sh so iOS gets instant pushes
             upstream-base-url = "https://ntfy.sh";
           };
