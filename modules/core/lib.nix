@@ -10,9 +10,10 @@ _: {
       ${mkDomain name}.extraConfig = ''
         tls {
           dns cloudflare {env.CLOUDFLARE_API_TOKEN}
-          resolvers 1.1.1.1
+          # Cloudflare's nameservers update within seconds; skip Caddy's own
+          # propagation check (it gave false negatives) and let the CA validate.
           propagation_delay 60s
-          propagation_timeout 300s
+          propagation_timeout -1
         }
         reverse_proxy 127.0.0.1:${toString port}
       '';
