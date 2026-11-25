@@ -16,6 +16,8 @@
       audiobookshelf
       jellyfin
       mealie
+      ntfy
+      ntfy-alerts
       pressbox
     ];
   };
