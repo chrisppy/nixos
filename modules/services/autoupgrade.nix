@@ -4,7 +4,8 @@ _: {
     {
       system.autoUpgrade = {
         enable = true;
-        flake = "github:chrisppy/nixos#${config.networking.hostName}";
+        # tested-<host> is only moved forward by CI after this host builds
+        flake = "github:chrisppy/nixos/tested-${config.networking.hostName}#${config.networking.hostName}";
         operation = "switch";
         dates = "07:00";
         randomizedDelaySec = "30min";

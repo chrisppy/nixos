@@ -11,6 +11,7 @@
       libation
       media
       niri
+      ntfy-alerts
       plymouth
       protonmail
       uefi
