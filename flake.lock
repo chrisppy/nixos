@@ -399,11 +399,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795683693,
-        "narHash": "sha256-Zi+gy31AQ83pDqj5wazSDAmKQUgfogd6xoKq+g04WEY=",
+        "lastModified": 1795721638,
+        "narHash": "sha256-dg9kl9cp4UFDRA8wkxY6ETQLqCO+1HAq5oIRMeaWAwg=",
         "owner": "chrisppy",
         "repo": "freecad-flake",
-        "rev": "2028f7c74f48d3810d5d751cdd0c5e228fca8cd5",
+        "rev": "ad68567ff084076359df0cfef01c407c129519e2",
         "type": "github"
       },
       "original": {
