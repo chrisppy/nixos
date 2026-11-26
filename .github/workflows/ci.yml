@@ -1,0 +1,69 @@
+name: CI
+
+# Builds every host. On master, each host that builds is promoted to its
+# own `tested-<host>` branch, which is what system.autoUpgrade pulls from,
+# so a broken flake update never reaches a machine.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+  # Lockfile commits are pushed with GITHUB_TOKEN, which doesn't trigger
+  # `push` workflows, so also run after the update job finishes.
+  workflow_run:
+    workflows: ["Update flake inputs"]
+    types: [completed]
+
+concurrency:
+  group: ci-${{ github.event_name == 'pull_request' && github.ref || 'master' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build ${{ matrix.host }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        host: [sideling, blueridge, smoky]
+
+    steps:
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          tool-cache: true
+
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes pipe-operators
+            # Same cache the hosts use for Determinate Nix, so CI doesn't build it from source
+            extra-substituters = https://install.determinate.systems
+            extra-trusted-public-keys = cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM=
+
+      - name: Set up Cachix
+        uses: cachix/cachix-action@v16
+        with:
+          name: red-oxide
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          skipPush: ${{ github.event_name == 'pull_request' }}
+
+      - name: Build ${{ matrix.host }}
+        run: >-
+          nix build --print-build-logs --no-link
+          .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel
+
+      - name: Promote to tested-${{ matrix.host }}
+        if: github.event_name != 'pull_request'
+        run: git push --force origin "HEAD:refs/heads/tested-${{ matrix.host }}"
