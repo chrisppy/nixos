@@ -28,14 +28,6 @@ _: {
                 match._props.app-id._raw = ''r#"^FreeCAD$"#'';
                 open-maximized-to-edges = true;
               }
-              {
-                match._props.app-id._raw = ''r#"^Inkscape$"#'';
-                open-maximized-to-edges = true;
-              }
-              {
-                match._props.app-id._raw = ''r#"^KiCAD$"#'';
-                open-maximized-to-edges = true;
-              }
             ];
             spawn-at-startup = [
               [
