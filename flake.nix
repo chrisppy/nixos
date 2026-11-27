@@ -48,6 +48,7 @@
       url = "github:DuarteSantos8/openGym?dir=contrib/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    preservation.url = "github:nix-community/preservation";
     pressbox = {
       url = "github:red-oxide/pressbox";
       inputs = {
