@@ -9,6 +9,7 @@
       laptop
       niri
       plymouth
+      preservation
       uefi
       zswap
     ];
