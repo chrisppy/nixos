@@ -78,15 +78,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1795684105,
-        "narHash": "sha256-mQsOWhY0LShEvtVXiQi6WxUV9DafcBqtbTiffiHxB7s=",
+        "lastModified": 1795836700,
+        "narHash": "sha256-OVdiEQlC8KJcj2hUveuj8T3crFi9DcYunHUl7Fn/K3A=",
         "owner": "red-oxide",
         "repo": "base24-themes",
-        "rev": "5b2e73987d4599af8c53399d4147696ea03a269f",
+        "rev": "5576782bcf2666bb7df584dc746484ca3e12722f",
         "type": "github"
       },
       "original": {
         "owner": "red-oxide",
+        "ref": "feat/wrapper-modules",
         "repo": "base24-themes",
         "type": "github"
       }

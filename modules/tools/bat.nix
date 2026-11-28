@@ -1,19 +1,14 @@
-{ config, inputs, ... }:
+{ config, ... }:
 let
   inherit (config.flake.meta.owner) username;
 in
 {
   flake.modules.nixos.base =
-    { config, pkgs, ... }:
+    { pkgs, ... }:
     {
-      wrappers.bat.module = {
-        # Stylix's bat target, without Home Manager.
-        themes.base16-stylix = config.lib.stylix.colors {
-          template = "${inputs.stylix}/modules/bat/base16-stylix.tmTheme.mustache";
-          extension = ".tmTheme";
-        };
-        settings.theme = "base16-stylix";
-      };
+      # bat's base16 theme uses the terminal's 16 colors, which kitty sets
+      # from the base24 theme.
+      wrappers.bat.module.settings.theme = "base16";
 
       users.users.${username}.packages = with pkgs.bat-extras; [
         batgrep

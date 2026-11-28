@@ -16,21 +16,18 @@ in
       in
       {
         wrappers.kitty.module = {
+          # The base24 palette as the terminal's colors. Programs that use
+          # the terminal's 16 colors (bat's base16 theme) follow it.
+          imports = [ inputs.base24-themes.wrapperModules.kitty ];
+          base24 = {
+            theme = config.theme.name;
+            opacity = opacity.terminal;
+          };
           # Stylix's NixOS module installs the font itself.
           font = {
             inherit (fonts.monospace) name;
             size = fonts.sizes.terminal;
           };
-          settings.background_opacity = toString opacity.terminal;
-          # Stylix's kitty target, without Home Manager.
-          extraConfig = ''
-            include ${
-              config.lib.stylix.colors {
-                templateRepo = inputs.stylix.inputs.tinted-kitty;
-                target = "base16";
-              }
-            }
-          '';
         };
         users.users.${username}.packages = [ pkgs.xterm ];
       };

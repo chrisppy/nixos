@@ -1,18 +1,16 @@
-_: {
+{ inputs, ... }:
+{
   flake.modules.nixos.pc =
     { config, ... }:
     {
-      # The colors and fonts of Stylix's mpv target.
-      wrappers.mpv.module."mpv.conf".content =
-        with config.lib.stylix.colors.withHashtag;
-        ''
+      wrappers.mpv.module = {
+        # OSD colors from the base24 theme; fonts from Stylix.
+        imports = [ inputs.base24-themes.wrapperModules.mpv ];
+        base24.theme = config.theme.name;
+        "mpv.conf".content = ''
           osd-font=${config.stylix.fonts.sansSerif.name}
           sub-font=${config.stylix.fonts.sansSerif.name}
-          background-color=#000000
-          osd-back-color=${base01}
-          osd-border-color=${base01}
-          osd-color=${base05}
-          osd-shadow-color=${base00}
         '';
+      };
     };
 }

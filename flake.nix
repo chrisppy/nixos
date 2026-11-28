@@ -1,7 +1,8 @@
 {
   inputs = {
     base24-themes = {
-      url = "github:red-oxide/base24-themes";
+      # TODO: back to the default branch once red-oxide/base24-themes#14 is merged
+      url = "github:red-oxide/base24-themes?ref=feat/wrapper-modules";
       inputs = {
         devfmt.follows = "devfmt";
         nixpkgs.follows = "nixpkgs";

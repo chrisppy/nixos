@@ -1,4 +1,5 @@
-_: {
+{ inputs, ... }:
+{
   flake.modules.nixos.niri =
     {
       config,
@@ -18,6 +19,8 @@ _: {
 
       wrappers.niri = {
         install = false; # programs.niri installs it
+        module.imports = [ inputs.base24-themes.wrapperModules.niri ];
+        module.base24.theme = config.theme.name;
         module.settings = {
           prefer-no-csd = _: { };
           cursor = {

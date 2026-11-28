@@ -5,7 +5,7 @@ _: {
       ...
     }:
     let
-      colors = config.lib.stylix.colors;
+      colors = config.theme.colors;
     in
     {
       nhx.programs.nhx.plugins."who-unstable" = {

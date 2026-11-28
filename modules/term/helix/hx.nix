@@ -51,18 +51,17 @@ in
           };
         };
 
-      # Stylix's base16 Helix theme, as the old stylix/nhx.nix target set it.
-      theme = config.lib.stylix.colors {
-        templateRepo = inputs.stylix.inputs.base16-helix;
-        target = "base16";
-      };
-      transparentTheme = pkgs.runCommandLocal "helix-transparent.toml" { } ''
-        sed 's/,\? bg = "base00"//g' <${theme} >$out
-      '';
-      stylixTheme = {
-        programs.nhx.settings.theme = "stylix";
-        home.file.".config/helix/themes/stylix.toml".source =
-          if config.stylix.opacity.terminal != 1.0 then transparentTheme else theme;
+      # The base24 theme for Helix, from base24-themes; without a background
+      # when the terminal is translucent.
+      helixTheme = (pkgs.formats.toml { }).generate "base24.toml" (
+        inputs.base24-themes.lib.base24.apps.helix {
+          theme = config.theme.scheme;
+          transparent = config.stylix.opacity.terminal != 1.0;
+        }
+      );
+      themeFile = {
+        programs.nhx.settings.theme = "base24";
+        home.file.".config/helix/themes/base24.toml".source = helixTheme;
       };
 
       nhx =
@@ -71,7 +70,7 @@ in
             { _module.args = { inherit pkgs; }; }
             homeOptions
             inputs.nhx.homeManagerModules.nhx
-            stylixTheme
+            themeFile
             config.nhx
           ];
         }).config;
