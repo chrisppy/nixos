@@ -69,24 +69,17 @@
       }
     },
     "base24-themes": {
-      "inputs": {
-        "devfmt": [
-          "devfmt"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
       "locked": {
-        "lastModified": 1795855164,
-        "narHash": "sha256-+q0fVCpCegLoQb7yyGf+dd8sGc+B3n6gHF+1bMW2g04=",
+        "lastModified": 1795890622,
+        "narHash": "sha256-4J4EowClVCbK4LrkufZPvLFyCs4DxaHtFVAbLwkt448=",
         "owner": "red-oxide",
         "repo": "base24-themes",
-        "rev": "8d46470381f57246ad8e608e56f6c79e8095b2c7",
+        "rev": "362a07079fb765475755a78db2f2f6268348a583",
         "type": "github"
       },
       "original": {
         "owner": "red-oxide",
+        "ref": "feat/toolkits",
         "repo": "base24-themes",
         "type": "github"
       }
