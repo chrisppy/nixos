@@ -5,7 +5,6 @@
       autoupgrade
       caddy
       design
-      determinate
       greetd
       intel-arc
       libation

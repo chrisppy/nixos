@@ -2,7 +2,6 @@
   "$declared": {
     "base24-themes": "github:red-oxide/base24-themes",
     "birdland": "github:red-oxide/birdland",
-    "determinate": "https://flakehub.com/f/DeterminateSystems/determinate/*",
     "devfmt": "github:red-oxide/devfmt",
     "disko": "github:nix-community/disko",
     "freecad-flake": "github:chrisppy/freecad-flake",
@@ -34,14 +33,6 @@
     "narHash": "sha256-H5tPes93pc5LJaSi/sCgPSgr3IVCsbp+VHuy2cc5bV4=",
     "lastModified": 1795860097,
     "public": true
-  },
-  "determinate": {
-    "type": "tarball",
-    "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/determinate/3.24.3/01a1f12b-29f0-7623-8ebb-9b32a98f9538/source.tar.gz",
-    "rev": "49968eb8f0f1a3c9c8790e9ead7ce7b5196f6c0f",
-    "narHash": "sha256-cIFgw0dKxzQULB8OSVLsXSrKfPfWzfzJA17rss9dqCg=",
-    "lastModified": 1795047249,
-    "revCount": 458
   },
   "devfmt": {
     "type": "github",

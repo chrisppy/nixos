@@ -48,9 +48,6 @@ jobs:
         with:
           extra_nix_config: |
             experimental-features = nix-command flakes pipe-operators
-            # Same cache the hosts use for Determinate Nix, so CI doesn't build it from source
-            extra-substituters = https://install.determinate.systems
-            extra-trusted-public-keys = cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM=
 
       - name: Set up Cachix
         uses: cachix/cachix-action@v16
