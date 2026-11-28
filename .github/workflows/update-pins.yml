@@ -1,0 +1,60 @@
+name: Update tack pins
+
+# Every input is a tack pin in .tack/pins.toml. Relock them daily and commit
+# the new lock to master; CI then builds every host and only promotes the
+# ones that build to tested-<host>, which is what system.autoUpgrade pulls.
+
+on:
+  schedule:
+    # Every day at 04:00 UTC
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: update-pins
+  cancel-in-progress: false
+
+jobs:
+  update-pins:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            experimental-features = nix-command flakes pipe-operators
+
+      # tack comes from our own cache: the first run builds it and pushes it
+      # to red-oxide, later runs pull it from there.
+      - name: Set up Cachix
+        uses: cachix/cachix-action@v16
+        with:
+          name: red-oxide
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      - name: Update pins
+        run: nix run github:manic-systems/tack/v2.0.0 -- update
+
+      - name: Check the flake still evaluates
+        run: nix flake check --no-build
+
+      - name: Commit and push
+        run: |
+          git add .tack
+          if git diff --cached --quiet; then
+            echo "No pins moved."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(tack): update pins"
+          git push

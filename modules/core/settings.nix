@@ -11,11 +11,9 @@ _: {
           "pipe-operators"
         ];
         substituters = [
-          "https://install.determinate.systems"
           "https://red-oxide.cachix.org"
         ];
         trusted-substituters = [
-          "https://install.determinate.systems"
           "https://red-oxide.cachix.org"
         ];
         trusted-public-keys = [

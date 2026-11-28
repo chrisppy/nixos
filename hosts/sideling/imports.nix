@@ -6,7 +6,6 @@
       base
       bcachefs
       caddy
-      determinate
       intel-arc
       uefi
       zfs
