@@ -1,9 +1,8 @@
 {
   inputs = {
     # base24-themes has no flake inputs (it pins with tack), so nothing to
-    # follow. On its toolkits branch until red-oxide/base24-themes#14 and #15
-    # are merged.
-    base24-themes.url = "github:red-oxide/base24-themes/feat/toolkits";
+    # follow.
+    base24-themes.url = "github:red-oxide/base24-themes";
     birdland = {
       url = "github:red-oxide/birdland";
       inputs = {
