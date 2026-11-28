@@ -70,11 +70,11 @@
     },
     "base24-themes": {
       "locked": {
-        "lastModified": 1795890622,
-        "narHash": "sha256-4J4EowClVCbK4LrkufZPvLFyCs4DxaHtFVAbLwkt448=",
+        "lastModified": 1795891118,
+        "narHash": "sha256-Q0LvHitvooUDeZNhckqb3Yj44jJI878sSe/MWFwfU1E=",
         "owner": "red-oxide",
         "repo": "base24-themes",
-        "rev": "362a07079fb765475755a78db2f2f6268348a583",
+        "rev": "554f4c62e5ef419f52f1489d0c8b0b6af771a755",
         "type": "github"
       },
       "original": {
