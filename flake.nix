@@ -1,12 +1,8 @@
 {
   inputs = {
-    base24-themes = {
-      url = "github:red-oxide/base24-themes";
-      inputs = {
-        devfmt.follows = "devfmt";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
+    # base24-themes has no flake inputs (it pins with tack), so nothing to
+    # follow.
+    base24-themes.url = "github:red-oxide/base24-themes";
     birdland = {
       url = "github:red-oxide/birdland";
       inputs = {
