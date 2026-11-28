@@ -1,5 +1,8 @@
-_: {
-  flake.modules.homeManager.gui = {
-    programs.element-desktop.enable = true;
-  };
+{ config, ... }:
+{
+  flake.modules.nixos.pc =
+    { pkgs, ... }:
+    {
+      users.users.${config.flake.meta.owner.username}.packages = [ pkgs.element-desktop ];
+    };
 }

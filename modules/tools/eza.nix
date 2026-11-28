@@ -1,10 +1,8 @@
-_: {
-  flake.modules.homeManager.base =
+{ config, ... }:
+{
+  flake.modules.nixos.base =
     { pkgs, ... }:
     {
-      programs.eza = {
-        enable = true;
-        package = pkgs.eza;
-      };
+      users.users.${config.flake.meta.owner.username}.packages = [ pkgs.eza ];
     };
 }

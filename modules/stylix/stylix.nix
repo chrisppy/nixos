@@ -1,20 +1,19 @@
 { inputs, ... }:
-
 let
-  base24 = inputs.base24-themes.lib.base24;
-  themeName = "birdland";
-  theme = base24.themes.${themeName};
+  inherit (inputs.base24-themes.lib) base24;
 in
 {
-  flake.modules.nixos.base = {
-    imports = [ inputs.stylix.nixosModules.stylix ];
+  flake.modules.nixos.base =
+    { config, ... }:
+    {
+      imports = [ inputs.stylix.nixosModules.stylix ];
 
-    fonts.fontconfig.enable = true;
+      fonts.fontconfig.enable = true;
 
-    stylix = {
-      enable = true;
-      base16Scheme = builtins.toFile "${themeName}.yaml" (base24.toYaml theme);
-      polarity = (base24.getMeta theme).variant;
+      stylix = {
+        enable = true;
+        base16Scheme = builtins.toFile "${config.theme.name}.yaml" (base24.toYaml config.theme.scheme);
+        polarity = config.theme.variant;
+      };
     };
-  };
 }

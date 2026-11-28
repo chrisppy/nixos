@@ -1,6 +1,6 @@
 _: {
-  flake.modules.homeManager.base = {
-    programs.nhx.plugins.scopeline = {
+  flake.modules.nixos.base = {
+    nhx.programs.nhx.plugins.scopeline = {
       enable = true;
       config = {
         showFile = false;

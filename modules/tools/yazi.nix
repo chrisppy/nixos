@@ -1,19 +1,23 @@
-_: {
-  flake.modules.homeManager.base =
-    { pkgs, ... }:
+{ inputs, ... }:
+{
+  flake.modules.nixos.base =
+    { config, pkgs, ... }:
     {
-      programs.yazi = {
-        enable = true;
+      wrappers.yazi.module = {
+        imports = [ inputs.base24-themes.wrapperModules.yazi ];
+        base24.theme = config.theme.name;
         plugins = {
           inherit (pkgs.yaziPlugins) git;
         };
-        settings.manager = {
-          show_hidden = false;
-          show_symlink = true;
-          sort_by = "natural";
-          sort_dir_first = true;
-          sort_sensitive = false;
-          sort_reverse = false;
+        settings = {
+          yazi.mgr = {
+            show_hidden = false;
+            show_symlink = true;
+            sort_by = "natural";
+            sort_dir_first = true;
+            sort_sensitive = false;
+            sort_reverse = false;
+          };
         };
       };
     };

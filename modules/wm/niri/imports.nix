@@ -1,18 +1,11 @@
-{ inputs, config, ... }:
+{ inputs, ... }:
 {
-  flake.modules = {
-    nixos.niri = {
-      imports = [
-        inputs.niri-nix.nixosModules.default
-      ];
-      nixpkgs.overlays = [
-        inputs.niri-nix.overlays.niri-nix
-      ];
-    };
-    homeManager.niri.imports = with config.flake.modules.homeManager; [
-      birdland
-      inputs.niri-nix.homeModules.default
-      inputs.niri-nix.homeModules.stylix
+  flake.modules.nixos.niri = {
+    imports = [
+      inputs.niri-nix.nixosModules.default
+    ];
+    nixpkgs.overlays = [
+      inputs.niri-nix.overlays.niri-nix
     ];
   };
 }

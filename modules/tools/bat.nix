@@ -1,17 +1,22 @@
-_: {
-  flake.modules.homeManager.base =
+{ config, ... }:
+let
+  inherit (config.flake.meta.owner) username;
+in
+{
+  flake.modules.nixos.base =
     { pkgs, ... }:
     {
-      programs.bat = {
-        enable = true;
-        extraPackages = with pkgs.bat-extras; [
-          batgrep
-          batwatch
-          prettybat
-        ];
-      };
+      # bat's base16 theme uses the terminal's 16 colors, which kitty sets
+      # from the base24 theme.
+      wrappers.bat.module.settings.theme = "base16";
 
-      home = {
+      users.users.${username}.packages = with pkgs.bat-extras; [
+        batgrep
+        batwatch
+        prettybat
+      ];
+
+      environment = {
         shellAliases = {
           cat = "bat --paging=never";
           less = "bat --paging=always";

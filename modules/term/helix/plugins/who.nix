@@ -1,14 +1,14 @@
 _: {
-  flake.modules.homeManager.base =
+  flake.modules.nixos.base =
     {
       config,
       ...
     }:
     let
-      colors = config.lib.stylix.colors;
+      colors = config.theme.colors;
     in
     {
-      programs.nhx.plugins."who-unstable" = {
+      nhx.programs.nhx.plugins."who-unstable" = {
         # enable = true;
         config = {
           color = colors.base0C;

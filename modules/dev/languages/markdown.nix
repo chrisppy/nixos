@@ -1,13 +1,17 @@
-_: {
-  flake.modules.homeManager.dev =
+{ config, ... }:
+let
+  inherit (config.flake.meta.owner) username;
+in
+{
+  flake.modules.nixos.pc =
     { lib, pkgs, ... }:
     {
-      home.packages = with pkgs; [
+      users.users.${username}.packages = with pkgs; [
         ltex-ls
         marksman
       ];
 
-      programs.nhx.languages = {
+      nhx.programs.nhx.languages = {
         language = [
           {
             name = "markdown";

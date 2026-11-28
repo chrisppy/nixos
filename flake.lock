@@ -78,15 +78,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1795684105,
-        "narHash": "sha256-mQsOWhY0LShEvtVXiQi6WxUV9DafcBqtbTiffiHxB7s=",
+        "lastModified": 1795837150,
+        "narHash": "sha256-mIl8iBxO9WIwRxmOGc+Idd7TVXlGNg9fF4B08zaLQzo=",
         "owner": "red-oxide",
         "repo": "base24-themes",
-        "rev": "5b2e73987d4599af8c53399d4147696ea03a269f",
+        "rev": "b8773d27d74f063ca44759ca8ad08ebf80550c18",
         "type": "github"
       },
       "original": {
         "owner": "red-oxide",
+        "ref": "feat/wrapper-modules",
         "repo": "base24-themes",
         "type": "github"
       }
@@ -117,6 +118,9 @@
           "devfmt"
         ],
         "home-manager": "home-manager",
+        "nix-wrapper-modules": [
+          "nix-wrapper-modules"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -124,15 +128,16 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1795776113,
-        "narHash": "sha256-ncaxQNleGli0E7MZTS8gpFv/AyUgxSw+iSaqGkgQ0MU=",
+        "lastModified": 1795835833,
+        "narHash": "sha256-CT+oqRRV2qtHAw/oIr3XpfZO88oGweh1js81T+lCc3w=",
         "owner": "red-oxide",
         "repo": "birdland",
-        "rev": "939e5a69100ccb27990dce8c9ef86b66e783304b",
+        "rev": "a3ad04fafe8487e509f8713d785ee7a41f96432a",
         "type": "github"
       },
       "original": {
         "owner": "red-oxide",
+        "ref": "feat/wrapper-modules",
         "repo": "birdland",
         "type": "github"
       }
@@ -488,27 +493,6 @@
         "type": "github"
       }
     },
-    "home-manager_2": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1795325060,
-        "narHash": "sha256-XYoMPsqRFZ6jOaYI1KAAu8fzqif4tkCX8mhEKrViDXQ=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "6480d7d8533b88c78cc6dcda395ab89cd546e450",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "ref": "release-26.05",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
     "import-tree": {
       "locked": {
         "lastModified": 1788467110,
@@ -583,6 +567,26 @@
       "original": {
         "type": "tarball",
         "url": "https://flakehub.com/f/DeterminateSystems/nix-src/%2A"
+      }
+    },
+    "nix-wrapper-modules": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1795484136,
+        "narHash": "sha256-F6ZSjFLSS6F3vv71/fIr7PLxQQZHuEcCIVBYDfIis2I=",
+        "owner": "nix-community",
+        "repo": "nix-wrapper-modules",
+        "rev": "dd4d2130b3e1df56837b11a9be025fcd2774030c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-wrapper-modules",
+        "type": "github"
       }
     },
     "nixfmt-rs": {
@@ -787,20 +791,24 @@
           "devfmt"
         ],
         "fenix": "fenix",
+        "nix-wrapper-modules": [
+          "nix-wrapper-modules"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1795757393,
-        "narHash": "sha256-QRjuY2Wtxt5lYkRAuLUjfD0h9A/lBdecn9mC9dfY0m0=",
+        "lastModified": 1795835835,
+        "narHash": "sha256-Zm4YTjtnguVY7XrhoSgUGkoGWj4rOK1cnuZoFZHVStw=",
         "owner": "red-oxide",
         "repo": "pressbox",
-        "rev": "6df8ec9e930784671e07dd3a4240bef2fede392c",
+        "rev": "b53676bd0606b283484f1352f447a9324746662d",
         "type": "github"
       },
       "original": {
         "owner": "red-oxide",
+        "ref": "feat/wrapper-modules",
         "repo": "pressbox",
         "type": "github"
       }
@@ -870,9 +878,9 @@
         "devfmt": "devfmt",
         "disko": "disko",
         "freecad-flake": "freecad-flake",
-        "home-manager": "home-manager_2",
         "nhx": "nhx",
         "niri-nix": "niri-nix",
+        "nix-wrapper-modules": "nix-wrapper-modules",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-kernel": "nixpkgs-kernel",
         "nixpkgs-unstable": "nixpkgs-unstable",

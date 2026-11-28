@@ -1,8 +1,9 @@
-_: {
-  flake.modules.homeManager.wayland =
+{ config, ... }:
+{
+  flake.modules.nixos.pc =
     { pkgs, ... }:
     {
-      home.packages = with pkgs; [
+      users.users.${config.flake.meta.owner.username}.packages = with pkgs; [
         brightnessctl
         grim
         slurp

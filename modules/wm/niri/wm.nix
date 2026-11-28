@@ -1,48 +1,51 @@
-_: {
-  flake.modules = {
-    nixos.niri = {
+{ inputs, ... }:
+{
+  flake.modules.nixos.niri =
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
+    {
       programs.niri = {
         enable = true;
+        # The wrapped niri, with the config below built in.
+        package = config.wrappers.niri.package;
         useNautilus = true;
         withXDG = true;
         withUWSM = true;
       };
-    };
 
-    homeManager.niri =
-      {
-        config,
-        lib,
-        pkgs,
-        ...
-      }:
-      {
-        wayland.windowManager.niri = {
-          enable = true;
-          settings = {
-            prefer-no-csd = true;
-            cursor.hide-when-typing = true;
-            screenshot-path = "~/pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
-            window-rule = [
-              {
-                match._props.app-id._raw = ''r#"^FreeCAD$"#'';
-                open-maximized-to-edges = true;
-              }
-            ];
-            spawn-at-startup = [
-              [
-                (lib.getExe' pkgs.tailscale "tailscale")
-                "systray"
-              ]
-            ]
-            ++ lib.optionals config.programs.discord.enable [
-              [
-                (lib.getExe config.programs.discord.package)
-                "--start-minimized"
-              ]
-            ];
+      wrappers.niri = {
+        install = false; # programs.niri installs it
+        module.imports = [ inputs.base24-themes.wrapperModules.niri ];
+        module.base24.theme = config.theme.name;
+        module.settings = {
+          prefer-no-csd = _: { };
+          cursor = {
+            xcursor-theme = config.stylix.cursor.name;
+            xcursor-size = config.stylix.cursor.size;
+            hide-when-typing = _: { };
           };
+          screenshot-path = "~/pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
+          window-rules = [
+            {
+              matches = [ { app-id = _: { custom = ''r#"^FreeCAD$"#''; }; } ];
+              open-maximized-to-edges = true;
+            }
+          ];
+          spawn-at-startup = [
+            [
+              (lib.getExe' pkgs.tailscale "tailscale")
+              "systray"
+            ]
+            [
+              (lib.getExe pkgs.discord)
+              "--start-minimized"
+            ]
+          ];
         };
       };
-  };
+    };
 }
