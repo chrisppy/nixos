@@ -16,8 +16,9 @@ in
       in
       {
         wrappers.kitty.module = {
+          # Stylix's NixOS module installs the font itself.
           font = {
-            inherit (fonts.monospace) package name;
+            inherit (fonts.monospace) name;
             size = fonts.sizes.terminal;
           };
           settings.background_opacity = toString opacity.terminal;
