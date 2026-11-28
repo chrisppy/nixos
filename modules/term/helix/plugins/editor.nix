@@ -1,6 +1,6 @@
 _: {
-  flake.modules.homeManager.base = {
-    programs.nhx.settings.editor = {
+  flake.modules.nixos.base = {
+    nhx.programs.nhx.settings.editor = {
       bufferline = "always";
       color-modes = true;
       cursorline = true;

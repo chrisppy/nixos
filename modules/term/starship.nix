@@ -1,5 +1,5 @@
 _: {
-  flake.modules.homeManager.base =
+  flake.modules.nixos.base =
     { lib, ... }:
     {
       programs.starship = {
@@ -32,8 +32,8 @@ _: {
           git_branch.style = "italic cyan";
           git_status = {
             style = "cyan";
-            conflicted = "";
-            up_to_date = "";
+            conflicted = "";
+            up_to_date = "";
           };
         };
       };

@@ -1,23 +1,28 @@
-_: {
-  flake.modules.homeManager.base =
+{ config, ... }:
+let
+  inherit (config.flake.meta.owner) username;
+  dirs = {
+    DESKTOP = "desktop";
+    DOCUMENTS = "documents";
+    DOWNLOAD = "downloads";
+    MUSIC = "music";
+    PICTURES = "pictures";
+    PUBLICSHARE = "share";
+    TEMPLATES = "templates";
+    VIDEOS = "videos";
+  };
+in
+{
+  flake.modules.nixos.base =
+    { lib, ... }:
     {
-      config,
-      lib,
-      ...
-    }:
-    {
-      home.preferXdgDirectories = true;
-      xdg.userDirs = {
-        enable = true;
-        createDirectories = lib.mkDefault true;
-        desktop = "${config.home.homeDirectory}/desktop";
-        documents = "${config.home.homeDirectory}/documents";
-        download = "${config.home.homeDirectory}/downloads";
-        music = "${config.home.homeDirectory}/music";
-        pictures = "${config.home.homeDirectory}/pictures";
-        publicShare = "${config.home.homeDirectory}/share";
-        templates = "${config.home.homeDirectory}/templates";
-        videos = "${config.home.homeDirectory}/videos";
-      };
+      home.files.".config/user-dirs.dirs" = builtins.toFile "user-dirs.dirs" (
+        lib.concatLines (lib.mapAttrsToList (key: dir: ''XDG_${key}_DIR="$HOME/${dir}"'') dirs)
+      );
+
+      # Create the directories too, as Home Manager's xdg.userDirs did.
+      systemd.user.tmpfiles.users.${username}.rules = lib.mapAttrsToList (
+        _: dir: "d %h/${dir} - - - -"
+      ) dirs;
     };
 }

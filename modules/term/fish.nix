@@ -3,66 +3,47 @@ let
   inherit (config.flake.meta.owner) username;
 in
 {
-  flake.modules = {
-    nixos.base =
-      { pkgs, ... }:
-      {
-        programs.fish.enable = true;
-        users.users.${username}.shell = pkgs.fish;
-      };
-    homeManager.base =
-      {
-        config,
-        lib,
-        pkgs,
-        ...
-      }:
-      {
-        programs.fish = {
-          enable = true;
-          shellAliases = {
-            open = lib.getExe' pkgs.xdg-utils "xdg-open";
-            ns = lib.getExe pkgs.nix-search-cli;
-            "nf." = "nix fmt .";
+  flake.modules.nixos.base =
+    { lib, pkgs, ... }:
+    {
+      programs.fish = {
+        enable = true;
+        shellAliases = {
+          open = lib.getExe' pkgs.xdg-utils "xdg-open";
+          ns = lib.getExe pkgs.nix-search-cli;
+          "nf." = "nix fmt .";
 
-            h = "history";
-            c = "clear";
-            tree = "${lib.getExe config.programs.eza.package} --tree";
+          h = "history";
+          c = "clear";
+          tree = "${lib.getExe pkgs.eza} --tree";
 
-            # Git
-            gs = "git status";
-            ga = "git add";
-            "ga." = "git add .";
-            gch = "git checkout";
-            gchb = "git checkout -b";
-            gc = "git commit -s";
-            gcm = "git commit -sm";
-            gca = "git commit -sam";
-            gb = "git branch";
-            gp = "git push";
-            gpl = "git pull";
-          };
-          functions = {
-            gpa = {
-              description = "Pull all git repos in subdirectories";
-              body = ''
-                for d in */
-                  git -C $d pull
-                end
-              '';
-            };
-          };
-          plugins = [
-            {
-              name = "autopair";
-              inherit (pkgs.fishPlugins.autopair) src;
-            }
-            {
-              name = "done";
-              inherit (pkgs.fishPlugins.done) src;
-            }
-          ];
+          # Git
+          gs = "git status";
+          ga = "git add";
+          "ga." = "git add .";
+          gch = "git checkout";
+          gchb = "git checkout -b";
+          gc = "git commit -s";
+          gcm = "git commit -sm";
+          gca = "git commit -sam";
+          gb = "git branch";
+          gp = "git push";
+          gpl = "git pull";
         };
+        interactiveShellInit = ''
+          function gpa --description 'Pull all git repos in subdirectories'
+            for d in */
+              git -C $d pull
+            end
+          end
+        '';
       };
-  };
+      users.users.${username}.shell = pkgs.fish;
+
+      # Plugins load from the system profile's vendor directories.
+      environment.systemPackages = with pkgs.fishPlugins; [
+        autopair
+        done
+      ];
+    };
 }

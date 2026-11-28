@@ -123,16 +123,13 @@ in
         caddy.virtualHosts = mkVHost name port;
       };
     };
-    homeManager = {
-      pressbox-clients = {
-        imports = [ inputs.pressbox.homeManagerModules.default ];
-        programs.pressbox = {
-          enable = true;
-          server = "https://${mkDomain name}";
-          tui.enable = true;
-          desktop.enable = true;
-        };
+    nixos.pc = {
+      wrappers = {
+        pressbox.module.server = "https://${mkDomain name}";
+        pressbox-iced.module.server = "https://${mkDomain name}";
       };
+      # Birdland's feeds indicator reads it from the session.
+      environment.sessionVariables.PRESSBOX_SERVER = "https://${mkDomain name}";
     };
   };
 }

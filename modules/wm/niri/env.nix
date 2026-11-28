@@ -1,6 +1,6 @@
 _: {
-  flake.modules.homeManager.niri = {
-    wayland.windowManager.niri.settings.environment = {
+  flake.modules.nixos.niri = {
+    wrappers.niri.module.settings.environment = {
       _JAVA_AWT_WM_NONREPARENTING = "1";
       GDK_BACKEND = "wayland,x11,*";
       MOZ_ENABLE_WAYLAND = "1";

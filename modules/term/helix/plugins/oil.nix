@@ -1,6 +1,6 @@
 _: {
-  flake.modules.homeManager.base = {
-    programs.nhx.plugins.oil = {
+  flake.modules.nixos.base = {
+    nhx.programs.nhx.plugins.oil = {
       enable = true;
       config = {
         showDotfiles = true;

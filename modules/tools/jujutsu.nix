@@ -1,13 +1,6 @@
 { config, ... }:
 {
-  flake.modules.homeManager.dev = {
-    programs.jujutsu = {
-      enable = true;
-      settings = {
-        user = {
-          inherit (config.flake.meta.owner) email name;
-        };
-      };
-    };
+  flake.modules.nixos.pc.wrappers.jujutsu.module.settings.user = {
+    inherit (config.flake.meta.owner) email name;
   };
 }

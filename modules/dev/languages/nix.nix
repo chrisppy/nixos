@@ -1,14 +1,18 @@
-_: {
-  flake.modules.homeManager.dev =
+{ config, ... }:
+let
+  inherit (config.flake.meta.owner) username;
+in
+{
+  flake.modules.nixos.pc =
     { pkgs, ... }:
     {
-      home.packages = with pkgs; [
+      users.users.${username}.packages = with pkgs; [
         nil
         nixd
         nixfmt
       ];
 
-      programs.nhx.languages = {
+      nhx.programs.nhx.languages = {
         language = [
           {
             name = "nix";

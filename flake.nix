@@ -8,10 +8,12 @@
       };
     };
     birdland = {
-      url = "github:red-oxide/birdland";
+      # TODO: back to the default branch once red-oxide/birdland#20 is merged
+      url = "github:red-oxide/birdland?ref=feat/wrapper-modules";
       inputs = {
         base24-themes.follows = "base24-themes";
         devfmt.follows = "devfmt";
+        nix-wrapper-modules.follows = "nix-wrapper-modules";
         nixpkgs.follows = "nixpkgs";
       };
     };
@@ -31,12 +33,12 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-    home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nhx = {
       url = "github:Ra77a3l3-jar/nhx";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-wrapper-modules = {
+      url = "github:nix-community/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix";
@@ -49,9 +51,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pressbox = {
-      url = "github:red-oxide/pressbox";
+      # TODO: back to the default branch once red-oxide/pressbox#43 is merged
+      url = "github:red-oxide/pressbox?ref=feat/wrapper-modules";
       inputs = {
         devfmt.follows = "devfmt";
+        nix-wrapper-modules.follows = "nix-wrapper-modules";
         nixpkgs.follows = "nixpkgs";
       };
     };

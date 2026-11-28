@@ -1,17 +1,27 @@
-_: {
-  flake.modules.homeManager.base =
-    { pkgs, ... }:
+{ config, inputs, ... }:
+let
+  inherit (config.flake.meta.owner) username;
+in
+{
+  flake.modules.nixos.base =
+    { config, pkgs, ... }:
     {
-      programs.bat = {
-        enable = true;
-        extraPackages = with pkgs.bat-extras; [
-          batgrep
-          batwatch
-          prettybat
-        ];
+      wrappers.bat.module = {
+        # Stylix's bat target, without Home Manager.
+        themes.base16-stylix = config.lib.stylix.colors {
+          template = "${inputs.stylix}/modules/bat/base16-stylix.tmTheme.mustache";
+          extension = ".tmTheme";
+        };
+        settings.theme = "base16-stylix";
       };
 
-      home = {
+      users.users.${username}.packages = with pkgs.bat-extras; [
+        batgrep
+        batwatch
+        prettybat
+      ];
+
+      environment = {
         shellAliases = {
           cat = "bat --paging=never";
           less = "bat --paging=always";

@@ -1,6 +1,6 @@
 _: {
-  flake.modules.homeManager.base = {
-    programs.nhx.plugins.forest = {
+  flake.modules.nixos.base = {
+    nhx.programs.nhx.plugins.forest = {
       enable = true;
       config = {
         style = "snacks";
