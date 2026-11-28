@@ -1,0 +1,67 @@
+# tack pins. `tack update` relocks pins.lock.json; nix only reads the lock.
+# https://github.com/manic-systems/tack
+#
+# `follows` reaches a pin's flake inputs, and the .tack pins of a project
+# marked `[tack] recomposable = true`. A project that pins with tack without
+# being recomposable keeps its own pins (tack traces a note on eval).
+
+[inputs.nixpkgs]
+url = "github:NixOS/nixpkgs/nixos-26.05"
+
+[inputs.nixpkgs-unstable]
+url = "github:NixOS/nixpkgs/nixos-unstable"
+
+# TODO: drop once bcachefs-tools builds against 6.18.64+ (see hosts/sideling/host.nix)
+[inputs.nixpkgs-kernel]
+url = "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f"
+
+# Pins with tack and only exports lib, so nothing to follow.
+[inputs.base24-themes]
+url = "github:red-oxide/base24-themes"
+
+[inputs.birdland]
+follows = { base24-themes = "base24-themes", devfmt = "devfmt", nixpkgs = "nixpkgs" }
+url     = "github:red-oxide/birdland"
+
+[inputs.determinate]
+url = "https://flakehub.com/f/DeterminateSystems/determinate/*"
+
+[inputs.devfmt]
+follows = { nixpkgs = "nixpkgs" }
+url     = "github:red-oxide/devfmt"
+
+[inputs.disko]
+follows = { nixpkgs = "nixpkgs" }
+url     = "github:nix-community/disko"
+
+[inputs.freecad-flake]
+follows = { devfmt = "devfmt", nixpkgs = "nixpkgs" }
+url     = "github:chrisppy/freecad-flake"
+
+[inputs.home-manager]
+follows = { nixpkgs = "nixpkgs" }
+url     = "github:nix-community/home-manager/release-26.05"
+
+[inputs.nhx]
+follows = { nixpkgs = "nixpkgs" }
+url     = "github:Ra77a3l3-jar/nhx"
+
+[inputs.niri-nix]
+url = "git+https://codeberg.org/BANanaD3V/niri-nix"
+
+[inputs.opengym]
+dir     = "contrib/nix"
+follows = { nixpkgs = "nixpkgs" }
+url     = "github:DuarteSantos8/openGym"
+
+[inputs.pressbox]
+follows = { devfmt = "devfmt", nixpkgs = "nixpkgs" }
+url     = "github:red-oxide/pressbox"
+
+[inputs.sops-nix]
+follows = { nixpkgs = "nixpkgs" }
+url     = "github:Mic92/sops-nix"
+
+[inputs.stylix]
+follows = { nixpkgs = "nixpkgs" }
+url     = "github:danth/stylix/release-26.05"

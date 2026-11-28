@@ -2,17 +2,17 @@ name: CI
 
 # Builds every host. On master, each host that builds is promoted to its
 # own `tested-<host>` branch, which is what system.autoUpgrade pulls from,
-# so a broken flake update never reaches a machine.
+# so a broken pin update never reaches a machine.
 
 on:
   push:
     branches: [master]
   pull_request:
   workflow_dispatch:
-  # Lockfile commits are pushed with GITHUB_TOKEN, which doesn't trigger
+  # Pin updates are pushed with GITHUB_TOKEN, which doesn't trigger
   # `push` workflows, so also run after the update job finishes.
   workflow_run:
-    workflows: ["Update flake inputs"]
+    workflows: ["Update tack pins"]
     types: [completed]
 
 concurrency:

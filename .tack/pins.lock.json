@@ -1,0 +1,163 @@
+{
+  "$declared": {
+    "base24-themes": "github:red-oxide/base24-themes",
+    "birdland": "github:red-oxide/birdland",
+    "determinate": "https://flakehub.com/f/DeterminateSystems/determinate/*",
+    "devfmt": "github:red-oxide/devfmt",
+    "disko": "github:nix-community/disko",
+    "freecad-flake": "github:chrisppy/freecad-flake",
+    "home-manager": "github:nix-community/home-manager/release-26.05",
+    "nhx": "github:Ra77a3l3-jar/nhx",
+    "niri-nix": "git+https://codeberg.org/BANanaD3V/niri-nix",
+    "nixpkgs": "github:NixOS/nixpkgs/nixos-26.05",
+    "nixpkgs-kernel": "github:NixOS/nixpkgs/f68407657ad294471eb4b2e65d193df26edf729f",
+    "nixpkgs-unstable": "github:NixOS/nixpkgs/nixos-unstable",
+    "opengym": "github:DuarteSantos8/openGym",
+    "pressbox": "github:red-oxide/pressbox",
+    "sops-nix": "github:Mic92/sops-nix",
+    "stylix": "github:danth/stylix/release-26.05"
+  },
+  "base24-themes": {
+    "type": "github",
+    "owner": "red-oxide",
+    "repo": "base24-themes",
+    "rev": "7626e8a0ebab894dc130efe035403f0148346377",
+    "narHash": "sha256-Q0LvHitvooUDeZNhckqb3Yj44jJI878sSe/MWFwfU1E=",
+    "lastModified": 1795894100,
+    "public": true
+  },
+  "birdland": {
+    "type": "github",
+    "owner": "red-oxide",
+    "repo": "birdland",
+    "rev": "f6ed8b7e17d6313ee5d0f1d11fdaae4dfeb64264",
+    "narHash": "sha256-H5tPes93pc5LJaSi/sCgPSgr3IVCsbp+VHuy2cc5bV4=",
+    "lastModified": 1795860097,
+    "public": true
+  },
+  "determinate": {
+    "type": "tarball",
+    "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/determinate/3.24.3/01a1f12b-29f0-7623-8ebb-9b32a98f9538/source.tar.gz",
+    "rev": "49968eb8f0f1a3c9c8790e9ead7ce7b5196f6c0f",
+    "narHash": "sha256-cIFgw0dKxzQULB8OSVLsXSrKfPfWzfzJA17rss9dqCg=",
+    "lastModified": 1795047249,
+    "revCount": 458
+  },
+  "devfmt": {
+    "type": "github",
+    "owner": "red-oxide",
+    "repo": "devfmt",
+    "rev": "664022d4a28d7d76908bdf260917b07562a014e6",
+    "narHash": "sha256-Et7veXW2GzMahrjEmwdfOUfJSmifFZ1wS9sMXoPR384=",
+    "lastModified": 1795867951,
+    "public": true
+  },
+  "disko": {
+    "type": "github",
+    "owner": "nix-community",
+    "repo": "disko",
+    "rev": "44761d4f745b95e037458a0e57133c5700c8e320",
+    "narHash": "sha256-D35n2Q2v1KrlF9LS/pFl8Z3EBMJW6qvPw5q4HMbXXLg=",
+    "lastModified": 1795168368,
+    "public": true
+  },
+  "freecad-flake": {
+    "type": "github",
+    "owner": "chrisppy",
+    "repo": "freecad-flake",
+    "rev": "8f39a2f276ff4a3de6dc17db1190df38aaba10bd",
+    "narHash": "sha256-dsiukHXMNqQwh/aY6jeyzLCJE8XooWOHeUqmjZqfy6g=",
+    "lastModified": 1795854899,
+    "public": true
+  },
+  "home-manager": {
+    "type": "github",
+    "owner": "nix-community",
+    "repo": "home-manager",
+    "rev": "6480d7d8533b88c78cc6dcda395ab89cd546e450",
+    "narHash": "sha256-XYoMPsqRFZ6jOaYI1KAAu8fzqif4tkCX8mhEKrViDXQ=",
+    "lastModified": 1795325060,
+    "public": true
+  },
+  "nhx": {
+    "type": "github",
+    "owner": "Ra77a3l3-jar",
+    "repo": "nhx",
+    "rev": "d04fba43d3ba2cd8cc0e8bcf31eff84392b5e7d7",
+    "narHash": "sha256-HxVuPICakeXAI7sjXU/M11dLcQ0EsWtCN7aucZEEdsc=",
+    "lastModified": 1793731467,
+    "public": true
+  },
+  "niri-nix": {
+    "type": "git",
+    "url": "https://codeberg.org/BANanaD3V/niri-nix",
+    "ref": "refs/heads/main",
+    "rev": "2bf797ee5a2fa16b5699b9dc582350654d342b72",
+    "narHash": "sha256-tp8aArbo2blNkTbKw27/fWFO2gLtgRqJT+2lXyXAkxw=",
+    "lastModified": 1794096592,
+    "revCount": 222
+  },
+  "nixpkgs": {
+    "type": "github",
+    "owner": "NixOS",
+    "repo": "nixpkgs",
+    "rev": "5b31ff946309736077f0c4ee23bb85d0a0a1c181",
+    "narHash": "sha256-CiSQ3/bsP5gXG2SQzOgwhqwl9MkBRhQQqJd3YmpaYL4=",
+    "lastModified": 1795502373,
+    "public": true
+  },
+  "nixpkgs-kernel": {
+    "type": "github",
+    "owner": "NixOS",
+    "repo": "nixpkgs",
+    "rev": "f68407657ad294471eb4b2e65d193df26edf729f",
+    "narHash": "sha256-E+XLAfnC7+bdr4qlEgRv6cdGmiqTU5oeFNKCha7epqQ=",
+    "lastModified": 1794872590,
+    "public": true
+  },
+  "nixpkgs-unstable": {
+    "type": "github",
+    "owner": "NixOS",
+    "repo": "nixpkgs",
+    "rev": "58d0d3e9d527ca7263be6a45d1f86eacdc700dab",
+    "narHash": "sha256-fD1nLSQM8tFob51/thCOr49JIAIjoqybAY27/+hwZQI=",
+    "lastModified": 1795546490,
+    "public": true
+  },
+  "opengym": {
+    "type": "github",
+    "owner": "DuarteSantos8",
+    "repo": "openGym",
+    "rev": "e4a68a94c42a3c17cbd560d66ce2e46a7048ab99",
+    "narHash": "sha256-FgWluxi5sGtj9Y5wknRqMbRXnqUg5Q8rT6GnX6u5AMA=",
+    "lastModified": 1794751988,
+    "public": true
+  },
+  "pressbox": {
+    "type": "github",
+    "owner": "red-oxide",
+    "repo": "pressbox",
+    "rev": "ad84e815bc2bbf859329e07d68aa24320ce64837",
+    "narHash": "sha256-FJKBsrjdzrmZZAfogPdfVG2i9GdJ+oXKSy0J7IO41wM=",
+    "lastModified": 1795842351,
+    "public": true
+  },
+  "sops-nix": {
+    "type": "github",
+    "owner": "Mic92",
+    "repo": "sops-nix",
+    "rev": "d5abe5e53200ad48254e8e6bd95e6cef94e66577",
+    "narHash": "sha256-2p8/wnENYHU2Z79Ir/rpq+V1sMI9mSD6xGAlvlbVBUY=",
+    "lastModified": 1795471345,
+    "public": true
+  },
+  "stylix": {
+    "type": "github",
+    "owner": "danth",
+    "repo": "stylix",
+    "rev": "dfb8f93ee16d817811363b26c64d9e59bec03c5b",
+    "narHash": "sha256-/odhJRZ0iueFk7Ik25/KTZJlgjtNPdzZPdG7KO2FWhM=",
+    "lastModified": 1791578552,
+    "public": true
+  }
+}
